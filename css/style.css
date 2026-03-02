@@ -170,6 +170,26 @@ main p {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.state-selector label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.state-selector select {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+}
+
+.month-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 #currentMonthDisplay {

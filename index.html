@@ -40,9 +40,33 @@
         <section id="calendar-section">
             <h2>2026년 독일 휴일 달력</h2>
             <div id="calendar-controls">
-                <button id="prevMonth">&lt; 이전 달</button>
-                <span id="currentMonthDisplay"></span>
-                <button id="nextMonth">다음 달 &gt;</button>
+                <div class="state-selector">
+                    <label for="stateSelect">지역 선택:</label>
+                    <select id="stateSelect">
+                        <option value="ALL" selected>전체 공휴일</option>
+                        <option value="BW">Baden-Württemberg (바덴뷔르템베르크)</option>
+                        <option value="BY">Bayern (바이에른)</option>
+                        <option value="BE">Berlin (베를린)</option>
+                        <option value="BB">Brandenburg (브란덴부르크)</option>
+                        <option value="HB">Bremen (브레멘)</option>
+                        <option value="HH">Hamburg (함부르크)</option>
+                        <option value="HE">Hessen (헤센)</option>
+                        <option value="MV">Mecklenburg-Vorpommern (메클렌부르크포어포메른)</option>
+                        <option value="NI">Niedersachsen (니더작센)</option>
+                        <option value="NW">Nordrhein-Westfalen (노르트라인베스트팔렌)</option>
+                        <option value="RP">Rheinland-Pfalz (라인란트팔츠)</option>
+                        <option value="SL">Saarland (자를란트)</option>
+                        <option value="SN">Sachsen (작센)</option>
+                        <option value="ST">Sachsen-Anhalt (작센안할트)</option>
+                        <option value="SH">Schleswig-Holstein (슐레스비히홀슈타인)</option>
+                        <option value="TH">Thüringen (튀링겐)</option>
+                    </select>
+                </div>
+                <div class="month-nav">
+                    <button id="prevMonth">&lt; 이전 달</button>
+                    <span id="currentMonthDisplay"></span>
+                    <button id="nextMonth">다음 달 &gt;</button>
+                </div>
             </div>
             <div id="calendar-grid" class="calendar-grid">
                 <!-- JS에서 달력이 동적으로 생성됩니다 -->
