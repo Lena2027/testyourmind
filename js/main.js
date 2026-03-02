@@ -1,11 +1,36 @@
+/**
+ * 현재 페이지의 깊이에 따라 루트 경로(./ 또는 ../ 또는 ../../)를 반환하는 함수
+ */
+function getBasePath() {
+    const path = window.location.pathname;
+    // GitHub Pages(/about/) 환경 고려
+    const depth = (path.match(/\//g) || []).length;
+    // 로컬 파일 시스템 또는 루트 도메인인 경우를 체크하여 경로 계산
+    if (path.includes('/blog/') || path.includes('/states/')) {
+        return '../';
+    }
+    return './';
+}
+
+const basePath = getBasePath();
+
 async function loadComponent(url, elementId) {
     try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error(`Failed to load ${url}`);
+        const fullUrl = basePath + url;
+        const response = await fetch(fullUrl);
+        if (!response.ok) throw new Error(`Failed to load ${fullUrl}`);
         const html = await response.text();
         document.getElementById(elementId).innerHTML = html;
         
-        // Header가 로드된 후 테마 토글 이벤트 연결
+        // 로드된 헤더의 링크들을 basePath에 맞게 조정 (서브디렉토리 대응)
+        const container = document.getElementById(elementId);
+        container.querySelectorAll('a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && !href.startsWith('http') && !href.startsWith('#')) {
+                link.setAttribute('href', basePath + href.replace('../', ''));
+            }
+        });
+
         if (elementId === 'header-container') {
             setupThemeToggle();
         }
@@ -18,7 +43,6 @@ function setupThemeToggle() {
     const toggleBtn = document.getElementById('theme-toggle');
     if (!toggleBtn) return;
 
-    // 저장된 테마 적용
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
     toggleBtn.textContent = savedTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
@@ -26,7 +50,6 @@ function setupThemeToggle() {
     toggleBtn.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         toggleBtn.textContent = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
@@ -34,14 +57,38 @@ function setupThemeToggle() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 테마 즉시 적용 (깜빡임 방지)
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
     
     loadComponent('components/header.html', 'header-container');
     loadComponent('components/footer.html', 'footer-container');
-    initCalendar();
+    
+    const calendarGrid = document.getElementById('calendar-grid');
+    if (calendarGrid) {
+        initCalendar();
+    }
 });
+
+// 휴일 이름과 블로그 파일 매핑
+const holidayLinkMap = {
+    "New Year's Day": "new-year-traditions.html",
+    "Good Friday": "easter-germany.html",
+    "Easter Monday": "easter-germany.html",
+    "Easter Sunday": "easter-germany.html",
+    "Labor Day": "labor-day-may-1st.html",
+    "Ascension Day": "ascension-fathers-day.html",
+    "Whit Monday": "pentecost-pfingsten.html",
+    "Whit Sunday": "pentecost-pfingsten.html",
+    "German Unity Day": "german-unity-day.html",
+    "Christmas Day": "christmas-germany.html",
+    "Boxing Day": "christmas-germany.html",
+    "Epiphany": "three-kings-day.html",
+    "Women's Day": "womens-day-berlin.html",
+    "Corpus Christi": "corpus-christi.html",
+    "Reformation Day": "reformation-all-saints.html",
+    "All Saints' Day": "reformation-all-saints.html",
+    "Day of Prayer": "emergency-services.html"
+};
 
 const nationalHolidays2026 = {
     "01-01": "New Year's Day",
@@ -145,9 +192,21 @@ function renderCalendar(year, month) {
         cell.innerHTML = `<span class="day-num">${day}</span>`;
         if (holidayName) {
             cell.classList.add('holiday-cell');
-            cell.innerHTML += `<span class="holiday-name">${holidayName}</span>`;
+            
+            // 휴일 이름을 링크로 변환
+            const names = holidayName.split(' / ');
+            const linkedNames = names.map(name => {
+                const file = holidayLinkMap[name];
+                if (file) {
+                    return `<a href="${basePath}blog/${file}" class="holiday-link" style="color: inherit; text-decoration: underline;">${name}</a>`;
+                }
+                return name;
+            }).join(' / ');
+
+            cell.innerHTML += `<span class="holiday-name">${linkedNames}</span>`;
+            
             const li = document.createElement('li');
-            li.textContent = `${monthNames[month]} ${day}: ${holidayName}`;
+            li.innerHTML = `${monthNames[month]} ${day}: ${linkedNames}`;
             holidayListUl.appendChild(li);
         }
         grid.appendChild(cell);
@@ -157,12 +216,9 @@ function renderCalendar(year, month) {
         holidayListUl.innerHTML = '<li>No holidays this month.</li>';
     }
 
-    // 대시보드 위젯 업데이트
     updateDashboard(year, month);
     setupICalExport();
 }
-
-// --- Dashboard Logic ---
 
 function getAllHolidaysForState(state) {
     const allHolidays = [];
@@ -171,7 +227,6 @@ function getAllHolidaysForState(state) {
     }
     for (const [dateStr, data] of Object.entries(stateSpecificHolidays2026)) {
         if (state === "ALL" || data.states.includes(state)) {
-            // 중복 날짜 처리
             const existing = allHolidays.find(h => h.dateStr === dateStr);
             if (existing) {
                 existing.name += ` / ${data.name}`;
@@ -189,16 +244,12 @@ function updateDashboard(year, month) {
     const countdownTimer = document.getElementById('countdown-timer');
     const nextHolidayName = document.getElementById('next-holiday-name');
     
-    if(!statusWidget) return; // 위젯이 없는 페이지(블로그 등) 방어
+    if(!statusWidget) return;
 
     const holidays = getAllHolidaysForState(selectedState);
-    
-    // 시뮬레이션을 위해 오늘을 2026년 3월 2일로 고정 (또는 실제 Date 객체 사용 가능)
-    // 실제 라이브 서비스에서는 const today = new Date(); 를 사용해야 하지만, 2026년 달력이므로 가상의 '오늘'을 씁니다.
     const today = new Date('2026-03-02T00:00:00');
     const todayStr = "03-02";
 
-    // 1. Is Today a Holiday?
     const todayHoliday = holidays.find(h => h.dateStr === todayStr);
     if (todayHoliday) {
         statusWidget.textContent = "Yes!";
@@ -210,7 +261,6 @@ function updateDashboard(year, month) {
         detailWidget.textContent = "It's a regular working day. Shops are open.";
     }
 
-    // 2. Next Holiday Countdown
     let nextHoliday = null;
     for (const h of holidays) {
         if (h.dateStr > todayStr) {
@@ -218,11 +268,7 @@ function updateDashboard(year, month) {
             break;
         }
     }
-    
-    // 만약 올해 남은 휴일이 없다면 내년 첫 휴일로 처리 (간단화)
-    if (!nextHoliday && holidays.length > 0) {
-        nextHoliday = holidays[0]; // 다음 해로 넘어간다고 가정
-    }
+    if (!nextHoliday && holidays.length > 0) nextHoliday = holidays[0];
 
     if (nextHoliday) {
         const [hMonth, hDay] = nextHoliday.dateStr.split('-');
@@ -235,7 +281,6 @@ function updateDashboard(year, month) {
     }
 }
 
-// 3. Export to iCal
 function setupICalExport() {
     const exportBtn = document.getElementById('export-ical');
     if (!exportBtn || exportBtn.dataset.listenerAttached) return;
@@ -266,4 +311,3 @@ function setupICalExport() {
         document.body.removeChild(link);
     });
 }
-
