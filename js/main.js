@@ -21,7 +21,7 @@ async function loadComponent(url, elementId) {
         if (!response.ok) throw new Error(`Failed to load ${fullUrl}`);
         const html = await response.text();
         document.getElementById(elementId).innerHTML = html;
-        
+
         // 로드된 헤더의 링크들을 basePath에 맞게 조정 (서브디렉토리 대응)
         const container = document.getElementById(elementId);
         container.querySelectorAll('a').forEach(link => {
@@ -57,15 +57,36 @@ function setupThemeToggle() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    
+    // Initialize Theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    } else {
+        // Auto-detect dark mode preference, fallback to light
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+    }
+
+    // Initialize Seasonal Theme Based on Month
+    const currentMonthNum = new Date().getMonth();
+    if (currentMonthNum >= 2 && currentMonthNum <= 4) document.body.classList.add('theme-spring');
+    else if (currentMonthNum >= 8 && currentMonthNum <= 10) document.body.classList.add('theme-autumn');
+    else if (currentMonthNum === 11 || currentMonthNum <= 1) document.body.classList.add('theme-winter');
+
     loadComponent('components/header.html', 'header-container');
     loadComponent('components/footer.html', 'footer-container');
-    
+
+    // Initialize AOS
+    if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 800, once: true });
+    }
+
     const calendarGrid = document.getElementById('calendar-grid');
     if (calendarGrid) {
         initCalendar();
+        initInteractiveMap();
+        initCountdown();
+        initBridgeCalculator();
     }
 });
 
@@ -122,8 +143,8 @@ function initCalendar() {
     const prevBtn = document.getElementById('prevMonth');
     const nextBtn = document.getElementById('nextMonth');
     const stateSelect = document.getElementById('stateSelect');
-    
-    if(!prevBtn || !nextBtn || !stateSelect) return;
+
+    if (!prevBtn || !nextBtn || !stateSelect) return;
 
     renderCalendar(currentYear, currentMonth);
 
@@ -142,19 +163,47 @@ function initCalendar() {
     stateSelect.addEventListener('change', (e) => {
         selectedState = e.target.value;
         renderCalendar(currentYear, currentMonth);
+        updateMapHighlight();
     });
+}
+
+function initInteractiveMap() {
+    const paths = document.querySelectorAll('#germany-map path');
+    paths.forEach(path => {
+        path.addEventListener('click', () => {
+            const stateId = path.id;
+            const stateSelect = document.getElementById('stateSelect');
+            if (stateSelect) {
+                stateSelect.value = stateId;
+                selectedState = stateId;
+                renderCalendar(currentYear, currentMonth);
+                updateMapHighlight();
+            }
+        });
+    });
+    updateMapHighlight();
+}
+
+function updateMapHighlight() {
+    const paths = document.querySelectorAll('#germany-map path');
+    paths.forEach(p => p.classList.remove('active'));
+
+    if (selectedState !== 'ALL') {
+        const activePath = document.getElementById(selectedState);
+        if (activePath) activePath.classList.add('active');
+    }
 }
 
 function renderCalendar(year, month) {
     const grid = document.getElementById('calendar-grid');
     const monthDisplay = document.getElementById('currentMonthDisplay');
     const holidayListUl = document.getElementById('holidays');
-    
-    if(!grid || !monthDisplay || !holidayListUl) return;
-    
+
+    if (!grid || !monthDisplay || !holidayListUl) return;
+
     grid.innerHTML = '';
     holidayListUl.innerHTML = '';
-    
+
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     monthDisplay.textContent = `${monthNames[month]} ${year}`;
 
@@ -192,7 +241,7 @@ function renderCalendar(year, month) {
         cell.innerHTML = `<span class="day-num">${day}</span>`;
         if (holidayName) {
             cell.classList.add('holiday-cell');
-            
+
             // 휴일 이름을 링크로 변환
             const names = holidayName.split(' / ');
             const linkedNames = names.map(name => {
@@ -204,7 +253,7 @@ function renderCalendar(year, month) {
             }).join(' / ');
 
             cell.innerHTML += `<span class="holiday-name">${linkedNames}</span>`;
-            
+
             const li = document.createElement('li');
             li.innerHTML = `${monthNames[month]} ${day}: ${linkedNames}`;
             holidayListUl.appendChild(li);
@@ -277,55 +326,209 @@ function getAllHolidaysForState(state) {
 function updateDashboard(year, month) {
     const statusWidget = document.getElementById('today-status');
     const detailWidget = document.getElementById('today-detail');
-    const countdownTimer = document.getElementById('countdown-timer');
-    const nextHolidayName = document.getElementById('next-holiday-name');
-    
-    if(!statusWidget) return;
+    const lightRed = document.getElementById('light-red');
+    const lightYellow = document.getElementById('light-yellow');
+    const lightGreen = document.getElementById('light-green');
+
+    if (!detailWidget) return;
 
     const holidays = getAllHolidaysForState(selectedState);
+    const todayDate = new Date(); // Use actual current date for live site, or keep hardcoded 2026-03-02 for testing
+    // To properly simulate 2026 holidays based on *today's* real date wouldn't work easily if testing in 2024. 
+    // We will use 2026-03-02 as the anchor point based on previous logic for demonstration purposes.
     const today = new Date('2026-03-02T00:00:00');
     const todayStr = "03-02";
 
     const todayHoliday = holidays.find(h => h.dateStr === todayStr);
-    if (todayHoliday) {
-        statusWidget.textContent = "Yes!";
-        statusWidget.style.color = "#28a745";
-        detailWidget.textContent = `Today is ${todayHoliday.name}. Most shops are closed.`;
-    } else {
-        statusWidget.textContent = "No";
-        statusWidget.style.color = "var(--text)";
-        detailWidget.textContent = "It's a regular working day. Shops are open.";
-    }
 
-    let nextHoliday = null;
-    for (const h of holidays) {
-        if (h.dateStr > todayStr) {
-            nextHoliday = h;
-            break;
+    // Reset lights
+    [lightRed, lightYellow, lightGreen].forEach(l => {
+        if (l) l.classList.remove('active');
+    });
+
+    if (todayHoliday) {
+        if (statusWidget) {
+            statusWidget.textContent = "Yes!";
+            statusWidget.style.color = "#ff4d4d";
+        }
+        detailWidget.textContent = `Today is ${todayHoliday.name}. Most shops are closed.`;
+        if (lightRed) lightRed.classList.add('active');
+    } else {
+        const dayOfWeek = today.getDay();
+        if (dayOfWeek === 0) { // Sunday
+            if (statusWidget) {
+                statusWidget.textContent = "Sunday";
+                statusWidget.style.color = "#ffcc00";
+            }
+            detailWidget.textContent = "It's Sunday. Most retail shops are closed.";
+            if (lightYellow) lightYellow.classList.add('active');
+        } else {
+            if (statusWidget) {
+                statusWidget.textContent = "No";
+                statusWidget.style.color = "#28a745";
+            }
+            detailWidget.textContent = "It's a regular working day. Shops are open.";
+            if (lightGreen) lightGreen.classList.add('active');
         }
     }
-    if (!nextHoliday && holidays.length > 0) nextHoliday = holidays[0];
 
-    if (nextHoliday) {
-        const [hMonth, hDay] = nextHoliday.dateStr.split('-');
-        const nextDate = new Date(2026, parseInt(hMonth)-1, parseInt(hDay));
-        const diffTime = Math.abs(nextDate - today);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        
-        countdownTimer.textContent = `${diffDays} days`;
-        nextHolidayName.textContent = `until ${nextHoliday.name} (${hDay}.${hMonth}.2026)`;
+    calculateBridgeDays(); // Update calculation when state changes
+}
+
+let countdownInterval;
+
+function initCountdown() {
+    if (countdownInterval) clearInterval(countdownInterval);
+
+    const updateTime = () => {
+        const holidays = getAllHolidaysForState(selectedState);
+        // Using actual Date.now() for the real countdown effect.
+        // If testing specifically for 2026 data, we need the "now" to be progressing.
+        const now = new Date();
+        const currentYear = now.getFullYear();
+
+        let targetHoliday = null;
+        let targetDate = null;
+
+        // Find next holiday in 2026
+        for (const h of holidays) {
+            const [hMonth, hDay] = h.dateStr.split('-');
+            const hDate = new Date(2026, parseInt(hMonth) - 1, parseInt(hDay), 0, 0, 0);
+            if (hDate > now) {
+                targetHoliday = h;
+                targetDate = hDate;
+                break;
+            }
+        }
+
+        // If we passed all 2026 holidays, just grab the last one or stop (edge case for 2026 calendar)
+        if (!targetHoliday && holidays.length > 0) {
+            targetHoliday = holidays[holidays.length - 1];
+            const [hMonth, hDay] = targetHoliday.dateStr.split('-');
+            targetDate = new Date(2026, parseInt(hMonth) - 1, parseInt(hDay), 0, 0, 0);
+        }
+
+        if (targetHoliday && targetDate) {
+            const diffMs = targetDate - now;
+
+            if (diffMs > 0) {
+                const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const mins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+                const secs = Math.floor((diffMs % (1000 * 60)) / 1000);
+
+                document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+                document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+                document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+
+                const nameEl = document.getElementById('next-holiday-name');
+                const dateEl = document.getElementById('next-holiday-date');
+                if (nameEl) nameEl.textContent = targetHoliday.name;
+                if (dateEl) {
+                    const [m, d] = targetHoliday.dateStr.split('-');
+                    dateEl.textContent = `${d}.${m}.2026`;
+                }
+            } else {
+                // It is currently a holiday
+                document.getElementById('cd-days').textContent = "00";
+                document.getElementById('cd-hours').textContent = "00";
+                document.getElementById('cd-mins').textContent = "00";
+                document.getElementById('cd-secs').textContent = "00";
+                document.getElementById('next-holiday-name').textContent = `Today is ${targetHoliday.name}!`;
+            }
+        }
+    };
+
+    updateTime();
+    countdownInterval = setInterval(updateTime, 1000);
+}
+
+// --- Bridge Day Calculator Logic ---
+function initBridgeCalculator() {
+    const slider = document.getElementById('leave-slider');
+    const valDisplay = document.getElementById('leave-value');
+
+    if (!slider) return;
+
+    slider.addEventListener('input', (e) => {
+        valDisplay.textContent = e.target.value;
+        calculateBridgeDays();
+    });
+
+    calculateBridgeDays();
+}
+
+function calculateBridgeDays() {
+    const slider = document.getElementById('leave-slider');
+    const bestPeriodDiv = document.getElementById('bridge-best-period');
+    const resLeave = document.getElementById('res-leave');
+    const resTotal = document.getElementById('res-total');
+    const resultCard = document.getElementById('bridge-result');
+
+    if (!slider || !bestPeriodDiv) return;
+
+    const requestedLeave = parseInt(slider.value, 10);
+    const holidaysForState = getAllHolidaysForState(selectedState).map(h => h.dateStr); // e.g., ["01-01", "04-03", ...]
+
+    // Basic heuristic calculator for 2026
+    let bestTotalOff = 0;
+    let bestPeriodName = "Try around Easter or May";
+
+    // Static analysis of 2026 known clusters
+    // Easter 2026: April 3 (Good Friday), April 6 (Easter Monday)
+    // Labor Day: May 1 (Friday)
+    // Ascension: May 14 (Thursday) -> Great for 1 day leave
+    // Pentecost: May 25 (Monday)
+    // Corpus Christi (regional): June 4 (Thursday) -> Great for 1 day leave
+
+    let suggestions = [];
+
+    if (requestedLeave >= 8) {
+        suggestions = [
+            { total: requestedLeave + 8, text: "Easter Period (Late March - Mid April)" }
+        ];
+    } else if (requestedLeave >= 4) {
+        suggestions = [
+            { total: requestedLeave + 5, text: "Easter Week (April)" },
+            { total: requestedLeave + 4, text: "Ascension & Pentecost (May)" }
+        ];
+    } else if (requestedLeave === 1) {
+        let oneDayText = "Any Friday/Monday holiday (gets you 4 days)";
+        let totalOff = 4;
+
+        if (holidaysForState.includes("05-14")) {
+            oneDayText = "May 15th (Friday after Ascension Day)";
+        } else if (holidaysForState.includes("06-04")) {
+            oneDayText = "June 5th (Friday after Corpus Christi)";
+        }
+        suggestions = [{ total: 4, text: oneDayText }];
+    } else {
+        // Fallback generic estimate: you usually gain +2 weekend days for short leave attached to a long weekend
+        suggestions = [{ total: requestedLeave + 3, text: "Around Ascension Day or Pentecost" }];
     }
+
+    // Update UI
+    const suggestion = suggestions[0];
+    bestPeriodDiv.textContent = suggestion.text;
+    resLeave.textContent = requestedLeave;
+    resTotal.textContent = suggestion.total;
+
+    // Animate change
+    resultCard.classList.remove('highlight-result');
+    void resultCard.offsetWidth; // trigger reflow
+    resultCard.classList.add('highlight-result');
 }
 
 function setupICalExport() {
     const exportBtn = document.getElementById('export-ical');
     if (!exportBtn || exportBtn.dataset.listenerAttached) return;
-    
+
     exportBtn.dataset.listenerAttached = 'true';
     exportBtn.addEventListener('click', () => {
         const holidays = getAllHolidaysForState(selectedState);
         let icsMSG = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//German Holiday Calendar//EN\n";
-        
+
         holidays.forEach(h => {
             const [hMonth, hDay] = h.dateStr.split('-');
             const dateStr = `2026${hMonth}${hDay}`;
@@ -335,9 +538,9 @@ function setupICalExport() {
             icsMSG += `SUMMARY:${h.name}\n`;
             icsMSG += "END:VEVENT\n";
         });
-        
+
         icsMSG += "END:VCALENDAR";
-        
+
         const blob = new Blob([icsMSG], { type: 'text/calendar;charset=utf-8' });
         const link = document.createElement('a');
         link.href = window.URL.createObjectURL(blob);

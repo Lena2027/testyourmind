@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" id="germany-map" style="width: 100%; height: auto; max-width: 400px; margin: 0 auto; display: block;">
+  <path id="BW" title="Baden-Württemberg" d="M185 680 L200 660 L240 650 L250 620 L280 620 L300 640 L300 680 L280 720 L240 730 L200 700 Z" />
+  <path id="BY" title="Bayern" d="M300 680 L300 640 L280 620 L300 580 L340 560 L380 560 L420 580 L440 620 L440 680 L400 720 L340 720 Z" />
+  <path id="BE" title="Berlin" d="M420 340 L440 340 L440 360 L420 360 Z" />
+  <path id="BB" title="Brandenburg" d="M360 280 L400 260 L460 260 L480 300 L480 380 L440 420 L380 400 L360 360 Z M420 340 L420 360 L440 360 L440 340 Z" />
+  <path id="HB" title="Bremen" d="M200 240 L220 240 L220 260 L200 260 Z" />
+  <path id="HH" title="Hamburg" d="M260 200 L280 200 L280 220 L260 220 Z" />
+  <path id="HE" title="Hessen" d="M220 500 L240 460 L280 460 L300 500 L300 580 L280 620 L250 620 L220 560 Z" />
+  <path id="MV" title="Mecklenburg-Vorpommern" d="M280 160 L340 140 L400 140 L460 180 L460 220 L400 260 L340 240 L280 220 Z" />
+  <path id="NI" title="Niedersachsen" d="M140 300 L180 240 L260 220 L280 220 L300 240 L340 240 L360 280 L360 360 L300 400 L260 380 L220 400 L180 380 L140 340 Z M200 240 L200 260 L220 260 L220 240 Z" />
+  <path id="NW" title="Nordrhein-Westfalen" d="M120 440 L160 380 L220 400 L260 380 L280 420 L240 460 L220 500 L160 520 L120 480 Z" />
+  <path id="RP" title="Rheinland-Pfalz" d="M140 560 L160 520 L220 500 L220 560 L250 620 L240 650 L200 660 L160 620 Z" />
+  <path id="SL" title="Saarland" d="M120 620 L140 560 L160 620 L140 640 Z" />
+  <path id="SN" title="Sachsen" d="M380 400 L440 420 L480 380 L480 440 L420 480 L380 460 Z" />
+  <path id="ST" title="Sachsen-Anhalt" d="M300 400 L360 360 L380 400 L380 460 L340 480 L300 440 Z" />
+  <path id="SH" title="Schleswig-Holstein" d="M220 120 L260 80 L300 80 L340 140 L280 160 L280 200 L260 200 L260 220 L220 200 Z M260 200 L280 200 L280 220 L260 220 Z" />
+  <path id="TH" title="Thüringen" d="M280 460 L340 480 L380 460 L420 480 L380 520 L340 520 L300 500 Z" />
+</svg>
