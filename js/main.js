@@ -218,7 +218,43 @@ function renderCalendar(year, month) {
 
     updateDashboard(year, month);
     setupICalExport();
+    updateMonthlyEvents(month);
 }
+
+// --- Event Data & Logic ---
+
+const monthlyEvents2026 = {
+    0: ["Cologne Carnival (Season Peak)", "Berlin Fashion Week"],
+    1: ["Berlinale (Berlin International Film Festival)", "Cologne Carnival (Rose Monday)"],
+    2: ["Leipzig Book Fair", "Starkbierfest (Munich Strong Beer Festival)"],
+    3: ["Easter Markets", "Spring Festivals (Frühlingsfeste)"],
+    4: ["May Day Festivals", "Hamburg Port Anniversary (Hafengeburtstag)"],
+    5: ["Kiel Week (Sailing Event)", "Rock am Ring / Rock im Park"],
+    6: ["Munich Opera Festival", "Christopher Street Day (CSD) Berlin"],
+    7: ["Bayreuth Festival", "Mainz Wine Market"],
+    8: ["Oktoberfest Starts (Late Sept)", "Stuttgart Beer Festival (Cannstatter Volksfest)"],
+    9: ["German Unity Day Celebrations", "Frankfurt Book Fair", "Oktoberfest Ends"],
+    10: ["Allerheiligen Markets", "St. Martin's Day Processions"],
+    11: ["Christmas Markets Nationwide", "New Year's Eve (Silvester) Berlin"]
+};
+
+function updateMonthlyEvents(month) {
+    const eventList = document.getElementById('dynamic-event-list');
+    if (!eventList) return;
+
+    const events = monthlyEvents2026[month] || [];
+    if (events.length > 0) {
+        let html = '<ul style="padding-left: 1.2rem; margin-top: 0.5rem;">';
+        events.forEach(e => {
+            html += `<li style="margin-bottom: 0.5rem; font-weight: 500;">${e}</li>`;
+        });
+        html += '</ul>';
+        eventList.innerHTML = html;
+    } else {
+        eventList.innerHTML = '<p>No major mega events scheduled for this month.</p>';
+    }
+}
+
 
 function getAllHolidaysForState(state) {
     const allHolidays = [];
