@@ -156,4 +156,114 @@ function renderCalendar(year, month) {
     if (!holidayListUl.innerHTML) {
         holidayListUl.innerHTML = '<li>No holidays this month.</li>';
     }
+
+    // 대시보드 위젯 업데이트
+    updateDashboard(year, month);
+    setupICalExport();
 }
+
+// --- Dashboard Logic ---
+
+function getAllHolidaysForState(state) {
+    const allHolidays = [];
+    for (const [dateStr, name] of Object.entries(nationalHolidays2026)) {
+        allHolidays.push({ dateStr, name });
+    }
+    for (const [dateStr, data] of Object.entries(stateSpecificHolidays2026)) {
+        if (state === "ALL" || data.states.includes(state)) {
+            // 중복 날짜 처리
+            const existing = allHolidays.find(h => h.dateStr === dateStr);
+            if (existing) {
+                existing.name += ` / ${data.name}`;
+            } else {
+                allHolidays.push({ dateStr, name: data.name });
+            }
+        }
+    }
+    return allHolidays.sort((a, b) => a.dateStr.localeCompare(b.dateStr));
+}
+
+function updateDashboard(year, month) {
+    const statusWidget = document.getElementById('today-status');
+    const detailWidget = document.getElementById('today-detail');
+    const countdownTimer = document.getElementById('countdown-timer');
+    const nextHolidayName = document.getElementById('next-holiday-name');
+    
+    if(!statusWidget) return; // 위젯이 없는 페이지(블로그 등) 방어
+
+    const holidays = getAllHolidaysForState(selectedState);
+    
+    // 시뮬레이션을 위해 오늘을 2026년 3월 2일로 고정 (또는 실제 Date 객체 사용 가능)
+    // 실제 라이브 서비스에서는 const today = new Date(); 를 사용해야 하지만, 2026년 달력이므로 가상의 '오늘'을 씁니다.
+    const today = new Date('2026-03-02T00:00:00');
+    const todayStr = "03-02";
+
+    // 1. Is Today a Holiday?
+    const todayHoliday = holidays.find(h => h.dateStr === todayStr);
+    if (todayHoliday) {
+        statusWidget.textContent = "Yes!";
+        statusWidget.style.color = "#28a745";
+        detailWidget.textContent = `Today is ${todayHoliday.name}. Most shops are closed.`;
+    } else {
+        statusWidget.textContent = "No";
+        statusWidget.style.color = "var(--text)";
+        detailWidget.textContent = "It's a regular working day. Shops are open.";
+    }
+
+    // 2. Next Holiday Countdown
+    let nextHoliday = null;
+    for (const h of holidays) {
+        if (h.dateStr > todayStr) {
+            nextHoliday = h;
+            break;
+        }
+    }
+    
+    // 만약 올해 남은 휴일이 없다면 내년 첫 휴일로 처리 (간단화)
+    if (!nextHoliday && holidays.length > 0) {
+        nextHoliday = holidays[0]; // 다음 해로 넘어간다고 가정
+    }
+
+    if (nextHoliday) {
+        const [hMonth, hDay] = nextHoliday.dateStr.split('-');
+        const nextDate = new Date(2026, parseInt(hMonth)-1, parseInt(hDay));
+        const diffTime = Math.abs(nextDate - today);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        
+        countdownTimer.textContent = `${diffDays} days`;
+        nextHolidayName.textContent = `until ${nextHoliday.name} (${hDay}.${hMonth}.2026)`;
+    }
+}
+
+// 3. Export to iCal
+function setupICalExport() {
+    const exportBtn = document.getElementById('export-ical');
+    if (!exportBtn || exportBtn.dataset.listenerAttached) return;
+    
+    exportBtn.dataset.listenerAttached = 'true';
+    exportBtn.addEventListener('click', () => {
+        const holidays = getAllHolidaysForState(selectedState);
+        let icsMSG = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//German Holiday Calendar//EN\n";
+        
+        holidays.forEach(h => {
+            const [hMonth, hDay] = h.dateStr.split('-');
+            const dateStr = `2026${hMonth}${hDay}`;
+            icsMSG += "BEGIN:VEVENT\n";
+            icsMSG += `DTSTART;VALUE=DATE:${dateStr}\n`;
+            icsMSG += `DTEND;VALUE=DATE:${dateStr}\n`;
+            icsMSG += `SUMMARY:${h.name}\n`;
+            icsMSG += "END:VEVENT\n";
+        });
+        
+        icsMSG += "END:VCALENDAR";
+        
+        const blob = new Blob([icsMSG], { type: 'text/calendar;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = `German_Holidays_2026_${selectedState}.ics`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+}
+

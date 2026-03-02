@@ -16,9 +16,29 @@
     <div id="header-container"></div>
 
     <main>
-        <section id="hero" style="text-align: center; margin-bottom: 3rem;">
+        <section id="hero" style="text-align: center; margin-bottom: 2rem;">
             <h1>2026 German Holiday Calendar</h1>
             <p style="color: var(--accent); font-size: 1.1rem;">Your ultimate tool for tracking national and regional public holidays across Germany.</p>
+        </section>
+
+        <!-- Interactive Dashboard Widgets -->
+        <section id="dashboard" style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 3rem;">
+            <div class="widget" id="status-widget" style="flex: 1; min-width: 250px; padding: 1.5rem; background: var(--gray); border-radius: 8px; border-left: 5px solid var(--primary); text-align: center;">
+                <h3 style="margin-bottom: 0.5rem;">Is Today a Holiday?</h3>
+                <div id="today-status" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">Checking...</div>
+                <p id="today-detail" style="font-size: 0.9rem; color: var(--accent); margin: 0;"></p>
+            </div>
+            
+            <div class="widget" id="countdown-widget" style="flex: 1; min-width: 250px; padding: 1.5rem; background: var(--gray); border-radius: 8px; border-left: 5px solid #007bff; text-align: center;">
+                <h3 style="margin-bottom: 0.5rem;">Next Holiday In:</h3>
+                <div id="countdown-timer" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">-- days</div>
+                <p id="next-holiday-name" style="font-size: 0.9rem; color: var(--accent); margin: 0;">--</p>
+            </div>
+            
+            <div class="widget" style="flex: 1; min-width: 250px; padding: 1.5rem; background: var(--gray); border-radius: 8px; border-left: 5px solid #28a745; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="margin-bottom: 1rem;">Export Calendar</h3>
+                <button id="export-ical" style="background: #28a745; color: white; border: none; padding: 0.8rem; border-radius: 4px; font-weight: bold; cursor: pointer; width: 100%;">📅 Add to Google/iCal</button>
+            </div>
         </section>
 
         <section id="calendar-section">
