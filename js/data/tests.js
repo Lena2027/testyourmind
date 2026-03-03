@@ -5,6 +5,410 @@
 
 const TESTS_DATA = [
   {
+  "id": "your-spirit-animal-what-animal-represents-your-hid",
+  "slug": "your-spirit-animal-what-animal-represents-your-hid",
+  "title": "Your Spirit Animal: What Animal Represents Your Hidden Instincts?",
+  "category": "Personality",
+  "categoryColor": "purple",
+  "emoji": "🦊",
+  "participants": "127,845",
+  "duration": "8 min",
+  "resultTypes": 4,
+  "intro": "Deep within the human psyche lies a primal landscape that predates language, logic, and social conditioning. This ancient terrain is governed by instincts—automatic behavioral patterns that have evolved over millions of years to help us survive, connect, and thrive. While we often pride ourselves on our rational minds, these hidden instincts continue to shape our decisions, relationships, and responses to the world in ways we rarely consciously acknowledge.\n\nThe concept of spirit animals has appeared across virtually every human culture throughout history, from Indigenous American traditions to Celtic mythology, from African tribal beliefs to Asian spiritual practices. While these traditions vary widely in their specific meanings and rituals, they share a common recognition: that humans possess an intuitive connection to the animal kingdom, and that certain creatures embody qualities that resonate with our deepest selves.\n\nModern psychology offers a fascinating lens through which to understand this universal phenomenon. Carl Jung's theory of archetypes suggests that certain symbolic images and patterns are embedded in our collective unconscious—a shared psychological inheritance that transcends individual experience. Animals frequently appear as powerful archetypal symbols in dreams, myths, and personal imagery, representing aspects of ourselves that may be difficult to access through purely rational thought.\n\nBeyond Jungian psychology, evolutionary psychology helps us understand why animal symbolism feels so meaningful. Our ancestors lived in intimate relationship with animals for hundreds of thousands of years, depending on them for survival while also competing with them for resources. This deep evolutionary history has left its mark on our neural architecture, creating what biologist E.O. Wilson called \"biophilia\"—an innate tendency to seek connections with other living systems.\n\nThis assessment is designed to bypass your conscious self-image and tap into your instinctual response patterns. Rather than asking what animal you admire or wish to emulate, these questions explore how you actually behave under pressure, how you form social bonds, how you approach challenges, and what drives your deepest motivations. The animal that emerges from this exploration represents not who you think you are, but who you become when your primal instincts take the lead.\n\nAs you answer these questions, resist the temptation to overthink or select responses based on social desirability. Instead, allow your gut reactions to guide you. The most accurate results come from honest self-reflection about your genuine behavioral tendencies, even those you might prefer to keep hidden.",
+  "background": "This assessment draws from multiple psychological frameworks to identify your instinctual profile. Evolutionary psychology provides the foundation, examining how survival strategies that developed in our ancestral environment continue to influence modern behavior. The four result types correspond to distinct adaptive strategies observed across species: the solitary strategist who relies on intelligence and independence, the social cooperator who thrives through group dynamics, the protective guardian who prioritizes security and loyalty, and the adaptable explorer who seeks novelty and change.\n\nJung's archetypal theory informs the symbolic dimension of the assessment, recognizing that animals serve as powerful psychological containers for aspects of ourselves that resist direct articulation. The questions are designed to activate what Jung called the \"shadow\"—unconscious aspects of personality that the conscious ego does not identify with but nonetheless influence behavior.\n\nAdditionally, the assessment incorporates insights from attachment theory and temperament research, recognizing that our instinctual patterns are shaped by both biological predisposition and early relational experiences. The result is a multidimensional portrait of your primal self.",
+  "howToUse": "Your spirit animal result offers a symbolic mirror for self-understanding, not a rigid category that limits your potential. Use this insight as a starting point for reflection: Where do you recognize these instincts showing up in your life? When have they served you well, and when have they created challenges?\n\nConsider how your instinctual style interacts with others. Understanding that people operate from different primal templates can enhance empathy and communication in relationships. A wolf's pack mentality may clash with an owl's need for solitude, but awareness creates space for accommodation.\n\nMost importantly, remember that healthy psychological functioning involves integration. While your dominant instincts represent genuine strengths, growth often comes from developing complementary qualities. Your spirit animal reveals your foundation—what you build upon it remains your choice.",
+  "questions": [
+    {
+      "text": "When you sense danger or threat in your environment, what is your immediate instinctual response?",
+      "options": [
+        {
+          "label": "A",
+          "text": "I become hyper-alert and analytical, assessing the situation from a safe distance before deciding how to respond",
+          "score": {
+            "owl": 3
+          }
+        },
+        {
+          "label": "B",
+          "text": "I look to see who else is affected and instinctively move to protect or coordinate with my group",
+          "score": {
+            "wolf": 3
+          }
+        },
+        {
+          "label": "C",
+          "text": "I stand my ground firmly, ready to defend myself and those I care about without backing down",
+          "score": {
+            "bear": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "I quickly scan for escape routes and opportunities, ready to adapt my approach based on what unfolds",
+          "score": {
+            "fox": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "In your most intimate relationships, what pattern do you notice in how you bond with others?",
+      "options": [
+        {
+          "label": "A",
+          "text": "I form deep connections with a select few individuals who prove themselves intellectually compatible over time",
+          "score": {
+            "owl": 3
+          }
+        },
+        {
+          "label": "B",
+          "text": "I create strong bonds through shared experiences and maintain fierce loyalty to my inner circle",
+          "score": {
+            "wolf": 3
+          }
+        },
+        {
+          "label": "C",
+          "text": "I am protective and nurturing, creating safe spaces where those I love can be vulnerable",
+          "score": {
+            "bear": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "I enjoy playful, dynamic relationships that allow both connection and independence",
+          "score": {
+            "fox": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "When faced with a complex problem that others have failed to solve, how do you approach it?",
+      "options": [
+        {
+          "label": "A",
+          "text": "I retreat to solitude where I can think deeply, research extensively, and develop a comprehensive understanding",
+          "score": {
+            "owl": 3
+          }
+        },
+        {
+          "label": "B",
+          "text": "I gather trusted collaborators, believing that collective intelligence will find solutions faster than individual effort",
+          "score": {
+            "wolf": 3
+          }
+        },
+        {
+          "label": "C",
+          "text": "I tackle it head-on with persistence and strength, trusting my ability to power through obstacles",
+          "score": {
+            "bear": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "I experiment with unconventional approaches, looking for clever workarounds others might have missed",
+          "score": {
+            "fox": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "What environment makes you feel most alive and energized?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Quiet spaces filled with knowledge—libraries, observatories, places where I can watch and learn undisturbed",
+          "score": {
+            "owl": 3
+          }
+        },
+        {
+          "label": "B",
+          "text": "Vibrant social settings where I am surrounded by people I trust and can engage in meaningful group activities",
+          "score": {
+            "wolf": 3
+          }
+        },
+        {
+          "label": "C",
+          "text": "Wild, natural spaces where I can feel my own strength and connect with something primal and grounding",
+          "score": {
+            "bear": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "Dynamic, changing environments that offer new stimuli, challenges, and opportunities for exploration",
+          "score": {
+            "fox": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "When you have been deeply hurt or betrayed by someone, what is your instinctual response over time?",
+      "options": [
+        {
+          "label": "A",
+          "text": "I withdraw to process alone, becoming more guarded and selective about who I allow close in the future",
+          "score": {
+            "owl": 3
+          }
+        },
+        {
+          "label": "B",
+          "text": "I turn to my trusted circle for support and may distance myself from the person while maintaining group harmony",
+          "score": {
+            "wolf": 3
+          }
+        },
+        {
+          "label": "C",
+          "text": "I feel deep anger and may confront the person directly, needing to establish clear boundaries",
+          "score": {
+            "bear": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "I process through movement and change, redirecting my energy toward new opportunities and people",
+          "score": {
+            "fox": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "How do you typically behave when resources (money, opportunities, attention) become scarce?",
+      "options": [
+        {
+          "label": "A",
+          "text": "I become more strategic and conservative, carefully calculating how to maximize what I have",
+          "score": {
+            "owl": 3
+          }
+        },
+        {
+          "label": "B",
+          "text": "I work with others to share resources and ensure the group survives together",
+          "score": {
+            "wolf": 3
+          }
+        },
+        {
+          "label": "C",
+          "text": "I become more territorial and protective of what is mine, ensuring my family's needs are met first",
+          "score": {
+            "bear": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "I become more resourceful and opportunistic, finding creative ways to acquire what I need",
+          "score": {
+            "fox": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "What role do you naturally assume when part of a group working toward a common goal?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The advisor or specialist who provides crucial knowledge and insight from a slightly removed position",
+          "score": {
+            "owl": 3
+          }
+        },
+        {
+          "label": "B",
+          "text": "The coordinator or leader who ensures everyone works together effectively and no one is left behind",
+          "score": {
+            "wolf": 3
+          }
+        },
+        {
+          "label": "C",
+          "text": "The protector or anchor who provides stability and ensures the group feels safe to take risks",
+          "score": {
+            "bear": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "The scout or innovator who explores new possibilities and brings fresh perspectives to the group",
+          "score": {
+            "fox": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "When you encounter someone new, what instinct guides your initial assessment of them?",
+      "options": [
+        {
+          "label": "A",
+          "text": "I observe carefully from a distance, gathering information before deciding whether to engage",
+          "score": {
+            "owl": 3
+          }
+        },
+        {
+          "label": "B",
+          "text": "I assess whether they would fit well within my social circle and what role they might play",
+          "score": {
+            "wolf": 3
+          }
+        },
+        {
+          "label": "C",
+          "text": "I gauge whether they pose any threat and whether their intentions seem genuine and trustworthy",
+          "score": {
+            "bear": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "I look for interesting qualities and potential opportunities, approaching with curious openness",
+          "score": {
+            "fox": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "What drives you at your deepest, most primal level—even if you do not always admit it?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The pursuit of understanding and truth, wanting to see what others cannot see",
+          "score": {
+            "owl": 3
+          }
+        },
+        {
+          "label": "B",
+          "text": "The need to belong and to know that my pack would fight for me as I would fight for them",
+          "score": {
+            "wolf": 3
+          }
+        },
+        {
+          "label": "C",
+          "text": "The drive to protect what matters and to create security for myself and those I love",
+          "score": {
+            "bear": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "The hunger for freedom and new experiences, refusing to be trapped or predictable",
+          "score": {
+            "fox": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "When you dream or daydream, what themes most frequently emerge?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Flying above landscapes, seeing hidden patterns, or discovering secret knowledge",
+          "score": {
+            "owl": 3
+          }
+        },
+        {
+          "label": "B",
+          "text": "Adventures with companions, meaningful gatherings, or defending loved ones together",
+          "score": {
+            "wolf": 3
+          }
+        },
+        {
+          "label": "C",
+          "text": "Powerful confrontations, protecting sacred spaces, or finding peaceful solitude in nature",
+          "score": {
+            "bear": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "Escaping constraints, exploring unknown territories, or outsmarting opponents through cleverness",
+          "score": {
+            "fox": 3
+          }
+        }
+      ]
+    }
+  ],
+  "results": {
+    "owl": {
+      "type": "The Owl",
+      "emoji": "🦉",
+      "title": "The Owl - Keeper of Hidden Wisdom",
+      "traits": [
+        "Perceptive",
+        "Independent",
+        "Strategic",
+        "Contemplative"
+      ],
+      "description": "Your spirit animal is the Owl, ancient symbol of wisdom, mystery, and the ability to see what others cannot. At your core, you possess an instinct for observation and understanding that sets you apart from those who rush through life without truly seeing. Like the owl who hunts in darkness, you are drawn to explore the hidden dimensions of existence—the unspoken truths, the patterns beneath the surface, the knowledge that requires patience and solitude to acquire.\n\nYour primal nature is that of the solitary strategist. While others may need constant social stimulation, you draw energy from quiet contemplation and deep thinking. This does not mean you are antisocial; rather, you are selective. You understand instinctively that true connection requires depth, not breadth, and you would rather have one meaningful conversation than a dozen superficial exchanges. Those who earn your trust discover a loyal and insightful companion, but earning that trust requires demonstrating intellectual integrity and emotional authenticity.\n\nYour shadow side may manifest as excessive detachment or a tendency to retreat into your mind when emotional engagement is required. The owl's gift of perspective can become a prison of isolation if you forget that wisdom ultimately must be lived, not merely contemplated. You may sometimes appear cold or aloof to those who do not understand that your stillness is not indifference but deep processing.\n\nEvolutionarily, your instinctual pattern reflects the adaptive strategy of the specialist—the creature who survives not through brute strength or social numbers but through superior awareness and strategic positioning. In ancestral environments, individuals with your instincts would have been the shamans, the trackers, the ones who noticed the subtle signs others missed. This heritage lives on in your modern ability to read situations, anticipate outcomes, and make decisions based on information others overlook.",
+      "dailyLife": "In daily life, your owl instincts manifest as a preference for depth over speed. You likely need significant alone time to function at your best, and may feel drained by environments that demand constant social performance. You probably have rituals of solitude—early mornings or late nights when the world is quiet and your mind can roam freely.\n\nAt work, you excel in roles requiring analysis, research, or strategic thinking. You may frustrate colleagues who want quick answers, because you instinctively understand that complex problems deserve thorough consideration. Your insights, when you finally share them, often prove remarkably accurate precisely because you took time others would not.\n\nIn relationships, you show love through attention—remembering details, noticing changes, understanding your partner's inner world in ways that can feel almost uncanny. However, you may struggle to express emotions directly, preferring to demonstrate care through actions and insights rather than verbal affirmations.",
+      "advice": "Honor your need for solitude without using it as an escape from necessary emotional engagement. Your instinct for withdrawal serves you well when processing complex information, but relationships require presence as well as perspective. Practice sharing your inner world before you have fully organized your thoughts—vulnerability, not just wisdom, creates true intimacy.\n\nCultivate embodied practices that ground you in physical experience. Owls can become trapped in their heads, mistaking mental understanding for lived wisdom. Movement, nature, sensory engagement—these anchor your considerable mental gifts in earthly reality.\n\nRemember that your vision, while powerful, is not omniscient. The owl sees clearly in darkness but can be blinded by its own certainty. Stay curious, stay humble, and remember that the wisest owl knows how much it has yet to learn."
+    },
+    "wolf": {
+      "type": "The Wolf",
+      "emoji": "🐺",
+      "title": "The Wolf - Guardian of the Sacred Pack",
+      "traits": [
+        "Loyal",
+        "Collaborative",
+        "Protective",
+        "Communicative"
+      ],
+      "description": "Your spirit animal is the Wolf, legendary symbol of loyalty, community, and the fierce bonds that form between those who face the wilderness together. At your deepest level, you are driven by an instinct for connection—not the superficial networking of social climbing, but the profound belonging that comes from true pack membership. You understand in your bones what psychology has confirmed: that humans are fundamentally social creatures, and that our greatest achievements and deepest fulfillment come through meaningful collaboration.\n\nYour primal nature is that of the social cooperator. You thrive when surrounded by people you trust, and you possess remarkable instincts for reading group dynamics, facilitating communication, and ensuring that collective efforts succeed. Like wolves who hunt together with sophisticated coordination, you intuitively understand how to bring out the best in a team, how to balance individual strengths with group needs, and how to maintain the social bonds that make cooperation possible.\n\nYour loyalty, once given, is fierce and unwavering. You would sacrifice personal gain for the good of your pack without hesitation, and you expect the same commitment in return. This intensity of connection is your greatest strength and your potential vulnerability. When your trust is betrayed or your pack is threatened, you can become defensive, even aggressive, in ways that may surprise those who only know your collaborative side.\n\nEvolutionarily, your instinctual pattern reflects the adaptive strategy that made humans the most successful social species on Earth. Our ancestors survived ice ages, predators, and scarcity not through individual strength but through unprecedented cooperation. Your wolf instincts carry this heritage—the deep knowledge that together we are stronger, that belonging is not weakness but survival, that the pack endures when individuals might fall.",
+      "dailyLife": "In daily life, your wolf instincts manifest as a natural orientation toward group activities and shared experiences. You likely feel most energized after meaningful social interactions and may become restless or depressed during extended periods of isolation. Your calendar probably reflects your values—filled with gatherings, collaborations, and time invested in maintaining important relationships.\n\nAt work, you excel in team environments and may struggle in roles requiring extended solo performance. You naturally emerge as a coordinator or leader, not because you seek power but because you instinctively work to ensure group cohesion and success. You remember birthdays, notice when colleagues are struggling, and invest in relationship-building that others might dismiss as unproductive.\n\nIn intimate relationships, you are devoted and demonstrative. You show love through inclusion—bringing partners into your inner circle, sharing experiences, creating rituals of togetherness. You may struggle with partners who need significant independence, experiencing their autonomy as rejection rather than healthy differentiation.",
+      "advice": "Nurture your pack instincts while developing comfort with healthy solitude. Your orientation toward connection is a gift, but personal growth sometimes requires facing yourself alone. Practice being content in your own company without interpreting solitude as abandonment or failure.\n\nBe mindful of your tendency to define yourself through your relationships and roles within groups. Your identity exists beyond your pack membership, and knowing who you are when standing alone strengthens rather than threatens your connections.\n\nChannel your protective instincts wisely. Not every perceived threat to your pack requires a fierce response. Sometimes the most loving protection is allowing others to face their own challenges, trusting in their strength as you would want them to trust in yours. The alpha wolf leads not through constant vigilance but through confident calm."
+    },
+    "bear": {
+      "type": "The Bear",
+      "emoji": "🐻",
+      "title": "The Bear - Sovereign of Inner Strength",
+      "traits": [
+        "Protective",
+        "Grounded",
+        "Powerful",
+        "Nurturing"
+      ],
+      "description": "Your spirit animal is the Bear, timeless symbol of strength, protection, and the fierce tenderness that guards what matters most. At your core, you possess an instinct for sovereignty—a deep knowing of your own power and an unwavering commitment to defending your territory, your loved ones, and your values. Like the bear who rules its domain with quiet authority, you do not need to prove your strength through constant display; your power is evident in your presence, your groundedness, your refusal to be moved from what you know to be right.\n\nYour primal nature is that of the protective guardian. You create spaces of safety and nurturing for those fortunate enough to be within your circle of care. This protection is not passive—it carries the weight of genuine power, the knowledge that you are capable of formidable response if your boundaries are crossed. Yet alongside this fierce capability exists profound tenderness. The bear who defends her cubs with terrifying force is the same bear who nurses them with infinite patience. You embody this paradox of strength and gentleness.\n\nYour shadow side may manifest as excessive territoriality or difficulty adapting to change. The bear's strength can become stubbornness, the protective instinct can become controlling, and the need for security can limit necessary growth. When stressed or threatened, you may become irritable, withdrawn, or prone to displays of anger that frighten those who forget the gentle creature beneath the formidable exterior.\n\nEvolutionarily, your instinctual pattern reflects the adaptive strategy of the apex presence—the creature who survives not through speed or cunning but through sheer capability and the wisdom to conserve energy for when it truly matters. Your ancestors who carried bear medicine were the protectors, the providers, the ones whose steady strength allowed others to take necessary risks knowing they had a safe harbor to return to.",
+      "dailyLife": "In daily life, your bear instincts manifest as a strong orientation toward home, security, and the physical foundations of well-being. You likely invest significant energy in creating comfortable spaces—homes that feel like sanctuaries, routines that provide stability, resources that ensure you and your loved ones are provided for. Material security matters to you not from greed but from the instinctive knowledge that safety enables everything else.\n\nAt work, you excel in roles requiring steady reliability, protective oversight, or long-term stewardship. You may not be the fastest or flashiest performer, but your consistent strength makes you invaluable. You naturally assume responsibility for the welfare of your team and may struggle with leadership styles that sacrifice people for short-term results.\n\nIn relationships, you show love through protection and provision. You create safety for partners to be vulnerable, and your steady presence offers an anchor in life's storms. However, you may struggle when partners need space or when circumstances require flexibility rather than strength. Learning that sometimes protection means stepping back is a lifelong lesson.",
+      "advice": "Honor your protective instincts while remaining open to change and growth. Your strength is genuine, but rigidity is not strength—true power includes the ability to adapt, to yield when appropriate, to recognize that not every situation requires a show of force.\n\nPractice expressing vulnerability. The bear's exterior armor can become a prison if you forget how to let others see your tender heart. Those who love you want to protect you sometimes too; allowing this does not diminish your strength but enriches your connections.\n\nRemember the bear's wisdom of cycles. Bears know when to act and when to rest, when to engage and when to retreat into restorative solitude. Honor your need for hibernation—periods of withdrawal and self-care that replenish the tremendous energy you expend in protecting and providing for others."
+    },
+    "fox": {
+      "type": "The Fox",
+      "emoji": "🦊",
+      "title": "The Fox - Dancer Between Worlds",
+      "traits": [
+        "Adaptable",
+        "Clever",
+        "Playful",
+        "Independent"
+      ],
+      "description": "Your spirit animal is the Fox, eternal symbol of cunning, adaptability, and the wild freedom that refuses to be tamed or categorized. At your core, you possess an instinct for opportunity—a quicksilver awareness that constantly scans your environment for possibilities, escape routes, and the spaces between rigid structures where a clever creature can thrive. Like the fox who survives at the edges of wilderness and civilization, you are a natural boundary-crosser, comfortable in multiple worlds while belonging completely to none.\n\nYour primal nature is that of the adaptable explorer. You are drawn to novelty, stimulated by change, and energized by challenges that require creativity rather than brute force. Where others see obstacles, you see puzzles. Where others follow established paths, you discover shortcuts and alternative routes. Your mind moves quickly, making connections that others miss, and you possess a playful charm that can disarm even those who should know better than to trust a fox.\n\nYour shadow side may manifest as restlessness, commitment-avoidance, or a tendency toward manipulation. The fox's adaptability can become shapelessness, the love of freedom can become fear of intimacy, and the clever mind can rationalize choices that serve self-interest at others' expense. When cornered or stressed, you may become evasive, deceptive, or simply disappear—running toward the next horizon rather than facing difficult truths.\n\nEvolutionarily, your instinctual pattern reflects the adaptive strategy of the opportunist—the creature who survives not through strength or numbers but through intelligence, flexibility, and the willingness to exploit niches that others overlook. Your ancestors who carried fox medicine were the traders, the scouts, the trickster figures who challenged rigid hierarchies and found pathways through impossible situations.",
+      "dailyLife": "In daily life, your fox instincts manifest as a constant orientation toward novelty and possibility. You likely become bored quickly with routine and may have a history of changing jobs, relationships, or locations more frequently than others understand. Your living space might reflect your adaptable nature—functional rather than heavily invested, easy to pack up if opportunity calls.\n\nAt work, you excel in roles requiring creativity, problem-solving, or navigating complex social situations. You may struggle with rigid hierarchies or repetitive tasks, and your career path probably looks unconventional compared to those who followed prescribed routes. Your ability to see angles others miss makes you valuable, but your tendency to lose interest can limit advancement in traditional structures.\n\nIn relationships, you bring playfulness, spontaneity, and excitement. You show love through shared adventures, intellectual stimulation, and keeping things fresh. However, you may struggle with the routine intimacy that long-term partnership requires, and partners may sometimes feel they cannot quite pin you down or trust your commitment.",
+      "advice": "Embrace your adaptable nature while developing roots that can anchor you without trapping you. True freedom includes the freedom to commit, to stay, to be known fully by another. Running toward opportunity and running from intimacy can look identical from outside; learn to recognize the difference within yourself.\n\nChannel your cleverness toward wisdom. The fox's quick mind can solve immediate puzzles while missing larger patterns. Slow down occasionally to consider long-term consequences and the impact of your choices on others who move at different speeds.\n\nHonor the trickster energy without letting it become mere selfishness. The fox's boundary-crossing serves an important function—challenging rigid systems, revealing hidden truths, keeping life from becoming too predictable. But trickster medicine requires integrity; use your gifts to open doors for others, not just to secure advantages for yourself."
+    }
+  }
+},
+  {
   "id": "the-fantasy-class-which-rpg-character-class-matche",
   "slug": "the-fantasy-class-which-rpg-character-class-matche",
   "title": "The Fantasy Class: Which RPG Character Class Matches Your Soul?",
