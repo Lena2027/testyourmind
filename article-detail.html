@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Article — Test Your Mind</title>
+    <meta name="description" id="pageDesc" content="In-depth psychology article from Test Your Mind.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .article-body {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .article-body p {
+            color: var(--color-text-muted);
+            line-height: 1.9;
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+        }
+
+        .article-body strong {
+            color: var(--color-white);
+        }
+
+        .article-body h2,
+        .article-body h3 {
+            display: none;
+        }
+
+        .article-block-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-white);
+            margin: 36px 0 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-orbs"></div>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">🧠</div>Test Your Mind
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a><a href="tests.html">Tests</a><a href="articles.html"
+                    class="active">Articles</a><a href="about.html">About</a>
+                <a href="tests.html" class="nav-cta">Take a Test ✨</a>
+            </div>
+            <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+    <nav class="mobile-nav">
+        <a href="index.html">🏠 Home</a><a href="tests.html">🧪 Tests</a><a href="articles.html">📖 Articles</a><a
+            href="about.html">💡 About</a><a href="contact.html">✉️ Contact</a>
+    </nav>
+
+    <div style="padding:calc(var(--header-h) + 40px) 0 40px;position:relative;z-index:1">
+        <div class="container">
+            <div
+                style="font-size:0.88rem;color:var(--color-text-muted);margin-bottom:20px;display:flex;gap:8px;align-items:center">
+                <a href="index.html" style="color:var(--color-primary-2)">Home</a> <span>›</span>
+                <a href="articles.html" style="color:var(--color-primary-2)">Articles</a> <span>›</span>
+                <span id="breadcrumb">Article</span>
+            </div>
+            <div style="max-width:760px">
+                <div id="articleMeta"
+                    style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap"></div>
+                <h1 id="articleTitle"
+                    style="font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.6rem);color:var(--color-white);line-height:1.25;margin-bottom:20px">
+                </h1>
+                <p id="articleExcerpt"
+                    style="font-size:1.1rem;color:var(--color-primary-2);line-height:1.7;margin-bottom:32px;font-style:italic">
+                </p>
+                <div style="height:1px;background:var(--color-border);margin-bottom:40px"></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section" style="padding-top:0;position:relative;z-index:1">
+        <div class="container">
+            <div class="article-body" id="articleBody"></div>
+
+            <!-- Related tests CTA -->
+            <div
+                style="max-width:760px;margin:48px auto 0;padding:36px;border-radius:var(--radius-xl);background:linear-gradient(135deg,rgba(139,92,246,0.1),rgba(245,158,11,0.06));border:1px solid rgba(139,92,246,0.25);text-align:center">
+                <div style="font-size:2rem;margin-bottom:10px">🧪</div>
+                <h2 style="font-family:var(--font-display);font-size:1.5rem;color:var(--color-white);margin-bottom:8px">
+                    Want to explore this topic further?</h2>
+                <p style="color:var(--color-text-muted);margin-bottom:20px">Take one of our science-backed tests and
+                    discover your personal profile.</p>
+                <a href="tests.html" class="btn btn-primary">Browse Tests →</a>
+            </div>
+
+            <!-- More articles -->
+            <div style="max-width:760px;margin:48px auto 0">
+                <h2
+                    style="font-family:var(--font-display);font-size:1.4rem;color:var(--color-white);margin-bottom:24px">
+                    More Articles</h2>
+                <div id="moreArticles"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">🧠</div>Test Your Mind
+                    </div>
+                    <p class="footer-brand-desc">Science-backed psychology tests. Always free.</p>
+                </div>
+                <div>
+                    <div class="footer-col-title">Tests</div>
+                    <div class="footer-links"><a href="tests.html?cat=personality">Personality</a><a
+                            href="tests.html?cat=love">Love</a><a href="tests.html?cat=mental-health">Mental Health</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-col-title">Explore</div>
+                    <div class="footer-links"><a href="articles.html">Articles</a><a href="about.html">About</a><a
+                            href="contact.html">Contact</a></div>
+                </div>
+                <div>
+                    <div class="footer-col-title">Legal</div>
+                    <div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2025 Test Your Mind · SOULCAKEY</span>
+                <div class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+    <button id="scrollTop">↑</button>
+
+    <script src="js/data/articles.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        const id = new URLSearchParams(window.location.search).get('id');
+        const art = ARTICLES_DATA.find(a => a.slug === id) || ARTICLES_DATA[0];
+
+        document.title = art.title + ' — Test Your Mind';
+        document.getElementById('pageDesc').content = art.excerpt;
+        document.getElementById('breadcrumb').textContent = art.title;
+        document.getElementById('articleTitle').textContent = art.title;
+        document.getElementById('articleExcerpt').textContent = art.excerpt;
+        document.getElementById('articleMeta').innerHTML = `
+    <span class="badge badge-${art.categoryColor}">${art.category}</span>
+    <span style="font-size:0.85rem;color:var(--color-text-muted)">${art.date}</span>
+    <span style="font-size:0.85rem;color:var(--color-text-muted)">· ${art.readTime}</span>
+  `;
+
+        // Render article content — split by **Bold** headings and newlines
+        const content = art.content || '';
+        const paragraphs = content.split('\n\n').map(p => p.trim()).filter(Boolean);
+        const bodyHtml = paragraphs.map(p => {
+            if (p.startsWith('**') && p.includes('**\n')) {
+                const titleEnd = p.indexOf('**\n');
+                const title = p.substring(2, titleEnd);
+                const rest = p.substring(titleEnd + 3);
+                return `<div class="article-block-title">${title}</div><p>${rest}</p>`;
+            }
+            return `<p>${p.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</p>`;
+        }).join('');
+        document.getElementById('articleBody').innerHTML = bodyHtml;
+
+        // More articles
+        const others = ARTICLES_DATA.filter(a => a.slug !== art.slug).slice(0, 2);
+        document.getElementById('moreArticles').innerHTML = others.map(a => `
+    <a href="article-detail.html?id=${a.slug}" class="article-card" style="margin-bottom:16px">
+      <div class="article-card-meta"><span class="badge badge-${a.categoryColor}">${a.category}</span><span class="article-card-date">${a.date}</span></div>
+      <div class="article-card-title">${a.title}</div>
+      <div class="article-card-excerpt">${a.excerpt}</div>
+      <div class="article-card-footer">Read article <span>→</span></div>
+    </a>
+  `).join('');
+    </script>
+</body>
+
+</html>

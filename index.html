@@ -1,304 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 German Holiday Calendar - Regional & National Public Holidays</title>
-    <meta name="description"
-        content="Check the complete 2026 German public holiday calendar. Easily filter by region (Bundesland) to find both national and state-specific holidays in Germany.">
-    <meta name="keywords"
-        content="German holidays, Germany public holidays 2026, feiertage, German calendar, regional holidays Germany">
-    <meta name="author" content="MyProject">
-    <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/interactive.css">
-    <!-- AOS Animate On Scroll -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Your Mind — Discover What Makes You, You</title>
+  <meta name="description" content="Take science-backed psychology tests to discover your personality, attachment style, and more. Free, thoughtful, and beautifully designed.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <div id="header-container"></div>
+<div class="bg-orbs"></div>
 
-    <main>
-        <section id="hero" style="text-align: center; margin-bottom: 2rem;" data-aos="fade-down">
-            <h1>2026 German Holiday Calendar</h1>
-            <p style="color: var(--accent); font-size: 1.1rem;">Your ultimate tool for tracking national and regional
-                public holidays across Germany.</p>
-        </section>
+<!-- HEADER -->
+<header class="header">
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">🧠</div>
+      Test Your Mind
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="tests.html">Tests</a>
+      <a href="articles.html">Articles</a>
+      <a href="about.html">About</a>
+      <a href="tests.html" class="nav-cta">Take a Test ✨</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+<nav class="mobile-nav">
+  <a href="index.html">🏠 Home</a>
+  <a href="tests.html">🧪 Tests</a>
+  <a href="articles.html">📖 Articles</a>
+  <a href="about.html">💡 About</a>
+  <a href="contact.html">✉️ Contact</a>
+</nav>
 
-        <!-- Interactive Dashboard Widgets -->
-        <section id="dashboard" style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 3rem;"
-            data-aos="fade-up">
-            <div class="widget" id="status-widget"
-                style="flex: 1; min-width: 260px; padding: 2rem; text-align: center;">
-                <h3>Is Today a Holiday?</h3>
-                <div class="traffic-light-container">
-                    <div class="traffic-light">
-                        <div class="bulb red" id="light-red"></div>
-                        <div class="bulb yellow" id="light-yellow"></div>
-                        <div class="bulb green" id="light-green"></div>
-                    </div>
-                </div>
-                <div id="today-status"
-                    style="font-size: 1.5rem; font-weight: bold; margin: 1rem 0 0.5rem; display:none;">Checking...</div>
-                <p id="today-detail" style="font-size: 0.9rem;"></p>
-            </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text animate-fade-up">
+      <div class="hero-tag">✨ Science-Backed Psychology Tests</div>
+      <h1 class="hero-title">
+        Discover What<br>
+        Makes You, <span>You</span>
+      </h1>
+      <p class="hero-desc">
+        Explore your personality, understand your relationships, and gain insight into your mental wellbeing — through beautifully crafted, research-grounded psychology tests.
+      </p>
+      <div class="hero-actions">
+        <a href="tests.html" class="btn btn-primary btn-lg">Take a Test Now 🚀</a>
+        <a href="about.html" class="btn btn-secondary btn-lg">Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <span class="hero-stat-num">30+</span>
+          <span class="hero-stat-label">Tests Available</span>
+        </div>
+        <div>
+          <span class="hero-stat-num">1M+</span>
+          <span class="hero-stat-label">Tests Taken</span>
+        </div>
+        <div>
+          <span class="hero-stat-num">Free</span>
+          <span class="hero-stat-label">Always</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="hero-card">
+          <div class="hero-card-icon">💞</div>
+          <div class="hero-card-title">Attachment Style</div>
+          <div class="hero-card-sub">247K participants</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">🌟</div>
+          <div class="hero-card-title">Big Five Personality</div>
+          <div class="hero-card-sub">512K participants</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">🧘</div>
+          <div class="hero-card-title">Stress Level Check</div>
+          <div class="hero-card-sub">189K participants</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div class="widget hero-countdown" id="countdown-widget"
-                style="flex: 1.5; min-width: 300px; padding: 2rem; text-align: center;">
-                <h3
-                    style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--blue); font-weight: 700; margin-bottom: 0;">
-                    ⏳ Next Holiday In</h3>
-                <div id="countdown-timer" class="countdown-display">
-                    <div class="time-block">
-                        <span id="cd-days" class="number">--</span>
-                        <span class="label">Days</span>
-                    </div>
-                    <span class="colon">:</span>
-                    <div class="time-block">
-                        <span id="cd-hours" class="number">--</span>
-                        <span class="label">Hours</span>
-                    </div>
-                    <span class="colon">:</span>
-                    <div class="time-block">
-                        <span id="cd-mins" class="number">--</span>
-                        <span class="label">Mins</span>
-                    </div>
-                    <span class="colon">:</span>
-                    <div class="time-block">
-                        <span id="cd-secs" class="number">--</span>
-                        <span class="label">Secs</span>
-                    </div>
-                </div>
-                <p id="next-holiday-name" style="font-size: 1.1rem; font-weight: 600; margin-top: 1rem;">--</p>
-                <p id="next-holiday-date" style="font-size: 0.85rem; color: var(--accent); margin-top: 0.2rem;">--</p>
-            </div>
-        </section>
+<!-- CATEGORIES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Explore By Category</h2>
+      <p class="section-subtitle">Find the test that speaks to where you are right now</p>
+    </div>
+    <div class="categories-grid" id="categoriesGrid">
+      <a href="tests.html?cat=personality" class="category-card">
+        <span class="category-icon">🌟</span>
+        <div class="category-name">Personality</div>
+        <div class="category-count">12 tests</div>
+      </a>
+      <a href="tests.html?cat=love" class="category-card">
+        <span class="category-icon">💞</span>
+        <div class="category-name">Love & Relationships</div>
+        <div class="category-count">9 tests</div>
+      </a>
+      <a href="tests.html?cat=career" class="category-card">
+        <span class="category-icon">💼</span>
+        <div class="category-name">Career</div>
+        <div class="category-count">6 tests</div>
+      </a>
+      <a href="tests.html?cat=mental-health" class="category-card">
+        <span class="category-icon">🧘</span>
+        <div class="category-name">Mental Health</div>
+        <div class="category-count">8 tests</div>
+      </a>
+      <a href="tests.html?cat=stress" class="category-card">
+        <span class="category-icon">⚡</span>
+        <div class="category-name">Stress & Burnout</div>
+        <div class="category-count">5 tests</div>
+      </a>
+      <a href="tests.html?cat=fun" class="category-card">
+        <span class="category-icon">🎉</span>
+        <div class="category-name">Fun & Light</div>
+        <div class="category-count">7 tests</div>
+      </a>
+    </div>
+  </div>
+</section>
 
-        <!-- Interactive Layout: Map + Calendar -->
-        <section id="interactive-layout" style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 5rem;">
-            <!-- SVG Map Panel -->
-            <div id="map-panel"
-                style="flex: 1; min-width: 300px; background: var(--gray); padding: 1.5rem; border-radius: 8px; text-align: center; display: flex; flex-direction: column; align-items: center;"
-                data-aos="fade-right">
-                <h3 style="margin-bottom: 0.5rem;">Select Region</h3>
-                <p style="font-size: 0.85rem; color: var(--accent); margin-bottom: 1.5rem;">Click on a state to filter
-                    holidays</p>
+<!-- POPULAR TESTS -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Most Popular Tests</h2>
+      <p class="section-subtitle">Taken and loved by thousands of people just like you</p>
+    </div>
+    <div class="tests-grid" id="popularTestsGrid">
+      <!-- Rendered by JS -->
+    </div>
+    <div class="text-center" style="margin-top:40px">
+      <a href="tests.html" class="btn btn-secondary">View All Tests →</a>
+    </div>
+  </div>
+</section>
 
-                <div class="map-container" style="width: 100%; max-width: 350px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" id="germany-map"
-                        style="width: 100%; height: auto; display: block; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">
-                        <path id="BW" title="Baden-Württemberg"
-                            d="M185 680 L200 660 L240 650 L250 620 L280 620 L300 640 L300 680 L280 720 L240 730 L200 700 Z" />
-                        <path id="BY" title="Bayern"
-                            d="M300 680 L300 640 L280 620 L300 580 L340 560 L380 560 L420 580 L440 620 L440 680 L400 720 L340 720 Z" />
-                        <path id="BE" title="Berlin" d="M420 340 L440 340 L440 360 L420 360 Z" />
-                        <path id="BB" title="Brandenburg"
-                            d="M360 280 L400 260 L460 260 L480 300 L480 380 L440 420 L380 400 L360 360 Z M420 340 L420 360 L440 360 L440 340 Z" />
-                        <path id="HB" title="Bremen" d="M200 240 L220 240 L220 260 L200 260 Z" />
-                        <path id="HH" title="Hamburg" d="M260 200 L280 200 L280 220 L260 220 Z" />
-                        <path id="HE" title="Hessen"
-                            d="M220 500 L240 460 L280 460 L300 500 L300 580 L280 620 L250 620 L220 560 Z" />
-                        <path id="MV" title="Mecklenburg-Vorpommern"
-                            d="M280 160 L340 140 L400 140 L460 180 L460 220 L400 260 L340 240 L280 220 Z" />
-                        <path id="NI" title="Niedersachsen"
-                            d="M140 300 L180 240 L260 220 L280 220 L300 240 L340 240 L360 280 L360 360 L300 400 L260 380 L220 400 L180 380 L140 340 Z M200 240 L200 260 L220 260 L220 240 Z" />
-                        <path id="NW" title="Nordrhein-Westfalen"
-                            d="M120 440 L160 380 L220 400 L260 380 L280 420 L240 460 L220 500 L160 520 L120 480 Z" />
-                        <path id="RP" title="Rheinland-Pfalz"
-                            d="M140 560 L160 520 L220 500 L220 560 L250 620 L240 650 L200 660 L160 620 Z" />
-                        <path id="SL" title="Saarland" d="M120 620 L140 560 L160 620 L140 640 Z" />
-                        <path id="SN" title="Sachsen" d="M380 400 L440 420 L480 380 L480 440 L420 480 L380 460 Z" />
-                        <path id="ST" title="Sachsen-Anhalt"
-                            d="M300 400 L360 360 L380 400 L380 460 L340 480 L300 440 Z" />
-                        <path id="SH" title="Schleswig-Holstein"
-                            d="M220 120 L260 80 L300 80 L340 140 L280 160 L280 200 L260 200 L260 220 L220 200 Z M260 200 L280 200 L280 220 L260 220 Z" />
-                        <path id="TH" title="Thüringen"
-                            d="M280 460 L340 480 L380 460 L420 480 L380 520 L340 520 L300 500 Z" />
-                    </svg>
-                </div>
-            </div>
+<!-- ABOUT BRIEF -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="about-brief">
+      <div class="about-brief-text">
+        <h2>Why Test Your Mind?</h2>
+        <p>We believe self-knowledge is not a luxury — it's the foundation of a well-lived life. Every test on this platform is grounded in peer-reviewed psychological research, designed to deliver genuine insight rather than flattering oversimplifications.</p>
+        <p>Our content is written and reviewed with care, ensuring that whether you take a personality test or a stress assessment, you walk away with something meaningful and actionable — not just a fun label.</p>
+        <p>Test Your Mind is built for the genuinely curious: people who want to understand the "why" behind their patterns, relationships, and reactions. We hope something here gives you a useful new lens on yourself.</p>
+        <a href="about.html" class="btn btn-secondary" style="margin-top:8px">Read Our Story →</a>
+      </div>
+      <div class="about-features">
+        <div class="about-feature">
+          <div class="about-feature-icon">🔬</div>
+          <div>
+            <div class="about-feature-title">Science-Backed</div>
+            <div class="about-feature-desc">Every test draws from peer-reviewed psychology research and established frameworks.</div>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon">🔒</div>
+          <div>
+            <div class="about-feature-title">Private & Secure</div>
+            <div class="about-feature-desc">We don't store your answers or sell your data. Your insights are yours alone.</div>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon">📖</div>
+          <div>
+            <div class="about-feature-title">Deep Results</div>
+            <div class="about-feature-desc">Each result comes with rich description, practical advice, and real-life application.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <!-- Calendar Section -->
-            <div id="calendar-section" style="flex: 2; min-width: 400px; padding: 0;" data-aos="fade-left">
-                <div id="calendar-controls">
-                    <div class="state-selector">
-                        <label for="stateSelect">Select Region (Bundesland):</label>
-                        <select id="stateSelect">
-                            <option value="ALL" selected>All Germany</option>
-                            <option value="BW">Baden-Württemberg</option>
-                            <option value="BY">Bayern</option>
-                            <option value="BE">Berlin</option>
-                            <option value="BB">Brandenburg</option>
-                            <option value="HB">Bremen</option>
-                            <option value="HH">Hamburg</option>
-                            <option value="HE">Hessen</option>
-                            <option value="MV">Mecklenburg-Vorpommern</option>
-                            <option value="NI">Niedersachsen</option>
-                            <option value="NW">Nordrhein-Westfalen</option>
-                            <option value="RP">Rheinland-Pfalz</option>
-                            <option value="SL">Saarland</option>
-                            <option value="SN">Sachsen</option>
-                            <option value="ST">Sachsen-Anhalt</option>
-                            <option value="SH">Schleswig-Holstein</option>
-                            <option value="TH">Thüringen</option>
-                        </select>
-                    </div>
-                    <div class="month-nav">
-                        <button id="prevMonth">Prev</button>
-                        <span id="currentMonthDisplay"></span>
-                        <button id="nextMonth">Next</button>
-                    </div>
-                </div>
-                <div id="calendar-grid" class="calendar-grid"></div>
-                <div id="holiday-list"
-                    style="margin-top: 2rem; padding: 1.5rem; background: var(--gray); border-radius: 8px;">
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                        <h3 style="margin: 0; font-size: 1.2rem;">Holidays this month</h3>
-                        <button id="export-ical"
-                            style="background: #28a745; color: white; border: none; padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.85rem; font-weight: bold; cursor: pointer;">📅
-                            iCal Export</button>
-                    </div>
-                    <ul id="holidays" style="list-style-type: none; padding-left: 0;"></ul>
-                </div>
-            </div>
-        </section>
+<!-- LATEST ARTICLES -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Latest Articles</h2>
+      <p class="section-subtitle">Deeper dives into psychology, personality science, and self-understanding</p>
+    </div>
+    <div class="articles-grid" id="latestArticlesGrid">
+      <!-- Rendered by JS -->
+    </div>
+    <div class="text-center" style="margin-top:40px">
+      <a href="articles.html" class="btn btn-secondary">View All Articles →</a>
+    </div>
+  </div>
+</section>
 
-        <!-- Bridge Day Calculator Section -->
-        <section id="bridge-day-calculator"
-            style="margin-top: 2rem; padding: 2.5rem; background: var(--gray); border-radius: 8px; border: 1px solid var(--border);"
-            data-aos="fade-up">
-            <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem;">🗓️ Bridge Day Calculator</h2>
-            <p style="color: var(--accent); margin-bottom: 2rem;">Maximize your vacation time! Tell us how many days of
-                leave you want to use, and we'll find the best period to take off in 2026 based on your selected region.
-            </p>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon">🧠</div>
+          Test Your Mind
+        </div>
+        <p class="footer-brand-desc">A psychology test platform built for self-discovery. Science-backed, beautifully designed, always free.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Tests</div>
+        <div class="footer-links">
+          <a href="tests.html?cat=personality">Personality</a>
+          <a href="tests.html?cat=love">Love & Relationships</a>
+          <a href="tests.html?cat=mental-health">Mental Health</a>
+          <a href="tests.html?cat=career">Career</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Explore</div>
+        <div class="footer-links">
+          <a href="articles.html">Articles</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Legal</div>
+        <div class="footer-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Test Your Mind · SOULCAKEY. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<button id="scrollTop" aria-label="Back to top">↑</button>
 
-            <div style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: flex-start;">
-                <div style="flex: 1; min-width: 250px;">
-                    <label for="leave-slider" style="display: block; font-weight: bold; margin-bottom: 1rem;">How many
-                        days off do you want to use?</label>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <input type="range" id="leave-slider" min="1" max="10" value="3"
-                            style="flex: 1; cursor: pointer;">
-                        <span id="leave-value"
-                            style="font-size: 1.5rem; font-weight: bold; color: var(--primary); min-width: 40px; text-align: center;">3</span>
-                    </div>
-                    <div
-                        style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--accent); margin-top: 0.5rem;">
-                        <span>1 day</span>
-                        <span>10 days</span>
-                    </div>
-                </div>
+<script src="js/data/tests.js"></script>
+<script src="js/data/articles.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Render popular tests (first 3)
+  const grid = document.getElementById('popularTestsGrid');
+  TESTS_DATA.slice(0, 3).forEach(test => {
+    grid.insertAdjacentHTML('beforeend', buildTestCard(test));
+  });
 
-                <div id="bridge-result"
-                    style="flex: 1; min-width: 280px; background: var(--bg); padding: 1.5rem; border-radius: 8px; border-left: 5px solid #28a745; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-                    <h3 style="margin-top: 0; font-size: 1.1rem; color: #28a745;">Recommendation</h3>
-                    <div id="bridge-best-period" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">
-                        Checking...</div>
-                    <p id="bridge-details" style="font-size: 0.95rem; margin: 0; color: var(--text);">Use <strong
-                            id="res-leave">3</strong> days of leave to get <strong id="res-total"
-                            style="color: #28a745; font-size: 1.1rem;">--</strong> continuous days off.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Monthly Event & State Spotlight Section -->
-        <section id="monthly-spotlight"
-            style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border);"
-            data-aos="fade-up">
-            <div id="monthly-events" style="flex: 2; min-width: 300px;">
-                <h2 style="font-size: 1.5rem;">Major Events This Month</h2>
-                <div id="dynamic-event-list">
-                    <!-- JS will load events based on current calendar month -->
-                    <p style="color: var(--accent);">Exploring the best festivals for the selected month...</p>
-                </div>
-                <a href="events.html" style="display: inline-block; margin-top: 1rem; color: #007bff;">View All 2026
-                    Events →</a>
-            </div>
-
-            <div id="state-spotlight"
-                style="flex: 1; min-width: 250px; padding: 2rem; background: var(--gray); border-radius: 8px;">
-                <h3 style="margin-top: 0;">State Spotlight</h3>
-                <div id="spotlight-content">
-                    <p><strong>Bavaria (Bayern)</strong> is currently the center of attention with its numerous folk
-                        festivals and stunning Alpine scenery.</p>
-                    <a href="states/bayern.html" style="font-size: 0.9rem; text-decoration: underline;">Learn about
-                        Bavaria</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEO Content Section for AdSense Approval -->
-        <section id="guide-section" style="margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border);"
-            data-aos="fade-up">
-            <h2>A Comprehensive Guide to Public Holidays in Germany (Feiertage)</h2>
-
-            <p>Germany has a unique system when it comes to public holidays. Unlike many other countries where holidays
-                are standardized nationally, Germany's federal structure means that holidays can vary significantly
-                depending on the state (<strong>Bundesland</strong>) you are in. Understanding these regional
-                differences is crucial for anyone traveling, working, or doing business in Germany.</p>
-
-            <h3 style="margin-top: 2rem;">National Holidays (Gesetzliche Feiertage)</h3>
-            <p>There are exactly nine public holidays that are celebrated universally across all 16 German states. These
-                include major religious and historical dates:</p>
-            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--accent);">
-                <li><strong>New Year's Day (Neujahr):</strong> January 1st</li>
-                <li><strong>Good Friday (Karfreitag):</strong> The Friday before Easter</li>
-                <li><strong>Easter Monday (Ostermontag):</strong> The Monday following Easter Sunday</li>
-                <li><strong>Labor Day (Tag der Arbeit):</strong> May 1st</li>
-                <li><strong>Ascension Day (Christi Himmelfahrt):</strong> 39 days after Easter Sunday</li>
-                <li><strong>Whit Monday (Pfingstmontag):</strong> 50 days after Easter Sunday</li>
-                <li><strong>German Unity Day (Tag der Deutschen Einheit):</strong> October 3rd - This is the only
-                    federal holiday mandated by federal law.</li>
-                <li><strong>Christmas Day (1. Weihnachtstag):</strong> December 25th</li>
-                <li><strong>Boxing Day / St. Stephen's Day (2. Weihnachtstag):</strong> December 26th</li>
-            </ul>
-
-            <h3 style="margin-top: 2rem;">Regional Holidays: Why Do They Differ?</h3>
-            <p>The remaining public holidays are determined at the state level. This is largely due to the historical
-                and religious demographics of the regions. For example, predominantly Catholic states in the south and
-                west, such as <strong>Bavaria (Bayern)</strong> and <strong>Baden-Württemberg</strong>, observe holidays
-                like Corpus Christi (Fronleichnam) and All Saints' Day (Allerheiligen).</p>
-            <p>In contrast, northern and eastern states, which have historically Protestant roots, might observe
-                Reformation Day (Reformationstag). Some states have unique regional holidays; for example,
-                <strong>Berlin and Mecklenburg-Vorpommern</strong> are currently the only states to recognize
-                International Women's Day (Frauentag) as an official public holiday.
-            </p>
-
-            <h3 style="margin-top: 2rem;">How to Use Our Calendar</h3>
-            <p>Our interactive calendar tool is designed to simplify your planning. By using the dropdown menu above,
-                you can select specific regions to filter the holidays relevant to your location. Whether you are
-                planning a vacation, scheduling business meetings, or just curious about German culture, this tool
-                ensures you never miss a <em>Feiertag</em>.</p>
-        </section>
-
-        <section id="affiliate-form" style="margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border);"
-            data-aos="fade-up">
-            <h2>Contact Us / Business Inquiries</h2>
-            <p style="margin-bottom: 1.5rem; color: var(--accent);">Have a question or want to partner with us? Reach
-                out using the form below.</p>
-            <form action="https://formspree.io/f/xgoljwgl" method="POST">
-                <div class="form-group">
-                    <input type="text" id="name" name="name" required placeholder="Your Name or Company">
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="_replyto" required placeholder="Your Email Address">
-                </div>
-                <div class="form-group">
-                    <textarea id="message" name="message" rows="4" required
-                        placeholder="How can we help you today?"></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-    </main>
-
-    <div id="footer-container"></div>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/main.js"></script>
+  // Render latest articles
+  const artGrid = document.getElementById('latestArticlesGrid');
+  ARTICLES_DATA.slice(0, 3).forEach(art => {
+    artGrid.insertAdjacentHTML('beforeend', `
+      <a href="article-detail.html?id=${art.slug}" class="article-card">
+        <div class="article-card-meta">
+          <span class="badge badge-${art.categoryColor}">${art.category}</span>
+          <span class="article-card-date">${art.date}</span>
+        </div>
+        <div class="article-card-title">${art.title}</div>
+        <div class="article-card-excerpt">${art.excerpt}</div>
+        <div class="article-card-footer">Read article <span>→</span></div>
+      </a>
+    `);
+  });
+</script>
 </body>
-
 </html>

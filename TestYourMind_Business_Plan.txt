@@ -1,0 +1,395 @@
+================================================================================
+                          TEST YOUR MIND
+              Psychology Test Website — Full Business Plan
+         Google AdSense Approval + Content Automation Strategy
+                       SOULCAKEY  |  2025
+================================================================================
+
+
+════════════════════════════════════════════════════════════════════════════════
+1. PROJECT OVERVIEW
+════════════════════════════════════════════════════════════════════════════════
+
+'Test Your Mind' is a psychology test website built for AdSense monetization
+and fully automated content production. Once a test topic is entered via GitHub
+Actions, the entire pipeline — question generation, result writing, thumbnail
+creation, and live deployment — runs automatically without any manual work.
+
+────────────────────────────────────────────────────────────────────────────────
+1-1. Basic Site Information
+────────────────────────────────────────────────────────────────────────────────
+
+  Site Name       : Test Your Mind
+  Site Type       : Psychology Test Specialist Website
+  Target Audience : Ages 13-40 interested in self-development & self-understanding
+  Language        : English
+  Revenue Model   : Google AdSense + future premium tests
+  Content Pipeline: Fully automated via GitHub Actions + Claude AI
+  Goal            : AdSense approval + scalable content at zero manual effort
+
+
+════════════════════════════════════════════════════════════════════════════════
+2. GOOGLE ADSENSE APPROVAL STRATEGY
+════════════════════════════════════════════════════════════════════════════════
+
+AdSense review prioritizes content quality and site completeness over traffic.
+All four requirements below must be met before applying.
+
+────────────────────────────────────────────────────────────────────────────────
+2-1. Mandatory Requirements
+────────────────────────────────────────────────────────────────────────────────
+
+  [★★★★★]  Sufficient Text Content
+            Each test page must have 300+ words of descriptive text
+
+  [★★★★★]  Required Pages Present
+            Privacy Policy, Terms of Service, About, Contact
+
+  [★★★★★]  Original Content
+            No copy-paste; unique AI-generated + edited descriptions
+
+  [★★★★☆]  Site Operation Period
+            At least 2-4 weeks live with consistent content
+
+  [★★★★☆]  Mobile Optimization
+            Responsive design; ads correctly positioned on mobile
+
+  [★★★☆☆]  Page Loading Speed
+            Core Web Vitals compliance recommended
+
+────────────────────────────────────────────────────────────────────────────────
+2-2. Required Text Per Test Page
+────────────────────────────────────────────────────────────────────────────────
+
+The most common rejection reason for test sites is thin content.
+Every test page must include:
+
+  * Test Introduction (200-300 words): what it measures and who it is for
+  * Psychological Background (100-200 words): theory behind the test
+  * How to Use the Results (100 words): practical application tips
+  * Result Descriptions (150+ words per result type): detailed interpretation
+  * Related Test Recommendations: internal links to boost session time
+
+
+════════════════════════════════════════════════════════════════════════════════
+3. WEBSITE STRUCTURE (SITEMAP)
+════════════════════════════════════════════════════════════════════════════════
+
+────────────────────────────────────────────────────────────────────────────────
+3-1. Full Page Structure
+────────────────────────────────────────────────────────────────────────────────
+
+  Page                URL                        AdSense Required
+  ──────────────────────────────────────────────────────────────────
+  Homepage            /                          YES
+  Test List           /tests                     YES
+  Test Detail         /tests/[slug]              YES - Core (text required)
+  Test Play           /tests/[slug]/play         YES
+  Result Page         /tests/[slug]/result       YES - Core (text required)
+  Blog / Articles     /articles                  Strongly Recommended
+  Article Detail      /articles/[slug]           Strongly Recommended
+  About               /about                     YES
+  Contact             /contact                   YES
+  Privacy Policy      /privacy                   YES
+  Terms of Service    /terms                     YES
+
+────────────────────────────────────────────────────────────────────────────────
+3-2. Homepage Layout
+────────────────────────────────────────────────────────────────────────────────
+
+  >> Header
+     * Logo + "Test Your Mind" site name
+     * Navigation: Home | Tests | Articles | About
+     * Search bar (optional)
+
+  >> Hero Section
+     * Headline: "Discover What Makes You, You"
+     * CTA button: "Take a Test Now"
+     * Trust indicators: number of tests, total participants
+
+  >> Category Section
+     * Personality | Love & Relationships | Career | Mental Health | Stress | Fun
+
+  >> Popular Tests Section
+     * 6-12 test cards: thumbnail + title + one-line description + participant count
+
+  >> About Brief
+     * 150-word site description (important for AdSense review!)
+
+  >> Latest Articles
+     * 3-4 recent article previews with link to full blog section
+
+  >> Footer
+     * Privacy Policy | Terms | About | Contact
+     * Copyright: 2025 Test Your Mind / SOULCAKEY
+
+
+════════════════════════════════════════════════════════════════════════════════
+4. CONTENT AUTOMATION SYSTEM (GITHUB ACTIONS + CLAUDE AI)
+════════════════════════════════════════════════════════════════════════════════
+
+This is the core operational advantage of Test Your Mind. Instead of manually
+writing tests, you simply enter a topic into GitHub — and the entire test is
+automatically created and published to the live website within minutes.
+
+────────────────────────────────────────────────────────────────────────────────
+4-1. Full Automation Pipeline
+────────────────────────────────────────────────────────────────────────────────
+
+  Step 1 — Topic Input
+    You enter a test topic (e.g. "Attachment Style") into GitHub Actions
+    Tool: GitHub Actions (manual trigger via web UI)
+
+  Step 2 — AI Content Generation
+    Claude AI generates: test title, intro text, 10 questions,
+    4 result types with full descriptions
+    Tool: Anthropic Claude API
+
+  Step 3 — File Creation
+    Generated content is saved as a structured JSON/Markdown file
+    Tool: GitHub Actions
+
+  Step 4 — Page Build
+    Static site builder converts the file into a live web page automatically
+    Tool: Next.js / Astro + Vercel
+
+  Step 5 — Deployment
+    New test page goes live on the website — no manual work required
+    Tool: Vercel / GitHub Pages
+
+  Step 6 — Homepage Update
+    Homepage test list automatically updates to show the new test
+    Tool: Automatic via data layer
+
+────────────────────────────────────────────────────────────────────────────────
+4-2. How to Trigger a New Test (Step by Step)
+────────────────────────────────────────────────────────────────────────────────
+
+  1. Go to your GitHub repository
+  2. Click the "Actions" tab at the top
+  3. Select the workflow: "Generate New Psychology Test"
+  4. Click "Run workflow"
+  5. Fill in the input: TEST_TOPIC (e.g. "What is your conflict resolution style?")
+  6. Click the green "Run workflow" button
+  7. Wait 1-3 minutes — your new test is live!
+
+────────────────────────────────────────────────────────────────────────────────
+4-3. GitHub Actions Workflow File
+────────────────────────────────────────────────────────────────────────────────
+
+  File: .github/workflows/generate-test.yml
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ name: Generate New Psychology Test                                  │
+  │ on:                                                                 │
+  │   workflow_dispatch:                                                │
+  │     inputs:                                                         │
+  │       test_topic:                                                   │
+  │         description: 'Enter the psychology test topic'             │
+  │         required: true                                              │
+  │         type: string                                                │
+  │                                                                     │
+  │ jobs:                                                               │
+  │   generate:                                                         │
+  │     runs-on: ubuntu-latest                                          │
+  │     steps:                                                          │
+  │       - uses: actions/checkout@v3                                   │
+  │       - name: Call Claude API to generate test content             │
+  │         run: node scripts/generate-test.js                         │
+  │         env:                                                        │
+  │           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}      │
+  │           TEST_TOPIC: ${{ github.event.inputs.test_topic }}        │
+  │       - name: Commit and push new test file                        │
+  │         run: |                                                      │
+  │           git config user.name 'GitHub Actions'                    │
+  │           git add .                                                 │
+  │           git commit -m 'Add new test: ${{ github.event.inputs.test_topic }}' │
+  │           git push                                                  │
+  └─────────────────────────────────────────────────────────────────────┘
+
+────────────────────────────────────────────────────────────────────────────────
+4-4. What Claude AI Generates Per Test
+────────────────────────────────────────────────────────────────────────────────
+
+  Content                  Min Length
+  ──────────────────────────────────────────────────────────────────────
+  Test Title               5-10 words (SEO-friendly)
+  Test Introduction        200+ words
+  Psychological Background 150+ words
+  10 Questions             4 options each, psychologically grounded
+  4 Result Types           150+ words each (label + full description)
+  How to Use Results       100+ words
+  Related Test Suggestions 3 internal links
+  SEO Meta Description     150-160 characters
+
+────────────────────────────────────────────────────────────────────────────────
+4-5. Tech Stack
+────────────────────────────────────────────────────────────────────────────────
+
+  Layer            Technology                  Purpose
+  ──────────────────────────────────────────────────────────────────────
+  Frontend         Next.js or Astro            Static site generation
+  Hosting          Vercel or GitHub Pages       Free, auto-deploys on push
+  Automation       GitHub Actions              Trigger via web UI
+  AI Generation    Claude API (Anthropic)      Generate all test content
+  Content Storage  JSON / Markdown in GitHub   No database needed
+  Styling          Tailwind CSS                Fast, responsive UI
+  Analytics        Google Search Console + GA4 Track traffic for AdSense
+
+────────────────────────────────────────────────────────────────────────────────
+4-6. Manual vs Automation Comparison
+────────────────────────────────────────────────────────────────────────────────
+
+  Task                      Manual          With Automation
+  ──────────────────────────────────────────────────────────────────────
+  Write test intro          30-60 min       Instant (AI-generated)
+  Create 10 questions       1-2 hours       Instant
+  Write 4 result types      1-2 hours       Instant
+  Publish to website        15-30 min       Automatic on git push
+  Total per test            3-5 hours       Under 3 minutes
+  Cost per test             Hours of time   ~$0.01 in API cost
+
+
+════════════════════════════════════════════════════════════════════════════════
+5. TEST DETAIL PAGE STRUCTURE
+════════════════════════════════════════════════════════════════════════════════
+
+  Section                  Content                              Min Length
+  ──────────────────────────────────────────────────────────────────────
+  Title + Thumbnail        Attractive cover image               -
+  Test Introduction        What it measures + who benefits      200+ words
+  Psychological Background Theory behind the test               150+ words
+  Test Overview            Questions, time, result types        50+ words
+  How to Use Results       Real-life application tips           100+ words
+  Start Button             Prominent CTA                        -
+  Related Tests            3-4 internally linked tests          -
+
+
+════════════════════════════════════════════════════════════════════════════════
+6. RESULT PAGE STRUCTURE
+════════════════════════════════════════════════════════════════════════════════
+
+  * Result title + visual (AI-generated image or color card)
+  * Detailed description: traits, strengths, weaknesses (150+ words)
+  * How this type shows up in daily life (100+ words)
+  * Career or relationship advice for this type (100+ words)
+  * Share buttons: Twitter/X, Instagram, copy link
+  * Retake button + related test recommendations (3-4 tests)
+
+
+════════════════════════════════════════════════════════════════════════════════
+7. BLOG / ARTICLES SECTION
+════════════════════════════════════════════════════════════════════════════════
+
+Blog articles are the strongest AdSense signal. Target 5-10 articles minimum
+before applying.
+
+────────────────────────────────────────────────────────────────────────────────
+7-1. Recommended Topics
+────────────────────────────────────────────────────────────────────────────────
+
+  * INFP vs INFJ: Key Differences and Common Misconceptions
+  * How Your Attachment Style Affects Your Relationships
+  * How Introverts Can Thrive in the Workplace
+  * 5 Signs You Might Be Dating a Narcissist
+  * Burnout vs Depression: How to Tell the Difference
+  * How to Read and Interpret Your Personality Test Results
+
+────────────────────────────────────────────────────────────────────────────────
+7-2. Article Minimum Standards
+────────────────────────────────────────────────────────────────────────────────
+
+  * 600+ words per article (1,000+ words strongly recommended)
+  * Fully original — edit and review all AI-generated drafts
+  * Include at least 2 internal links to related tests
+  * Publish 5-10 articles before submitting AdSense application
+
+
+════════════════════════════════════════════════════════════════════════════════
+8. REQUIRED PAGES GUIDE
+════════════════════════════════════════════════════════════════════════════════
+
+  Privacy Policy (/privacy)
+    * List all data collected (cookies, ad identifiers, etc.)
+    * Explicitly state that Google AdSense cookies are used (MANDATORY!)
+    * Data retention period and third-party sharing policy
+    * User rights and contact details
+
+  About Page (/about)
+    * Site purpose and philosophy (200+ words)
+    * Who runs the site (can be anonymous but consistent)
+    * Brief explanation of how content is created
+
+  Contact Page (/contact)
+    * Email address or contact form
+    * Expected response time
+
+
+════════════════════════════════════════════════════════════════════════════════
+9. PRE-APPLICATION CHECKLIST
+════════════════════════════════════════════════════════════════════════════════
+
+  [ ]  10+ test pages published
+  [ ]  300+ words of description text per test page
+  [ ]  150+ words per result type on result pages
+  [ ]  5+ blog articles (600+ words each)
+  [ ]  Privacy Policy page live
+  [ ]  Terms of Service page live
+  [ ]  About page live
+  [ ]  Contact page live (email or form)
+  [ ]  Mobile responsiveness tested
+  [ ]  Site has been live for at least 2 weeks
+  [ ]  GitHub Actions automation tested and working
+  [ ]  Google Search Console sitemap submitted
+  [ ]  No copyright violations (images + text verified)
+
+
+════════════════════════════════════════════════════════════════════════════════
+10. RECOMMENDED TIMELINE TO ADSENSE APPROVAL
+════════════════════════════════════════════════════════════════════════════════
+
+  Week 1
+    - Set up site (Next.js/Astro + Vercel)
+    - Build homepage + add all required pages (About, Privacy, Contact, Terms)
+    - Set up GitHub Actions workflow + connect Claude API
+    - Test the full automation pipeline end-to-end
+
+  Weeks 1-2
+    - Use automation to generate and publish 10+ tests with full text
+
+  Week 2
+    - Write and publish 5+ blog articles (AI draft + manual editing)
+
+  Weeks 2-3
+    - Register on Google Search Console
+    - Submit sitemap, verify indexing
+
+  Week 3
+    - Review all pages for content quality
+    - Fix any thin or incomplete text
+
+  Weeks 3-4
+    - Submit Google AdSense application
+
+  2-4 Weeks After Applying
+    - Wait for review result
+    - If rejected: address Google's feedback and reapply
+
+
+════════════════════════════════════════════════════════════════════════════════
+11. FINAL SUMMARY
+════════════════════════════════════════════════════════════════════════════════
+
+Test Your Mind is designed as a lean, fully automated psychology test platform.
+By combining GitHub Actions with the Claude API, new tests can be generated and
+published in under 3 minutes with minimal cost. This allows you to scale content
+rapidly — a key factor for AdSense approval and long-term SEO growth.
+
+Focus on content quality first: ensure every test page has 300+ words of text,
+every result has a detailed description, and all required pages are in place.
+Once the checklist is complete, submit your AdSense application with confidence.
+
+================================================================================
+                    -- End of Test Your Mind Business Plan --
+                              SOULCAKEY  |  2025
+================================================================================

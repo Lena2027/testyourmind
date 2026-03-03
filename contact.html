@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Test Your Mind</title>
+    <meta name="description"
+        content="Get in touch with the Test Your Mind team. We welcome feedback, topic suggestions, and questions.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="bg-orbs"></div>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">🧠</div>Test Your Mind
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a><a href="tests.html">Tests</a><a href="articles.html">Articles</a><a
+                    href="about.html">About</a>
+                <a href="tests.html" class="nav-cta">Take a Test ✨</a>
+            </div>
+            <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+    <nav class="mobile-nav">
+        <a href="index.html">🏠 Home</a><a href="tests.html">🧪 Tests</a><a href="articles.html">📖 Articles</a><a
+            href="about.html">💡 About</a><a href="contact.html">✉️ Contact</a>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-header-title">Contact Us</h1>
+            <p class="page-header-desc">Questions, feedback, or topic ideas? We genuinely want to hear from you.</p>
+        </div>
+    </div>
+
+    <section class="section" style="padding-top:0;position:relative;z-index:1">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info animate-fade-up">
+                    <h2>Let's Talk</h2>
+                    <p>Whether you have feedback about a test, a suggestion for a new topic, a question about our
+                        content, or simply something on your mind — we genuinely welcome your message. Psychology is
+                        best discussed, and curious minds make for the most interesting conversations.</p>
+                    <p>We aim to respond to all messages within 2–3 business days.</p>
+
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">✉️</div>
+                        <div class="contact-detail-text">
+                            <strong>Email</strong>
+                            <span>hello@testyourmind.io</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">⏱</div>
+                        <div class="contact-detail-text">
+                            <strong>Response Time</strong>
+                            <span>Within 2–3 business days</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">🌍</div>
+                        <div class="contact-detail-text">
+                            <strong>Language</strong>
+                            <span>English preferred · Other languages welcome</span>
+                        </div>
+                    </div>
+
+                    <div
+                        style="margin-top:32px;padding:20px;border-radius:var(--radius-md);background:var(--color-surface);border:1px solid var(--color-border)">
+                        <p style="font-size:0.9rem;color:var(--color-text-muted);margin:0"><strong
+                                style="color:var(--color-white)">Please note:</strong> Test Your Mind is an educational
+                            platform. We are not able to provide mental health support or clinical advice. If you are in
+                            crisis, please contact a qualified mental health professional or emergency services in your
+                            country.</p>
+                    </div>
+                </div>
+
+                <div class="contact-form animate-fade-up">
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Your Name</label>
+                            <input class="form-input" type="text" id="name" name="name" placeholder="Jane Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address</label>
+                            <input class="form-input" type="email" id="email" name="email"
+                                placeholder="jane@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="subject">Subject</label>
+                            <select class="form-select" id="subject" name="subject">
+                                <option value="feedback">Test Feedback</option>
+                                <option value="topic">Topic Suggestion</option>
+                                <option value="question">Content Question</option>
+                                <option value="technical">Technical Issue</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="message">Message</label>
+                            <textarea class="form-textarea" id="message" name="message"
+                                placeholder="Tell us what's on your mind..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">Send Message ✉️</button>
+                    </form>
+                    <div id="formSuccess" style="display:none;text-align:center;padding:32px">
+                        <div style="font-size:3rem;margin-bottom:16px">🎉</div>
+                        <h3 style="color:var(--color-white);margin-bottom:8px">Message sent!</h3>
+                        <p style="color:var(--color-text-muted)">Thank you for reaching out. We'll get back to you
+                            within 2–3 business days.</p>
+                        <a href="tests.html" class="btn btn-primary" style="margin-top:20px">Take a Test →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">🧠</div>Test Your Mind
+                    </div>
+                    <p class="footer-brand-desc">Psychology tests for self-discovery. Always free.</p>
+                </div>
+                <div>
+                    <div class="footer-col-title">Tests</div>
+                    <div class="footer-links"><a href="tests.html?cat=personality">Personality</a><a
+                            href="tests.html?cat=love">Love</a><a href="tests.html?cat=mental-health">Mental Health</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-col-title">Explore</div>
+                    <div class="footer-links"><a href="articles.html">Articles</a><a href="about.html">About</a><a
+                            href="contact.html">Contact</a></div>
+                </div>
+                <div>
+                    <div class="footer-col-title">Legal</div>
+                    <div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2025 Test Your Mind · SOULCAKEY</span>
+                <div class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+    <button id="scrollTop">↑</button>
+    <script src="js/main.js"></script>
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('formSuccess').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

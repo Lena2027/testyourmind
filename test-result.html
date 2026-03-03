@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Your Result — Test Your Mind</title>
+    <meta name="description"
+        content="Discover your psychology test result with detailed insights, real-life applications, and personalized advice.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .result-section {
+            padding-top: 0;
+        }
+
+        .result-content-card {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: var(--radius-xl);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            margin-bottom: 28px;
+        }
+
+        .result-content-card h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 14px;
+        }
+
+        .result-content-card p {
+            color: var(--color-text-muted);
+            line-height: 1.85;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-orbs"></div>
+
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">🧠</div>Test Your Mind
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a><a href="tests.html" class="active">Tests</a><a
+                    href="articles.html">Articles</a><a href="about.html">About</a>
+                <a href="tests.html" class="nav-cta">Take a Test ✨</a>
+            </div>
+            <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+    <nav class="mobile-nav">
+        <a href="index.html">🏠 Home</a><a href="tests.html">🧪 Tests</a><a href="articles.html">📖 Articles</a><a
+            href="about.html">💡 About</a><a href="contact.html">✉️ Contact</a>
+    </nav>
+
+    <!-- Result Hero -->
+    <div class="result-hero" id="resultHero">
+        <!-- Rendered by JS -->
+    </div>
+
+    <!-- Result Content -->
+    <section class="section result-section">
+        <div class="container" id="resultContent">
+            <!-- Rendered by JS -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">🧠</div>Test Your Mind
+                    </div>
+                    <p class="footer-brand-desc">Science-backed psychology tests. Always free.</p>
+                </div>
+                <div>
+                    <div class="footer-col-title">Tests</div>
+                    <div class="footer-links"><a href="tests.html?cat=personality">Personality</a><a
+                            href="tests.html?cat=love">Love</a><a href="tests.html?cat=mental-health">Mental Health</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-col-title">Explore</div>
+                    <div class="footer-links"><a href="articles.html">Articles</a><a href="about.html">About</a><a
+                            href="contact.html">Contact</a></div>
+                </div>
+                <div>
+                    <div class="footer-col-title">Legal</div>
+                    <div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2025 Test Your Mind · SOULCAKEY</span>
+                <div class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+    <button id="scrollTop" aria-label="Back to top">↑</button>
+
+    <script src="js/data/tests.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const testId = params.get('id') || sessionStorage.getItem('tym_result_test');
+        const resultKey = params.get('result') || sessionStorage.getItem('tym_result_key');
+        const test = TESTS_DATA.find(t => t.slug === testId) || TESTS_DATA[0];
+        const result = test.results[resultKey] || Object.values(test.results)[0];
+        const relatedTests = TESTS_DATA.filter(t => t.slug !== test.slug).slice(0, 3);
+
+        document.title = result.title + ' — Test Your Mind';
+
+        // Hero
+        document.getElementById('resultHero').innerHTML = `
+    <div class="container animate-fade-up" style="text-align:center">
+      <div style="font-size:0.88rem;color:var(--color-text-muted);margin-bottom:12px">
+        <a href="test-detail.html?id=${test.slug}" style="color:var(--color-primary-2)">${test.title}</a> — Your Result
+      </div>
+      <div class="result-type-badge">Your Type: ${result.type}</div>
+      <span class="result-emoji">${result.emoji}</span>
+      <h1 class="result-title">${result.title}</h1>
+      <div class="result-traits">
+        ${result.traits.map(t => `<span class="result-trait">${t}</span>`).join('')}
+      </div>
+      <div class="result-share">
+        <button class="btn btn-secondary btn-sm" onclick="copyLink()">🔗 Copy Link</button>
+        <a href="test-play.html?id=${test.slug}" class="btn btn-secondary btn-sm">🔄 Retake Test</a>
+        <a href="tests.html" class="btn btn-primary btn-sm">✨ Take Another Test</a>
+      </div>
+    </div>
+  `;
+
+        // Content sections
+        const descHtml = result.description.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('');
+        const dailyHtml = result.dailyLife || '';
+        const adviceHtml = result.advice || '';
+
+        document.getElementById('resultContent').innerHTML = `
+    <div class="result-content-card animate-fade-up">
+      <h2>🔍 Your Full Profile</h2>
+      ${descHtml}
+    </div>
+    ${dailyHtml ? `
+    <div class="result-content-card">
+      <h2>🌍 How This Shows Up in Daily Life</h2>
+      <p>${dailyHtml}</p>
+    </div>` : ''}
+    ${adviceHtml ? `
+    <div class="result-content-card">
+      <h2>💡 Guidance & Next Steps</h2>
+      <p>${adviceHtml}</p>
+    </div>` : ''}
+
+    <div style="max-width:800px;margin:0 auto 40px;padding:36px;border-radius:var(--radius-xl);background:linear-gradient(135deg,rgba(139,92,246,0.1),rgba(245,158,11,0.05));border:1px solid rgba(139,92,246,0.25);text-align:center">
+      <h2 style="font-family:var(--font-display);font-size:1.6rem;color:var(--color-white);margin-bottom:8px">Explore More Tests</h2>
+      <p style="color:var(--color-text-muted);margin-bottom:28px">Each test reveals a different dimension of who you are.</p>
+      <div class="tests-grid" style="margin-bottom:0">
+        ${relatedTests.map(rt => buildTestCard(rt)).join('')}
+      </div>
+    </div>
+  `;
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied! Share your result. 🎉'));
+        }
+    </script>
+</body>
+
+</html>

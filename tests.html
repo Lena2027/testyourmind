@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Psychology Tests — Test Your Mind</title>
+    <meta name="description"
+        content="Browse our full library of science-backed psychology tests covering personality, relationships, mental health, career, and more.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="bg-orbs"></div>
+
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">🧠</div>Test Your Mind
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="tests.html" class="active">Tests</a>
+                <a href="articles.html">Articles</a>
+                <a href="about.html">About</a>
+                <a href="tests.html" class="nav-cta">Take a Test ✨</a>
+            </div>
+            <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+    <nav class="mobile-nav">
+        <a href="index.html">🏠 Home</a><a href="tests.html">🧪 Tests</a><a href="articles.html">📖 Articles</a><a
+            href="about.html">💡 About</a><a href="contact.html">✉️ Contact</a>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-header-title">Psychology Tests</h1>
+            <p class="page-header-desc">Science-backed, thoughtfully designed. Find the test that calls to you today.
+            </p>
+        </div>
+    </div>
+
+    <section class="section" style="padding-top:0">
+        <div class="container">
+            <div class="filter-bar">
+                <button class="filter-btn active" data-cat="all">All Tests</button>
+                <button class="filter-btn" data-cat="personality">🌟 Personality</button>
+                <button class="filter-btn" data-cat="love">💞 Love</button>
+                <button class="filter-btn" data-cat="mental-health">🧘 Mental Health</button>
+                <button class="filter-btn" data-cat="career">💼 Career</button>
+                <div class="search-bar">
+                    <span>🔍</span>
+                    <input type="text" id="searchInput" placeholder="Search tests...">
+                </div>
+            </div>
+            <div class="tests-grid" id="testsGrid"></div>
+            <div id="noResults" style="display:none;text-align:center;padding:60px 0;color:var(--color-text-muted)">
+                <div style="font-size:3rem;margin-bottom:16px">🔍</div>
+                <p>No tests found. Try a different search or filter.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">🧠</div>Test Your Mind
+                    </div>
+                    <p class="footer-brand-desc">Science-backed psychology tests for self-discovery. Always free.</p>
+                </div>
+                <div>
+                    <div class="footer-col-title">Tests</div>
+                    <div class="footer-links"><a href="tests.html?cat=personality">Personality</a><a
+                            href="tests.html?cat=love">Love</a><a href="tests.html?cat=mental-health">Mental Health</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-col-title">Explore</div>
+                    <div class="footer-links"><a href="articles.html">Articles</a><a href="about.html">About</a><a
+                            href="contact.html">Contact</a></div>
+                </div>
+                <div>
+                    <div class="footer-col-title">Legal</div>
+                    <div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Test Your Mind · SOULCAKEY</span>
+                <div class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a
+                        href="contact.html">Contact</a></div>
+            </div>
+        </div>
+    </footer>
+    <button id="scrollTop" aria-label="Back to top">↑</button>
+
+    <script src="js/data/tests.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        const catMap = { personality: 'Personality', love: 'Love & Relationships', 'mental-health': 'Mental Health', career: 'Career', stress: 'Stress & Burnout', fun: 'Fun & Light' };
+        let activeCat = new URLSearchParams(window.location.search).get('cat') || 'all';
+        let searchQ = '';
+
+        function renderTests() {
+            const grid = document.getElementById('testsGrid');
+            const filtered = TESTS_DATA.filter(t => {
+                const catMatch = activeCat === 'all' || t.category === catMap[activeCat];
+                const searchMatch = !searchQ || t.title.toLowerCase().includes(searchQ) || t.category.toLowerCase().includes(searchQ);
+                return catMatch && searchMatch;
+            });
+            grid.innerHTML = filtered.map(t => buildTestCard(t)).join('');
+            document.getElementById('noResults').style.display = filtered.length ? 'none' : 'block';
+        }
+
+        // Set active filter button
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            if (btn.dataset.cat === activeCat) btn.classList.add('active');
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeCat = btn.dataset.cat;
+                renderTests();
+            });
+        });
+
+        document.getElementById('searchInput').addEventListener('input', e => {
+            searchQ = e.target.value.toLowerCase();
+            renderTests();
+        });
+
+        renderTests();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Test Details — Test Your Mind</title>
+    <meta name="description" id="pageDesc"
+        content="Take this science-backed psychology test and discover meaningful insights about yourself.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .test-detail-hero {
+            padding: calc(var(--header-h) + 40px) 0 48px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .test-detail-breadcrumb {
+            font-size: 0.88rem;
+            color: var(--color-text-muted);
+            margin-bottom: 20px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .test-detail-breadcrumb a {
+            color: var(--color-primary-2);
+        }
+
+        .test-detail-banner {
+            width: 100%;
+            height: 300px;
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            margin-bottom: 32px;
+        }
+
+        .test-detail-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: var(--color-white);
+            margin-bottom: 16px;
+        }
+
+        .prose h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-white);
+            margin: 32px 0 12px;
+        }
+
+        .prose p {
+            color: var(--color-text-muted);
+            line-height: 1.85;
+            margin-bottom: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-orbs"></div>
+
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">🧠</div>Test Your Mind
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a><a href="tests.html" class="active">Tests</a><a
+                    href="articles.html">Articles</a><a href="about.html">About</a>
+                <a href="tests.html" class="nav-cta">Take a Test ✨</a>
+            </div>
+            <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+    <nav class="mobile-nav">
+        <a href="index.html">🏠 Home</a><a href="tests.html">🧪 Tests</a><a href="articles.html">📖 Articles</a><a
+            href="about.html">💡 About</a><a href="contact.html">✉️ Contact</a>
+    </nav>
+
+    <div class="test-detail-hero">
+        <div class="container">
+            <div class="test-detail-breadcrumb">
+                <a href="index.html">Home</a> <span>›</span>
+                <a href="tests.html">Tests</a> <span>›</span>
+                <span id="breadcrumbTitle">Test</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="section" style="padding-top:0">
+        <div class="container">
+            <div class="test-detail-layout" id="detailLayout">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">🧠</div>Test Your Mind
+                    </div>
+                    <p class="footer-brand-desc">Science-backed psychology tests. Always free.</p>
+                </div>
+                <div>
+                    <div class="footer-col-title">Tests</div>
+                    <div class="footer-links"><a href="tests.html?cat=personality">Personality</a><a
+                            href="tests.html?cat=love">Love</a><a href="tests.html?cat=mental-health">Mental Health</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-col-title">Explore</div>
+                    <div class="footer-links"><a href="articles.html">Articles</a><a href="about.html">About</a><a
+                            href="contact.html">Contact</a></div>
+                </div>
+                <div>
+                    <div class="footer-col-title">Legal</div>
+                    <div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2025 Test Your Mind · SOULCAKEY</span>
+                <div class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+    <button id="scrollTop" aria-label="Back to top">↑</button>
+
+    <script src="js/data/tests.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        const id = new URLSearchParams(window.location.search).get('id');
+        const test = TESTS_DATA.find(t => t.slug === id) || TESTS_DATA[0];
+
+        document.title = test.title + ' — Test Your Mind';
+        document.getElementById('pageDesc').content = test.intro ? test.intro.substring(0, 155) : '';
+        document.getElementById('breadcrumbTitle').textContent = test.title;
+
+        const gradients = {
+            rose: 'linear-gradient(135deg, rgba(244,63,94,0.25), rgba(251,113,133,0.12))',
+            purple: 'linear-gradient(135deg, rgba(139,92,246,0.25), rgba(167,139,250,0.12))',
+            teal: 'linear-gradient(135deg, rgba(20,184,166,0.25), rgba(45,212,191,0.12))',
+            blue: 'linear-gradient(135deg, rgba(59,130,246,0.25), rgba(147,197,253,0.12))',
+            gold: 'linear-gradient(135deg, rgba(245,158,11,0.25), rgba(251,191,36,0.12))',
+        };
+        const grad = gradients[test.categoryColor] || gradients.purple;
+
+        const relatedTests = TESTS_DATA.filter(t => t.slug !== test.slug).slice(0, 3);
+
+        document.getElementById('detailLayout').innerHTML = `
+    <div>
+      <div class="test-detail-banner" style="background:${grad}">${test.emoji}</div>
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
+        <span class="badge badge-${test.categoryColor}">${test.category}</span>
+        <span style="font-size:0.85rem;color:var(--color-text-muted)">❓ ${Array.isArray(test.questions) ? test.questions.length : test.questions} Questions</span>
+        <span style="font-size:0.85rem;color:var(--color-text-muted)">⏱ ${test.duration}</span>
+        <span style="font-size:0.85rem;color:var(--color-text-muted)">👥 ${test.participants} taken</span>
+      </div>
+      <h1 class="test-detail-title">${test.title}</h1>
+      <a href="test-play.html?id=${test.slug}" class="btn btn-primary btn-lg" style="margin-bottom:40px">Start Test Now 🚀</a>
+
+      <div class="prose">
+        <h2>About This Test</h2>
+        ${test.intro.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('')}
+
+        <h2>Psychological Background</h2>
+        <p>${test.background}</p>
+
+        <h2>Test Overview</h2>
+        <p>This assessment consists of <strong style="color:var(--color-white)">${Array.isArray(test.questions) ? test.questions.length : test.questions} questions</strong>, each with four carefully constructed options. There are <strong style="color:var(--color-white)">${test.resultTypes} possible result types</strong>, each with a detailed description covering your traits, strengths, real-life patterns, and practical advice. The test takes approximately <strong style="color:var(--color-white)">${test.duration}</strong> to complete.</p>
+        <p>Answer based on how you actually think, feel, and behave — not how you wish you did, or how you think you "should" respond. Honest answers produce the most meaningful results.</p>
+
+        <h2>How to Use Your Results</h2>
+        <p>${test.howToUse}</p>
+      </div>
+
+      <div style="margin-top:40px;padding:32px;border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(139,92,246,0.1),rgba(245,158,11,0.05));border:1px solid rgba(139,92,246,0.25);text-align:center">
+        <div style="font-size:2.5rem;margin-bottom:12px">${test.emoji}</div>
+        <h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--color-white);margin-bottom:8px">Ready to discover your result?</h3>
+        <p style="color:var(--color-text-muted);margin-bottom:20px">Takes ${test.duration} · ${Array.isArray(test.questions) ? test.questions.length : test.questions} questions · Free</p>
+        <a href="test-play.html?id=${test.slug}" class="btn btn-gold btn-lg">Take the Test Now 🎯</a>
+      </div>
+    </div>
+
+    <aside class="test-detail-sidebar">
+      <div class="test-sidebar-card">
+        <div style="font-weight:700;color:var(--color-white);margin-bottom:16px">Test Summary</div>
+        <div class="test-sidebar-stat"><span class="test-sidebar-label">Questions</span><span class="test-sidebar-value">${Array.isArray(test.questions) ? test.questions.length : test.questions}</span></div>
+        <div class="test-sidebar-stat"><span class="test-sidebar-label">Duration</span><span class="test-sidebar-value">${test.duration}</span></div>
+        <div class="test-sidebar-stat"><span class="test-sidebar-label">Result Types</span><span class="test-sidebar-value">${test.resultTypes}</span></div>
+        <div class="test-sidebar-stat"><span class="test-sidebar-label">Category</span><span class="test-sidebar-value">${test.category}</span></div>
+        <div class="test-sidebar-stat"><span class="test-sidebar-label">Taken By</span><span class="test-sidebar-value">${test.participants}</span></div>
+        <a href="test-play.html?id=${test.slug}" class="btn btn-primary btn-block" style="margin-top:20px">Start Test →</a>
+      </div>
+
+      <div class="test-sidebar-card">
+        <div style="font-weight:700;color:var(--color-white);margin-bottom:16px">Related Tests</div>
+        ${relatedTests.map(rt => `
+          <a href="test-detail.html?id=${rt.slug}" class="related-test-item">
+            <div class="related-test-thumb">${rt.emoji}</div>
+            <div>
+              <div class="related-test-title">${rt.title}</div>
+              <div class="related-test-meta">❓ ${Array.isArray(rt.questions) ? rt.questions.length : rt.questions} Qs · ⏱ ${rt.duration}</div>
+            </div>
+          </a>
+        `).join('')}
+      </div>
+    </aside>
+  `;
+    </script>
+</body>
+
+</html>

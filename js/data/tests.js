@@ -1,0 +1,594 @@
+// =============================================
+// TEST YOUR MIND — Sample Test Data
+// SOULCAKEY | 2025
+// =============================================
+
+const TESTS_DATA = [
+    {
+        id: 'attachment-style',
+        slug: 'attachment-style',
+        title: 'What Is Your Attachment Style?',
+        category: 'Love & Relationships',
+        categoryColor: 'rose',
+        emoji: '💞',
+        gradient: 'linear-gradient(135deg, rgba(244,63,94,0.3), rgba(251,113,133,0.15))',
+        participants: '247,382',
+        duration: '5 min',
+        questions: 10,
+        resultTypes: 4,
+        featured: true,
+        intro: `Attachment theory, pioneered by British psychologist John Bowlby and later expanded by Mary Ainsworth through her landmark Strange Situation studies, remains one of the most robust frameworks in modern psychology. Your attachment style is the emotional blueprint that forms in early childhood through repeated interactions with your caregivers, shaping how you relate to others in intimate, platonic, and professional relationships throughout your entire life.
+
+Understanding your attachment style is one of the most powerful steps you can take toward self-awareness and healthier relationships. Research shows that our early bonding experiences wire the brain's social circuitry in lasting ways — influencing how we respond to emotional intimacy, how we handle conflict, our tolerance for vulnerability, and even our physical health in adulthood. People with secure attachment styles consistently report higher relationship satisfaction, better emotional regulation, and greater resilience under stress.
+
+This test is grounded in decades of empirical research and identifies four primary attachment styles: Secure, Anxious-Preoccupied, Dismissive-Avoidant, and Fearful-Avoidant (also known as Disorganized). Each style reflects a unique pattern of thinking, feeling, and behaving in close relationships.
+
+Whether you're working through past relationship patterns, preparing for couples therapy, or simply curious about your emotional landscape, this 10-question assessment offers a meaningful starting point. Take your time with each question and choose the response that resonates most honestly — there are no right or wrong answers.`,
+        background: `Attachment theory has its roots in Bowlby's evolutionary framework: humans are biologically programmed to form close bonds for survival. Ainsworth's four-quadrant model — organized around two dimensions (anxiety about abandonment and avoidance of intimacy) — provides the scientific basis for this test. Later researchers like Philip Shaver and Mario Mikulincer confirmed these patterns persist robustly into adult romantic relationships.`,
+        howToUse: `Once you receive your result, reflect on how this pattern shows up across different relationships in your life — not just romantic ones. Many therapists use attachment knowledge as a foundation for lasting change. Consider discussing your results with a trusted partner or therapist to open a meaningful conversation about needs, triggers, and communication styles.`,
+        questions: [
+            {
+                id: 1,
+                text: 'When someone close to you doesn\'t reply to your message for a few hours, you typically:',
+                options: [
+                    { label: 'A', text: 'Assume they\'re busy and go on with your day without worry.', score: { secure: 3 } },
+                    { label: 'B', text: 'Feel a growing sense of anxiety and check your phone repeatedly.', score: { anxious: 3 } },
+                    { label: 'C', text: 'Shrug it off — you value your independence anyway.', score: { avoidant: 3 } },
+                    { label: 'D', text: 'Start to worry they are upset with you, but then pull away yourself.', score: { fearful: 3 } }
+                ]
+            },
+            {
+                id: 2,
+                text: 'In romantic relationships, emotional intimacy makes you feel:',
+                options: [
+                    { label: 'A', text: 'Comfortable and grounded — it deepens the connection.', score: { secure: 3 } },
+                    { label: 'B', text: 'Excited but often worried it won\'t last.', score: { anxious: 3 } },
+                    { label: 'C', text: 'A little smothered — you prefer more personal space.', score: { avoidant: 3 } },
+                    { label: 'D', text: 'Conflicted — you crave it but simultaneously fear it.', score: { fearful: 3 } }
+                ]
+            },
+            {
+                id: 3,
+                text: 'When you experience conflict with someone you care about, your first instinct is to:',
+                options: [
+                    { label: 'A', text: 'Talk it through calmly when emotions settle.', score: { secure: 3 } },
+                    { label: 'B', text: 'Seek reassurance immediately — the tension feels unbearable.', score: { anxious: 3 } },
+                    { label: 'C', text: 'Give yourself space and process it alone.', score: { avoidant: 3 } },
+                    { label: 'D', text: 'Feel overwhelmed and unsure whether to approach or retreat.', score: { fearful: 3 } }
+                ]
+            },
+            {
+                id: 4,
+                text: 'How do you feel about depending on other people for emotional support?',
+                options: [
+                    { label: 'A', text: 'It feels natural and healthy to lean on others sometimes.', score: { secure: 3 } },
+                    { label: 'B', text: 'You strongly crave support but worry about being "too much."', score: { anxious: 3 } },
+                    { label: 'C', text: 'You prefer to handle things on your own — needing others feels weak.', score: { avoidant: 3 } },
+                    { label: 'D', text: 'You want support but distrust whether others will actually be there.', score: { fearful: 3 } }
+                ]
+            },
+            {
+                id: 5,
+                text: 'If a partner said "I love you" very early in a relationship, you would:',
+                options: [
+                    { label: 'A', text: 'Feel warm and respond genuinely based on your true feelings.', score: { secure: 3 } },
+                    { label: 'B', text: 'Feel elated and reciprocate eagerly.', score: { anxious: 3 } },
+                    { label: 'C', text: 'Feel uncomfortable and need more time.', score: { avoidant: 3 } },
+                    { label: 'D', text: 'Feel a mix of deep longing and intense fear.', score: { fearful: 3 } }
+                ]
+            },
+            {
+                id: 6,
+                text: 'Your closest friendships are generally:',
+                options: [
+                    { label: 'A', text: 'Stable, mutually supportive, and built on trust.', score: { secure: 3 } },
+                    { label: 'B', text: 'Intense — you invest deeply and worry about the friendship often.', score: { anxious: 3 } },
+                    { label: 'C', text: 'Kept at a comfortable distance — you value loyalty but guard privacy.', score: { avoidant: 3 } },
+                    { label: 'D', text: 'Complicated — you want closeness but often sabotage or pull away.', score: { fearful: 3 } }
+                ]
+            },
+            {
+                id: 7,
+                text: 'When you imagine a truly intimate, long-term relationship, you feel:',
+                options: [
+                    { label: 'A', text: 'Optimistic and genuinely excited about the possibility.', score: { secure: 3 } },
+                    { label: 'B', text: 'Hopeful but plagued by fear of abandonment.', score: { anxious: 3 } },
+                    { label: 'C', text: 'Uncertain — relationships always feel like a compromise of freedom.', score: { avoidant: 3 } },
+                    { label: 'D', text: 'Deeply ambivalent — the idea is appealing and terrifying in equal measure.', score: { fearful: 3 } }
+                ]
+            },
+            {
+                id: 8,
+                text: 'After an emotionally vulnerable conversation, you usually:',
+                options: [
+                    { label: 'A', text: 'Feel closer to the other person and relieved.', score: { secure: 3 } },
+                    { label: 'B', text: 'Feel exposed and need frequent reassurance afterward.', score: { anxious: 3 } },
+                    { label: 'C', text: 'Feel awkward — you regret sharing too much and pull back.', score: { avoidant: 3 } },
+                    { label: 'D', text: 'Feel emotionally raw and unsure how to process it.', score: { fearful: 3 } }
+                ]
+            },
+            {
+                id: 9,
+                text: 'When a relationship ends, you typically:',
+                options: [
+                    { label: 'A', text: 'Grieve fully but recover with a sense of self-worth intact.', score: { secure: 3 } },
+                    { label: 'B', text: 'Find it extremely hard to let go and seek reconciliation.', score: { anxious: 3 } },
+                    { label: 'C', text: 'Move on fairly quickly by keeping busy and redirecting attention.', score: { avoidant: 3 } },
+                    { label: 'D', text: 'Experience intense emotional chaos — grief, anger, and numbness alternating.', score: { fearful: 3 } }
+                ]
+            },
+            {
+                id: 10,
+                text: 'Your gut feeling about whether people in your life will stay is generally:',
+                options: [
+                    { label: 'A', text: 'Trusting — most people who care for you will stay.', score: { secure: 3 } },
+                    { label: 'B', text: 'Uncertain — you frequently fear being left or replaced.', score: { anxious: 3 } },
+                    { label: 'C', text: 'Neutral — people come and go and that\'s OK.', score: { avoidant: 3 } },
+                    { label: 'D', text: 'Pessimistic — expecting people to leave is how you protect yourself.', score: { fearful: 3 } }
+                ]
+            }
+        ],
+        results: {
+            secure: {
+                type: 'Secure',
+                title: 'The Secure Connector',
+                emoji: '🌿',
+                color: '#22c55e',
+                traits: ['Emotionally available', 'Trusting', 'Resilient', 'Clear communicator', 'Comfortable with intimacy'],
+                description: `You have developed a secure attachment style — one of the most positive foundations for relationships that psychology has identified. You feel fundamentally worthy of love and confident that others will be there for you, which allows you to form deep, stable, and mutually fulfilling connections without excessive anxiety or avoidance.
+
+People with a secure attachment style like yours are comfortable with emotional intimacy while also maintaining a healthy sense of self. You can express your needs clearly without excessive fear of rejection, and you can meet your partner's needs without losing yourself in the process. When conflicts arise, you approach them as problems to be solved together rather than threats to the relationship itself.
+
+Research consistently shows that securely attached individuals have higher relationship satisfaction, better emotional regulation, and greater resilience under stress. You likely also serve as a stabilizing, reassuring presence for those around you.
+
+In daily life, this means you probably handle separation from loved ones without catastrophizing, feel genuine joy rather than suspicion when things are going well, and recover from setbacks in relationships with your self-worth intact.`,
+                dailyLife: `In practice, your secure style means you can enjoy time alone without feeling abandoned, express disagreement without fearing the relationship will crumble, and receive love without constant anxiety about whether it will last. Partners often describe people like you as grounding and emotionally safe.`,
+                advice: `Continue nurturing your emotional intelligence and modeling healthy relationship dynamics. You naturally offer security to others — consider using that gift consciously in your relationships and community. If a partner has a different attachment style, your stability can be an invaluable resource in building shared security over time.`
+            },
+            anxious: {
+                type: 'Anxious-Preoccupied',
+                title: 'The Compassionate Worrier',
+                emoji: '🌊',
+                color: '#f59e0b',
+                traits: ['Deeply empathetic', 'Passionate', 'Loyal', 'Emotionally aware', 'Highly attentive'],
+                description: `Your results suggest an anxious-preoccupied attachment style, characterized by a deep longing for closeness and a persistent fear that this closeness could be taken away. This pattern typically develops when early caregiving was inconsistent — sometimes warm and present, other times absent or unpredictable — leading your developing mind to conclude that love must be vigilantly monitored and worked for.
+
+The anxious attachment style brings with it remarkable strengths: a capacity for deep empathy, passionate investment in relationships, and a heightened awareness of emotional nuance in others. Many of the world's most emotionally sensitive and perceptive people are anxiously attached.
+
+However, the constant background hum of worry about the relationship — "Are they angry with me? Did I say something wrong? Are they pulling away?" — can be exhausting, both for you and for your partners. Reassurance provides temporary relief but rarely addresses the underlying anxiety.
+
+The encouraging truth is that attachment styles are not fixed destinies. Through therapy (especially attachment-focused or Emotionally Focused Therapy), mindfulness practices, and honest communication in relationships, many people with anxious attachment develop what researchers call "earned security" — the ability to feel consistently safe in relationships despite early experiences.`,
+                dailyLife: `Day to day, you may find yourself overanalyzing messages, seeking reassurance frequently, or feeling disproportionately distressed when plans change or a friend seems distant. These are all expressions of a nervous system that learned to be hypervigilant about connection.`,
+                advice: `Practice noticing when anxiety is speaking versus when there is genuine cause for concern. Developing self-soothing strategies — journaling, mindfulness, physical movement — can reduce your reliance on external validation. Therapy with a skilled attachment-informed therapist can be transformative.`
+            },
+            avoidant: {
+                type: 'Dismissive-Avoidant',
+                title: 'The Independent Spirit',
+                emoji: '🏔️',
+                color: '#06b6d4',
+                traits: ['Self-reliant', 'Calm under pressure', 'Independent', 'Logical', 'Consistent'],
+                description: `Your results point to a dismissive-avoidant attachment style. This pattern typically develops when expressing emotional needs in childhood was met with dismissal, irritation, or emotional unavailability from caregivers. As an adaptive response, you learned to minimize reliance on others and build a strong sense of self-sufficiency — and this has served you in many ways.
+
+Dismissive-avoidant individuals are often highly capable, self-reliant, and emotionally regulated under pressure. They bring consistency and practicality to their relationships and rarely act in emotionally reactive ways. In professional settings, these qualities can be tremendous assets.
+
+In close relationships, however, the avoidant style can create distance that partners find painful. When others seek emotional connection or support, your instinct may be to pull back, intellectualize feelings, or redirect to practical solutions. This isn't because you don't care — beneath the surface, avoidants often have deep feelings they struggle to access or express.
+
+The core work for dismissive-avoidant individuals involves softening the defensive structure around emotional vulnerability. This means gradually allowing yourself to need others and tolerating the discomfort that comes with emotional intimacy, rather than retreating into self-sufficiency as a default.`,
+                dailyLife: `You may feel a sense of relief when spending time alone, emotional overwhelm when partners want more closeness, and a pattern of distancing behaviors when relationships intensify. You likely value independence highly and may judge emotional expressiveness in others as neediness.`,
+                advice: `Begin by noticing the physical sensations that arise when someone expresses a need for closeness. Rather than immediately creating distance, practice pausing and asking yourself what is happening internally. For partners: learning to communicate needs indirectly and allowing space paradoxically often helps avoidant partners move closer.`
+            },
+            fearful: {
+                type: 'Fearful-Avoidant',
+                title: 'The Brave Paradox',
+                emoji: '🦋',
+                color: '#a78bfa',
+                traits: ['Deeply perceptive', 'Complex', 'Intensely creative', 'Empathetic', 'Growth-oriented'],
+                description: `Your results suggest a fearful-avoidant (disorganized) attachment style — the most complex of the four patterns. This style develops when the primary caregiver was simultaneously the source of comfort and fear, creating an impossible bind: the very person needed for safety was also a source of threat or unpredictability.
+
+The result is a deep, unresolved conflict between the longing for intimacy and the fear of it. You may find yourself simultaneously craving closeness and pushing people away, sometimes within the same relationship. This push-pull dynamic can be confusing to partners and exhausting to live with internally.
+
+Despite its challenges, the fearful-avoidant pattern often coexists with remarkable emotional depth, creativity, empathy, and resilience. Many people with this style have overcome significant adversity and developed a nuanced, compassionate understanding of human complexity.
+
+Healing from disorganized attachment is absolutely possible, but it typically requires professional support — specifically trauma-informed therapy approaches such as EMDR, somatic therapy, or Internal Family Systems (IFS). The goal is not to eliminate your complexity but to integrate it into a coherent, stable sense of self.`,
+                dailyLife: `You may find yourself attracted to intense relationships that quickly become overwhelming, engaging in self-sabotage when things are going well, or oscillating between emotional flood and shutdown. Trust is both desperately craved and enormously difficult to extend.`,
+                advice: `Recognize that your patterns make complete sense given their origins — this is an adaptive response, not a character flaw. Seek a trauma-informed therapist you feel genuinely safe with. Work on building your internal sense of safety and self-compassion before focusing on changing relationship patterns.`
+            }
+        }
+    },
+    {
+        id: 'big-five-personality',
+        slug: 'big-five-personality',
+        title: 'Discover Your Big Five Personality Profile',
+        category: 'Personality',
+        categoryColor: 'purple',
+        emoji: '🌟',
+        gradient: 'linear-gradient(135deg, rgba(139,92,246,0.3), rgba(167,139,250,0.15))',
+        participants: '512,941',
+        duration: '6 min',
+        questions: 10,
+        resultTypes: 4,
+        featured: true,
+        intro: `The Big Five personality model — also known as the Five-Factor Model (FFM) — is the gold standard of personality science, developed and refined over decades by researchers including Lewis Goldberg, Paul Costa, and Robert McCrae. Unlike popular typology systems with fixed categories, the Big Five measures five continuous dimensions of personality: Openness to Experience, Conscientiousness, Extraversion, Agreeableness, and Neuroticism (often remembered by the acronym OCEAN).
+
+This framework is used by leading research institutions, corporate psychologists, and clinical therapists worldwide precisely because it is both scientifically validated and practically meaningful. Whether you're exploring career fit, understanding interpersonal dynamics, or deepening self-awareness for personal growth, your Big Five profile provides a nuanced, evidence-based portrait of how you think, feel, and engage with the world.
+
+This shortened 10-question assessment will give you a profile across the five dimensions and identify your most dominant personality cluster. For the most accurate results, respond based on how you actually behave — not how you wish you behaved or how you think others see you.
+
+Remember: there is no "best" personality profile. Each combination of traits carries distinct strengths and challenges, and understanding yours is the first step toward working with your natural tendencies rather than against them.`,
+        background: `The Big Five emerged from lexical hypothesis research — the idea that all the important ways humans differ from one another are encoded in language. Decades of cross-cultural research across 50+ countries have confirmed the model's robustness. It predicts job performance, relationship satisfaction, mental health outcomes, and even physical health markers.`,
+        howToUse: `Use your results to identify which environments and roles naturally energize you, and which require conscious energy management. Share your profile with close ones to improve mutual understanding. Many career coaches and therapists incorporate Big Five results into their practice as a starting framework.`,
+        questions: [
+            {
+                id: 1,
+                text: 'When approaching a new project or challenge, you tend to:',
+                options: [
+                    { label: 'A', text: 'Brainstorm wildly creative solutions and enjoy experimenting.', score: { open: 3 } },
+                    { label: 'B', text: 'Make a detailed plan and execute it systematically.', score: { conscientious: 3 } },
+                    { label: 'C', text: 'Talk it through with others and gain energy from collaboration.', score: { extraverted: 3 } },
+                    { label: 'D', text: 'Research carefully and consider all potential risks first.', score: { neurotic: 3 } }
+                ]
+            },
+            {
+                id: 2,
+                text: 'At a social gathering, you are most likely to:',
+                options: [
+                    { label: 'A', text: 'Talk to many different people and feel energized by the crowd.', score: { extraverted: 3 } },
+                    { label: 'B', text: 'Find a quiet corner for a few deep conversations.', score: { open: 2, agreeable: 1 } },
+                    { label: 'C', text: 'Help organize things or make sure everyone is comfortable.', score: { agreeable: 2, conscientious: 1 } },
+                    { label: 'D', text: 'Feel drained and need time to recover afterward.', score: { neurotic: 2 } }
+                ]
+            },
+            {
+                id: 3,
+                text: 'Your workspace or living space is usually:',
+                options: [
+                    { label: 'A', text: 'Organized and clean — mess genuinely stresses you out.', score: { conscientious: 3 } },
+                    { label: 'B', text: 'A creative organized chaos that only makes sense to you.', score: { open: 3 } },
+                    { label: 'C', text: 'Warm and social — full of personal items and decorations.', score: { agreeable: 2, extraverted: 1 } },
+                    { label: 'D', text: 'Varies wildly depending on your current mood.', score: { neurotic: 3 } }
+                ]
+            },
+            {
+                id: 4,
+                text: 'When a friend shares a problem, your instinct is to:',
+                options: [
+                    { label: 'A', text: 'Empathize fully and validate their feelings first.', score: { agreeable: 3 } },
+                    { label: 'B', text: 'Analyze the situation and suggest practical solutions.', score: { conscientious: 2, open: 1 } },
+                    { label: 'C', text: 'Explore creative or unconventional approaches together.', score: { open: 3 } },
+                    { label: 'D', text: 'Feel their emotions intensely alongside them.', score: { neurotic: 2, agreeable: 1 } }
+                ]
+            },
+            {
+                id: 5,
+                text: 'You are most fulfilled when:',
+                options: [
+                    { label: 'A', text: 'Completing a difficult task exactly as planned.', score: { conscientious: 3 } },
+                    { label: 'B', text: 'Exploring new ideas, art, or experiences.', score: { open: 3 } },
+                    { label: 'C', text: 'Connecting deeply with people who matter to you.', score: { agreeable: 2, extraverted: 1 } },
+                    { label: 'D', text: 'Being recognized and appreciated by your community.', score: { extraverted: 3 } }
+                ]
+            },
+            {
+                id: 6,
+                text: 'When you make a mistake, you typically:',
+                options: [
+                    { label: 'A', text: 'Analyze what went wrong, adjust, and move forward efficiently.', score: { conscientious: 3 } },
+                    { label: 'B', text: 'Reflect deeply on it and may ruminate for some time.', score: { neurotic: 3 } },
+                    { label: 'C', text: 'Talk it through with someone close to process the experience.', score: { agreeable: 2, extraverted: 1 } },
+                    { label: 'D', text: 'See it as an interesting learning opportunity.', score: { open: 3 } }
+                ]
+            },
+            {
+                id: 7,
+                text: 'In decision-making, you rely most heavily on:',
+                options: [
+                    { label: 'A', text: 'Gut instinct and creative intuition.', score: { open: 3 } },
+                    { label: 'B', text: 'Logical analysis and systematic evidence.', score: { conscientious: 3 } },
+                    { label: 'C', text: 'How the decision affects the people involved.', score: { agreeable: 3 } },
+                    { label: 'D', text: 'How you feel in the moment, which can change.', score: { neurotic: 2, open: 1 } }
+                ]
+            },
+            {
+                id: 8,
+                text: 'Your idea of a perfect weekend is:',
+                options: [
+                    { label: 'A', text: 'A busy social calendar full of events and people.', score: { extraverted: 3 } },
+                    { label: 'B', text: 'A deep dive into a fascinating book, documentary, or creative project.', score: { open: 3 } },
+                    { label: 'C', text: 'Ticking off your to-do list and feeling productive.', score: { conscientious: 3 } },
+                    { label: 'D', text: 'Quiet time with a few close people, no agenda.', score: { agreeable: 2, neurotic: 1 } }
+                ]
+            },
+            {
+                id: 9,
+                text: 'People who know you well would most likely describe you as:',
+                options: [
+                    { label: 'A', text: 'Warm, generous, and deeply considerate.', score: { agreeable: 3 } },
+                    { label: 'B', text: 'Reliable, disciplined, and high-achieving.', score: { conscientious: 3 } },
+                    { label: 'C', text: 'Creative, curious, and full of surprising ideas.', score: { open: 3 } },
+                    { label: 'D', text: 'Energetic, sociable, and the life of the room.', score: { extraverted: 3 } }
+                ]
+            },
+            {
+                id: 10,
+                text: 'When life feels uncertain or unpredictable, you:',
+                options: [
+                    { label: 'A', text: 'Stay calm and focus on what you can control.', score: { conscientious: 2, open: 1 } },
+                    { label: 'B', text: 'Feel anxious and need reassurance or extra support.', score: { neurotic: 3 } },
+                    { label: 'C', text: 'See it as an adventure and embrace the unknown.', score: { open: 3, extraverted: 1 } },
+                    { label: 'D', text: 'Focus on supporting others around you through the uncertainty.', score: { agreeable: 3 } }
+                ]
+            }
+        ],
+        results: {
+            open: {
+                type: 'Open Explorer',
+                title: 'The Open Explorer',
+                emoji: '🔭',
+                color: '#a78bfa',
+                traits: ['Highly creative', 'Intellectually curious', 'Imaginative', 'Open-minded', 'Aesthetically sensitive'],
+                description: `Your dominant trait is Openness to Experience — the dimension that captures intellectual curiosity, creativity, appreciation for beauty, and a preference for novelty over routine. You score high in a trait that correlates strongly with creative achievement, philosophical depth, and unconventional thinking.
+
+Open individuals like you thrive in environments that allow exploration, experimentation, and the free pursuit of ideas. You are likely drawn to art, music, literature, philosophy, science, or any domain where imagination and original thinking are valued. You see connections others miss, and you often experience the world with a richness and depth that can be both a gift and a burden.
+
+Research links high openness to greater creativity, broader empathy, and enhanced ability to cope with ambiguity — all increasingly valuable qualities in today's complex world. However, very high openness can sometimes make it difficult to finish projects (because new ideas keep arriving), maintain routines, or relate to more practically-minded people.
+
+Understanding your Open Explorer profile can help you deliberately choose environments and collaborators that complement your natural style: detail-oriented partners who help ground your visions, and structured systems that channel your creativity productively.`,
+                dailyLife: `You are likely the person who can't walk past a bookstore, who gets absorbed in Wikipedia rabbit holes at midnight, who makes connections between completely unrelated fields. Routine can feel suffocating; you may frequently reinvent your environment, hobbies, or ways of working.`,
+                advice: `Harness your curiosity by committing to finishing projects before starting new ones. Pair with high-Conscientiousness collaborators for maximum impact. Your creativity is a genuine asset — build structures that protect and channel it rather than leaving it entirely undisciplined.`
+            },
+            conscientious: {
+                type: 'Conscientiousness Champion',
+                title: 'The Conscientiousness Champion',
+                emoji: '⚙️',
+                color: '#22c55e',
+                traits: ['Organized', 'Goal-driven', 'Reliable', 'Self-disciplined', 'Detail-oriented'],
+                description: `Your strongest dimension is Conscientiousness — the personality trait most consistently linked to professional success, academic achievement, health outcomes, and relationship longevity. You are organized, disciplined, goal-directed, and deeply reliable. When you commit to something, you follow through.
+
+Highly conscientious individuals like you are the people organizations depend on. You set high standards for yourself and others, plan carefully, and execute systematically. Research by the American Psychological Association identifies Conscientiousness as the single strongest personality predictor of career success across virtually all fields.
+
+Your self-regulation is remarkable: you resist short-term temptations in service of long-term goals. You maintain systems and habits that compound over time. You handle responsibility with genuine competence and take pride in quality work done well.
+
+The flip side is that extremely high Conscientiousness can tip into perfectionism, rigid thinking, or difficulty with spontaneity and play. You may struggle when others don't share your standards, or when circumstances require flexibility rather than structure.`,
+                dailyLife: `Your calendar is probably color-coded. You arrive early. You finish what you start. When others procrastinate, you're already reviewing your work. This reliability makes you invaluable — and sometimes means others take advantage of your dependability.`,
+                advice: `Practice deliberate spontaneity: schedule downtime with no agenda and practice letting it be enough. Celebrate completion rather than immediately raising the standard for next time. Allow yourself and others to be "good enough" in lower-stakes situations.`
+            },
+            extraverted: {
+                type: 'Radiant Extravert',
+                title: 'The Radiant Extravert',
+                emoji: '☀️',
+                color: '#f59e0b',
+                traits: ['Socially energized', 'Enthusiastic', 'Assertive', 'Expressive', 'Optimistic'],
+                description: `Your profile scores highest on Extraversion — the dimension that captures social energy, positive emotionality, assertiveness, and enthusiasm. You gain energy from engaging with people, and you bring a natural warmth and dynamism that makes social environments come alive.
+
+Extraverts are typically strong communicators, effective leaders, and natural networkers. Your outward orientation means you are often the catalyst who brings people together, advocates for bold decisions, and keeps group energy high. Research by psychologist Brian Little shows that extraverts consistently report higher levels of positive emotion and subjective wellbeing in social environments.
+
+You are likely at your best in roles that involve collaboration, leadership, communication, or public engagement. Solo, isolated work over extended periods may deplete you in ways that introverted colleagues don't experience.
+
+It's worth noting that Extraversion exists on a continuum. Very high scorers sometimes struggle with solitude, may make decisions before fully reflecting, or can come across as dominating in quieter group dynamics. Developing your capacity for reflection and active listening can round out your natural strengths.`,
+                dailyLife: `You probably hate silent car rides, think out loud when solving problems, and feel genuinely recharged after a good dinner with friends. Working from home in isolation likely feels distinctly less enjoyable than an active office environment.`,
+                advice: `Build in regular solo reflection time to balance your social orientation. Practice asking more questions in conversations to develop listening depth. Seek leadership roles that leverage your natural enthusiasm while creating intentional space for more introverted voices.`
+            },
+            agreeable: {
+                type: 'Compassionate Connector',
+                title: 'The Compassionate Connector',
+                emoji: '🤝',
+                color: '#2dd4bf',
+                traits: ['Deeply empathetic', 'Cooperative', 'Trustworthy', 'Conflict-averse', 'Nurturing'],
+                description: `Your highest dimension is Agreeableness — the trait that captures warmth, empathy, cooperation, and care for others. You are genuinely altruistic, attuned to others' emotional states, and deeply committed to harmony in your relationships and communities.
+
+High-agreeableness individuals like you make exceptional caregivers, counselors, mediators, and collaborative partners. Research shows that Agreeableness predicts prosocial behavior, relationship satisfaction, and team cohesion. Your natural empathy helps you understand perspectives very different from your own, and your cooperative spirit makes you someone people turn to during difficult times.
+
+In a world that increasingly values empathy and emotional intelligence, your Agreeableness is a profound strength. However, very high agreeableness can come with real costs: difficulty asserting your own needs, tendency to avoid necessary conflict, susceptibility to people-pleasing, and vulnerability to exploitation by those with lower agreeableness.
+
+Learning to balance your natural giving orientation with appropriate self-assertion is not about becoming less caring — it's about ensuring the warmth you offer is sustainable and reciprocal.`,
+                dailyLife: `You likely find it physically uncomfortable to disappoint people, often put others' needs before your own, and feel genuine pain when witnessing conflict or distress. You may have trouble saying no even when you're overextended.`,
+                advice: `Practice distinguishing between helpfulness that nourishes you and self-sacrifice that depletes you. Work on direct communication of your needs — it's not unkind to have boundaries. Therapy or assertiveness training can help integrate genuine care with healthy self-advocacy.`
+            },
+            neurotic: {
+                type: 'Sensitive Depth-Finder',
+                title: 'The Sensitive Depth-Finder',
+                emoji: '🌊',
+                color: '#fb7185',
+                traits: ['Emotionally intense', 'Perceptive', 'Deeply empathetic', 'Self-reflective', 'Passionate'],
+                description: `Your results indicate higher scores on Neuroticism (also called Emotional Reactivity or Negative Emotionality) — the dimension that measures sensitivity to stress, tendency to experience negative emotions more vividly, and emotional volatility. Rather than viewing this as a flaw, it's important to understand the extraordinary gift embedded within emotional sensitivity.
+
+High neuroticism correlates with heightened threat detection, deep empathy, artistic sensitivity, philosophical depth, and a rich inner emotional life. Many of history's most transformative artists, writers, musicians, and thinkers scored high on this dimension. The very sensitivity that makes life feel intense also makes you unusually attuned to beauty, injustice, complexity, and the full spectrum of human experience.
+
+The challenge, of course, is that this amplified emotional experience can be exhausting. Rumination, anxiety, and difficulty "switching off" are common. Stress affects you more deeply than it affects lower-neuroticism individuals, and recovery takes longer.
+
+The goal is not to eliminate your sensitivity — that would mean losing your greatest gift — but to build emotional regulation skills that allow you to work with your intensity rather than being swept away by it.`,
+                dailyLife: `You may replay conversations long after they've ended, feel emotions physically (tension, fatigue, butterflies), and find certain environments — loud, chaotic, or emotionally charged — genuinely overwhelming in ways others don't understand.`,
+                advice: `Invest in emotional regulation practices: mindfulness, journaling, somatic bodywork, or therapy. Design your environment and lifestyle to minimize unnecessary stressors. Honor your sensitivity as the source of your empathy and creativity, not a deficiency to overcome.`
+            }
+        }
+    },
+    {
+        id: 'stress-level',
+        slug: 'stress-level',
+        title: 'What Is Your Current Stress Level?',
+        category: 'Mental Health',
+        categoryColor: 'teal',
+        emoji: '🧘',
+        gradient: 'linear-gradient(135deg, rgba(20,184,166,0.3), rgba(45,212,191,0.15))',
+        participants: '189,654',
+        duration: '4 min',
+        questions: 10,
+        resultTypes: 4,
+        featured: false,
+        intro: `Stress is not merely an unpleasant feeling — it is a complex physiological and psychological response that, when chronic, affects virtually every system in the human body. The American Psychological Association reports that over 75% of adults experience physical symptoms of stress regularly, yet most people dramatically underestimate their actual stress load because chronic stress becomes normalized over time.
+
+This assessment is designed to help you accurately gauge your current stress level by examining key indicators across multiple domains: physical symptoms, emotional state, cognitive functioning, behavioral patterns, and social engagement. By measuring stress across these dimensions rather than relying on a single "how stressed are you?" question, this test provides a more accurate picture of your total stress burden.
+
+Understanding your stress level is not about categorizing you or causing alarm — it is about awareness. You cannot effectively manage something you don't clearly see. Whether the results confirm what you already suspected or reveal something surprising, the information is powerful precisely because it gives you something concrete to work with.
+
+Inspired by established clinical tools including the Perceived Stress Scale (PSS) developed by Sheldon Cohen at Carnegie Mellon University, this test will give you a snapshot of your current experience and practical guidance for each level.`,
+        background: `Modern stress research distinguishes between acute stress (short-term, adaptive) and chronic stress (sustained, damaging). The HPA axis (hypothalamic-pituitary-adrenal axis) is the primary stress response system. When chronically activated, it elevates cortisol in ways that damage the immune system, cardiovascular system, memory consolidation, and mental health.`,
+        howToUse: `Use your results as a starting point for an honest conversation with yourself — or a healthcare provider — about what your body and mind need right now. Stress levels can fluctuate significantly, so consider retaking this test periodically, especially during life transitions.`,
+        questions: [
+            {
+                id: 1,
+                text: 'How often have you felt overwhelmed or unable to cope with everything on your plate recently?',
+                options: [
+                    { label: 'A', text: 'Rarely — I feel generally in control of my life.', score: { low: 3 } },
+                    { label: 'B', text: 'Occasionally, but I bounce back quickly.', score: { mild: 3 } },
+                    { label: 'C', text: 'Frequently — most days feel like too much.', score: { high: 3 } },
+                    { label: 'D', text: 'Almost constantly — I\'m in survival mode.', score: { severe: 3 } }
+                ]
+            },
+            {
+                id: 2,
+                text: 'Your sleep over the past two weeks has been:',
+                options: [
+                    { label: 'A', text: 'Consistently restful and refreshing.', score: { low: 3 } },
+                    { label: 'B', text: 'Mostly fine with occasional restless nights.', score: { mild: 3 } },
+                    { label: 'C', text: 'Disrupted — difficulty falling or staying asleep several nights a week.', score: { high: 3 } },
+                    { label: 'D', text: 'Either chronically insufficient or you sleep too much and still wake exhausted.', score: { severe: 3 } }
+                ]
+            },
+            {
+                id: 3,
+                text: 'In terms of concentration and mental clarity, lately you:',
+                options: [
+                    { label: 'A', text: 'Think clearly and focus well on tasks.', score: { low: 3 } },
+                    { label: 'B', text: 'Notice occasional brain fog or distractibility.', score: { mild: 3 } },
+                    { label: 'C', text: 'Struggle to focus and frequently lose your train of thought.', score: { high: 3 } },
+                    { label: 'D', text: 'Feel mentally scattered, forgetful, and unable to process information well.', score: { severe: 3 } }
+                ]
+            },
+            {
+                id: 4,
+                text: 'Your physical body has been experiencing:',
+                options: [
+                    { label: 'A', text: 'No notable physical tension or stress-related symptoms.', score: { low: 3 } },
+                    { label: 'B', text: 'Occasional tension headaches or tight shoulders.', score: { mild: 3 } },
+                    { label: 'C', text: 'Regular physical symptoms: headaches, muscle tension, digestive issues, or fatigue.', score: { high: 3 } },
+                    { label: 'D', text: 'Chronic physical symptoms across multiple areas of your body.', score: { severe: 3 } }
+                ]
+            },
+            {
+                id: 5,
+                text: 'Your emotional state over the past month has generally felt:',
+                options: [
+                    { label: 'A', text: 'Stable and predominantly positive.', score: { low: 3 } },
+                    { label: 'B', text: 'Mostly fine with noticeable dips in mood.', score: { mild: 3 } },
+                    { label: 'C', text: 'Frequently irritable, anxious, or emotionally flat.', score: { high: 3 } },
+                    { label: 'D', text: 'Emotionally exhausted, numb, or overwhelmed much of the time.', score: { severe: 3 } }
+                ]
+            },
+            {
+                id: 6,
+                text: 'When it comes to activities that used to bring you joy:',
+                options: [
+                    { label: 'A', text: 'You still enjoy them regularly and they genuinely restore you.', score: { low: 3 } },
+                    { label: 'B', text: 'You engage with them but sometimes it takes effort to get started.', score: { mild: 3 } },
+                    { label: 'C', text: 'You\'ve been doing them less and they don\'t feel as rewarding.', score: { high: 3 } },
+                    { label: 'D', text: 'They\'ve largely disappeared from your life — you lack the energy or motivation.', score: { severe: 3 } }
+                ]
+            },
+            {
+                id: 7,
+                text: 'Your appetite and eating habits recently:',
+                options: [
+                    { label: 'A', text: 'Are stable and healthy — eating regularly and mindfully.', score: { low: 3 } },
+                    { label: 'B', text: 'Are slightly off — skipping meals or occasional stress eating.', score: { mild: 3 } },
+                    { label: 'C', text: 'Have changed noticeably — significantly more or less than usual.', score: { high: 3 } },
+                    { label: 'D', text: 'Are significantly disrupted — you\'re rarely hungry or eating compulsively.', score: { severe: 3 } }
+                ]
+            },
+            {
+                id: 8,
+                text: 'Your relationships and social life have been:',
+                options: [
+                    { label: 'A', text: 'Nourishing and engaging — you genuinely enjoy connecting.', score: { low: 3 } },
+                    { label: 'B', text: 'Mostly positive but you\'ve been slightly more withdrawn.', score: { mild: 3 } },
+                    { label: 'C', text: 'A source of tension or something you\'ve been avoiding.', score: { high: 3 } },
+                    { label: 'D', text: 'Significantly strained or you\'ve largely isolated yourself.', score: { severe: 3 } }
+                ]
+            },
+            {
+                id: 9,
+                text: 'When you think about the future, you mainly feel:',
+                options: [
+                    { label: 'A', text: 'Optimistic and engaged with your goals.', score: { low: 3 } },
+                    { label: 'B', text: 'Cautiously hopeful but aware of uncertainties.', score: { mild: 3 } },
+                    { label: 'C', text: 'Anxious or overwhelmed by what\'s ahead.', score: { high: 3 } },
+                    { label: 'D', text: 'Hopeless, dreading, or emotionally disconnected from the future.', score: { severe: 3 } }
+                ]
+            },
+            {
+                id: 10,
+                text: 'Your ability to relax and decompress outside of work or responsibilities:',
+                options: [
+                    { label: 'A', text: 'Is generally good — you can genuinely switch off and recharge.', score: { low: 3 } },
+                    { label: 'B', text: 'Takes time but you usually get there.', score: { mild: 3 } },
+                    { label: 'C', text: 'Is difficult — you stay "on" even when you should be resting.', score: { high: 3 } },
+                    { label: 'D', text: 'Feels nearly impossible — you don\'t remember the last time you truly relaxed.', score: { severe: 3 } }
+                ]
+            }
+        ],
+        results: {
+            low: {
+                type: 'Balanced & Thriving',
+                title: 'Balanced & Thriving',
+                emoji: '🌱',
+                color: '#22c55e',
+                traits: ['Well-regulated', 'Resilient', 'Present', 'Energized', 'Emotionally stable'],
+                description: `Your results suggest a low overall stress level — you are currently in a state of genuine psychological balance and resilience. This is a meaningful and worth-noting achievement in today's high-demand world. Research by the American Institute of Stress confirms that only a minority of adults consistently maintain this level of stress equilibrium.
+
+At this level, your nervous system is operating in what researchers call the "optimal arousal zone" — alert, engaged, and capable without being overwhelmed. Your cortisol levels are likely well-regulated, your immune system is functioning effectively, and your brain's prefrontal cortex (responsible for complex thinking, emotional regulation, and decision-making) is working at its best.
+
+Low stress doesn't mean absence of challenge — it means you have developed effective ways of meeting life's demands without exceeding your capacity. Whether through intentional lifestyle choices, strong social support, effective coping strategies, or a season of relative stability, your current state is something to both appreciate and protect.`,
+                dailyLife: `You likely sleep well, feel genuine enthusiasm for your activities, maintain meaningful relationships, and can face challenges without excessive dread. Problems feel solvable rather than overwhelming.`,
+                advice: `Continue honoring the habits and conditions that support your wellbeing. Consider formally identifying what contributes most to your balance so you can protect these elements proactively during busier seasons. This is an ideal time to build resilience practices that will serve you during inevitable periods of higher demand.`
+            },
+            mild: {
+                type: 'Mild Stress',
+                title: 'Navigating Mild Stress',
+                emoji: '🌤️',
+                color: '#f59e0b',
+                traits: ['Functional', 'Aware', 'Adaptable', 'Occasionally strained', 'Seeking balance'],
+                description: `Your results show mild to moderate stress — a very common and manageable state, but one that deserves attention before it escalates. You are functioning well in most areas of life, but you're noticing the friction: occasional sleep disruption, some difficulty fully relaxing, a tendency to feel slightly overwhelmed during busy periods.
+
+This level of stress is what researchers sometimes call "yellow zone" stress — not acute enough to trigger crisis but sustained enough to gradually erode wellbeing if left unaddressed. The insidious thing about mild chronic stress is that it normalizes so quickly. Many people spend years in this zone, assuming it's simply "adult life," without realizing how much better they could feel.
+
+The positive news: at this level, relatively modest interventions create significant improvements. You haven't yet crossed into the territory where stress has structurally impaired your regulation systems. Your body and mind are sending early warning signals that are worth heeding.`,
+                dailyLife: `You can get through your days competently and even enjoyably, but there's an undercurrent of tension that rarely fully releases. Weekends may not feel quite restful enough. You may be a bit more reactive or short-fused than your usual self.`,
+                advice: `Audit your current life for one or two significant stressors you've been accepting as fixed — they may not be. Prioritize sleep quality specifically (not just quantity). Introduce 15-20 minutes of genuine movement daily. Consider a simple weekly review of stressors versus recovery activities to consciously balance them.`
+            },
+            high: {
+                type: 'High Stress',
+                title: 'High Stress Alert',
+                emoji: '⚡',
+                color: '#f97316',
+                traits: ['Overloaded', 'Depleted', 'Hypervigilant', 'Strained', 'Needing support'],
+                description: `Your results indicate high stress — a level that is significantly impacting your daily functioning, physical health, and emotional wellbeing. This is not a minor inconvenience; chronic high stress at this level has measurable consequences documented by decades of medical and psychological research.
+
+When stress is sustained at this intensity, elevated cortisol and inflammatory markers actively harm the body: weakening immune function (making you more susceptible to illness), disrupting memory consolidation (affecting both short and long-term recall), destabilizing mood regulation, and accelerating cellular aging. The World Health Organization has categorized chronic stress as a global epidemic for good reason.
+
+This is not meant to alarm you — it is meant to motivate meaningful action. Many people function at high-stress levels for extended periods because they have no choice, or because they don't realize how much it's costing them. Recognizing the true picture is the critical first step.
+
+You need — and deserve — real relief, not just surface-level coping strategies. This requires more than bubble baths and breathing exercises. At this level, structural changes to your workload, lifestyle, relationships, or professional support are warranted.`,
+                dailyLife: `Most days feel like an endurance test. Relaxation feels like something you vaguely remember. You may be short-tempered, forgetful, and struggling to experience genuine joy even during moments that "should" feel good.`,
+                advice: `This is a meaningful threshold: please speak with a healthcare provider or mental health professional about your stress burden. Identify one significant stressor you can reduce or eliminate this week, not manage — eliminate. Lean into your social support network. Make sleep a non-negotiable priority. Consider stress leave if your work or circumstances allow it.`
+            },
+            severe: {
+                type: 'Severe Stress',
+                title: 'Severe Stress — You Need Support',
+                emoji: '🆘',
+                color: '#ef4444',
+                traits: ['Crisis-level depletion', 'Burnout symptoms', 'Urgent need for support', 'Disconnected', 'Overwhelmed'],
+                description: `Your results suggest severe stress — a level that indicates your system has been under significant strain, very likely for an extended period. This is the territory that clinical psychologists and physicians recognize as burnout, acute stress disorder, or the precursor to serious mental and physical health consequences.
+
+At this level, the neurological and physiological effects of chronic extreme stress are significant: your hippocampus (memory center) shows reduced functioning, your prefrontal cortex (decision-making) is literally less effective, your immune system is compromised, and your nervous system has likely shifted into a state of chronic dysregulation — either hyperarousal (anxiety, reactivity) or hypoarousal (numbness, flatness, dissociation).
+
+This result is not a judgment — it is recognition of something real and serious that you may have been carrying largely alone. The human nervous system was not designed to sustain this level of activation indefinitely, and that's not a weakness; it's basic biology.
+
+You are not broken. You are depleted. There is an important difference. And depleted systems can heal — but they need rest, support, and often professional guidance to do so.`,
+                dailyLife: `Daily existence may feel like moving through fog or constantly fighting a current. You may feel emotionally numb, disconnected from yourself and others, unable to remember what normal felt like. Basic tasks may feel monumental.`,
+                advice: `Please reach out to a mental health professional as soon as possible — not eventually, now. If your stress is connected to your workplace, look into your organization's Employee Assistance Program (EAP) for immediate counseling access. Communicate your state honestly to one trusted person in your life. Minimize additional stressors and obligations wherever possible. You cannot pour from an empty cup — recovery must be the priority.`
+            }
+        }
+    }
+];
+
+if (typeof module !== 'undefined') module.exports = TESTS_DATA;
