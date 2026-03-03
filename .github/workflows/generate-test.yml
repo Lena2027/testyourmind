@@ -1,0 +1,95 @@
+name: 🧠 Generate New Psychology Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: '테스트 주제 (예: leadership style, emotional intelligence, love language...)'
+        required: true
+        type: string
+      category_hint:
+        description: '카테고리 힌트 (선택사항)'
+        required: false
+        type: choice
+        default: 'auto'
+        options:
+          - auto
+          - Personality
+          - Love & Relationships
+          - Mental Health
+          - Career
+          - Stress & Burnout
+          - Fun & Light
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  generate-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: ✅ Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Install dependencies
+        run: |
+          pip install anthropic
+
+      - name: 🧠 Generate test with Claude AI
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "📝 Topic: ${{ github.event.inputs.topic }}"
+          python scripts/generate_test.py "${{ github.event.inputs.topic }}"
+
+      - name: 🔍 Verify tests.js was updated
+        run: |
+          echo "=== Top of tests.js ==="
+          head -60 js/data/tests.js
+          echo "========================"
+
+      - name: 📝 Commit updated tests.js
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add js/data/tests.js
+          git diff --cached --stat
+          git commit -m "✨ Auto-generate test: ${{ github.event.inputs.topic }}" || echo "Nothing to commit"
+
+      - name: 🚀 Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+
+      - name: 📄 Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: 📦 Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: 🌐 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: 🎉 Done!
+        run: |
+          echo "✅ Test for '${{ github.event.inputs.topic }}' is now live!"
+          echo "🔗 Visit: https://lena2027.github.io/testyourmind/tests.html"
