@@ -5,6 +5,530 @@
 
 const TESTS_DATA = [
   {
+  "id": "the-fantasy-class-which-rpg-character-class-matche",
+  "slug": "the-fantasy-class-which-rpg-character-class-matche",
+  "title": "The Fantasy Class: Which RPG Character Class Matches Your Soul?",
+  "category": "Fun & Light",
+  "categoryColor": "gold",
+  "emoji": "⚔️",
+  "participants": "127,842",
+  "duration": "8 min",
+  "resultTypes": 4,
+  "intro": "Throughout human history, we have told stories of heroes who embody distinct archetypes—the brave warrior charging into battle, the wise sage wielding mysterious powers, the cunning trickster navigating shadows, and the compassionate healer mending wounds both physical and spiritual. These archetypes persist because they reflect fundamental aspects of human personality that psychologists have studied for over a century.\n\nCarl Jung, the pioneering psychologist, believed that archetypes represent universal patterns residing in our collective unconscious. When we feel drawn to particular characters in stories, games, and mythology, we are recognizing something deep within ourselves—aspects of our personality that resonate with these timeless patterns. The fantasy classes found in role-playing games are modern expressions of these ancient archetypes, refined through decades of storytelling and game design to represent distinct approaches to challenges, relationships, and personal growth.\n\nThis test draws upon established psychological frameworks including the Big Five personality traits (openness, conscientiousness, extraversion, agreeableness, and neuroticism), attachment theory, and research into cognitive styles and problem-solving approaches. Each fantasy class correlates with specific combinations of these psychological dimensions. Warriors tend to score high in conscientiousness and extraversion. Mages often demonstrate elevated openness to experience and analytical thinking styles. Rogues typically exhibit high adaptability and independence. Healers frequently show strong agreeableness and emotional intelligence.\n\nBeyond simple categorization, understanding which archetype resonates with your personality can offer genuine insights into your strengths, potential blind spots, and natural inclinations in both personal and professional contexts. Research in narrative psychology suggests that the stories we identify with shape how we understand ourselves and navigate our lives. By exploring your fantasy class alignment, you may discover new perspectives on your decision-making patterns, relationship dynamics, and approach to overcoming obstacles.\n\nAs you answer these questions, respond with your genuine first instinct rather than what you think sounds most impressive or desirable. There are no wrong answers, and each class represents valuable and necessary qualities in any community or team. The most effective adventuring parties—like the most successful teams in real life—require diverse perspectives and complementary strengths. Your authentic responses will reveal which archetypal energy flows most naturally through your personality.",
+  "background": "This assessment integrates multiple psychological frameworks to map personality dimensions onto fantasy archetypes. The Big Five model (Costa & McCrae, 1992) provides the foundational structure, with each class representing distinct trait combinations. Warriors align with high conscientiousness and extraversion, reflecting their disciplined yet action-oriented nature. Mages correlate with elevated openness and analytical cognitive styles identified in dual-process theory research. Rogues demonstrate high adaptability and autonomy, traits associated with self-determination theory (Deci & Ryan). Healers exhibit strong agreeableness and emotional intelligence as defined by Salovey and Mayer's framework.\n\nAdditionally, the test incorporates elements of approach-avoidance motivation theory, examining whether individuals naturally move toward challenges or strategically navigate around them. Problem-solving style research (Kirton's Adaption-Innovation theory) informs questions about creative versus systematic approaches. The resulting profiles offer more than entertainment—they provide a lens for understanding genuine psychological tendencies through the accessible framework of beloved fantasy archetypes.",
+  "howToUse": "Your results reveal psychological tendencies expressed through the language of fantasy archetypes. Consider how your primary class manifests in real-world contexts: career choices, relationship patterns, conflict resolution styles, and stress responses. If you scored as a Warrior, you may thrive in leadership roles requiring decisive action. Mages often excel in research, analysis, and creative problem-solving. Rogues frequently succeed in dynamic environments requiring adaptability. Healers naturally gravitate toward caregiving and collaborative professions.\n\nRemember that most people contain elements of multiple classes—your secondary scores matter too. Use these insights for self-reflection rather than rigid self-definition. Consider discussing results with friends or colleagues to gain external perspective on how your archetypal tendencies appear to others.",
+  "questions": [
+    {
+      "text": "When facing a significant problem in your life, what is your most natural first response?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Confront it directly and take immediate action to resolve it",
+          "score": {
+            "warrior": 3,
+            "healer": 0,
+            "mage": 0,
+            "rogue": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Step back to analyze the situation thoroughly before deciding",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 3,
+            "rogue": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Look for creative workarounds or unconventional solutions",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 1,
+            "rogue": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "Consider how the problem affects everyone involved and seek collaborative solutions",
+          "score": {
+            "warrior": 0,
+            "healer": 3,
+            "mage": 1,
+            "rogue": 0
+          }
+        }
+      ]
+    },
+    {
+      "text": "In a group project or team setting, which role do you naturally gravitate toward?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Taking charge and keeping everyone focused on the goal",
+          "score": {
+            "warrior": 3,
+            "healer": 0,
+            "mage": 1,
+            "rogue": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "Researching deeply and providing expert knowledge",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 3,
+            "rogue": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Handling the tricky parts others avoid and improvising solutions",
+          "score": {
+            "warrior": 1,
+            "healer": 0,
+            "mage": 0,
+            "rogue": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "Maintaining group harmony and supporting struggling members",
+          "score": {
+            "warrior": 0,
+            "healer": 3,
+            "mage": 0,
+            "rogue": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "When someone you care about is going through a difficult time, how do you typically respond?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Offer to take action on their behalf or help them fight through it",
+          "score": {
+            "warrior": 3,
+            "healer": 1,
+            "mage": 0,
+            "rogue": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "Help them understand the situation rationally and consider all angles",
+          "score": {
+            "warrior": 0,
+            "healer": 1,
+            "mage": 3,
+            "rogue": 0
+          }
+        },
+        {
+          "label": "C",
+          "text": "Distract them or help them find a way to escape the pressure",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 0,
+            "rogue": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "Listen deeply and provide emotional comfort and validation",
+          "score": {
+            "warrior": 0,
+            "healer": 3,
+            "mage": 0,
+            "rogue": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "What type of environment allows you to do your best work?",
+      "options": [
+        {
+          "label": "A",
+          "text": "A structured environment with clear objectives and challenges to overcome",
+          "score": {
+            "warrior": 3,
+            "healer": 0,
+            "mage": 1,
+            "rogue": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "A quiet space with access to resources for deep thinking and learning",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 3,
+            "rogue": 0
+          }
+        },
+        {
+          "label": "C",
+          "text": "A flexible environment with minimal rules and room for improvisation",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 1,
+            "rogue": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "A collaborative space where meaningful connections can flourish",
+          "score": {
+            "warrior": 0,
+            "healer": 3,
+            "mage": 0,
+            "rogue": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "When you achieve a significant accomplishment, what aspect feels most rewarding?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Knowing I overcame a real challenge through determination and strength",
+          "score": {
+            "warrior": 3,
+            "healer": 0,
+            "mage": 1,
+            "rogue": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "The mastery and understanding I gained through the process",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 3,
+            "rogue": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "The cleverness of how I achieved it, especially if others couldn't",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 1,
+            "rogue": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "The positive impact my accomplishment had on others",
+          "score": {
+            "warrior": 0,
+            "healer": 3,
+            "mage": 0,
+            "rogue": 0
+          }
+        }
+      ]
+    },
+    {
+      "text": "How do you typically handle conflict with others?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Address it head-on with honest, direct communication",
+          "score": {
+            "warrior": 3,
+            "healer": 0,
+            "mage": 0,
+            "rogue": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "Analyze the root causes and propose logical solutions",
+          "score": {
+            "warrior": 1,
+            "healer": 0,
+            "mage": 3,
+            "rogue": 0
+          }
+        },
+        {
+          "label": "C",
+          "text": "Navigate around it strategically or wait for the right moment",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 1,
+            "rogue": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "Seek to understand all perspectives and find common ground",
+          "score": {
+            "warrior": 0,
+            "healer": 3,
+            "mage": 0,
+            "rogue": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "What draws you most strongly to a story's protagonist?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Their courage, honor, and willingness to protect others",
+          "score": {
+            "warrior": 3,
+            "healer": 1,
+            "mage": 0,
+            "rogue": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "Their intelligence, wisdom, and pursuit of hidden knowledge",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 3,
+            "rogue": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Their wit, independence, and ability to beat the odds",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 0,
+            "rogue": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "Their compassion, growth, and ability to inspire change in others",
+          "score": {
+            "warrior": 0,
+            "healer": 3,
+            "mage": 1,
+            "rogue": 0
+          }
+        }
+      ]
+    },
+    {
+      "text": "When learning something new, what approach works best for you?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Diving in and learning through direct practice and experience",
+          "score": {
+            "warrior": 3,
+            "healer": 0,
+            "mage": 0,
+            "rogue": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Systematic study and building understanding from fundamentals",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 3,
+            "rogue": 0
+          }
+        },
+        {
+          "label": "C",
+          "text": "Experimenting freely and finding shortcuts that work for me",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 1,
+            "rogue": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "Learning alongside others and sharing the journey",
+          "score": {
+            "warrior": 1,
+            "healer": 3,
+            "mage": 0,
+            "rogue": 0
+          }
+        }
+      ]
+    },
+    {
+      "text": "What is your greatest fear or source of anxiety?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Being powerless to protect myself or those I care about",
+          "score": {
+            "warrior": 3,
+            "healer": 1,
+            "mage": 0,
+            "rogue": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "Being ignorant or making decisions without understanding",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 3,
+            "rogue": 0
+          }
+        },
+        {
+          "label": "C",
+          "text": "Being trapped, controlled, or losing my freedom",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 0,
+            "rogue": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "Being alone or unable to help those who are suffering",
+          "score": {
+            "warrior": 0,
+            "healer": 3,
+            "mage": 1,
+            "rogue": 0
+          }
+        }
+      ]
+    },
+    {
+      "text": "If you could have one supernatural ability, which would you choose?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Superhuman strength and invulnerability",
+          "score": {
+            "warrior": 3,
+            "healer": 0,
+            "mage": 0,
+            "rogue": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "The ability to know and understand anything",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 3,
+            "rogue": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Invisibility and the power to go anywhere undetected",
+          "score": {
+            "warrior": 0,
+            "healer": 0,
+            "mage": 0,
+            "rogue": 3
+          }
+        },
+        {
+          "label": "D",
+          "text": "The power to heal any wound or illness",
+          "score": {
+            "warrior": 0,
+            "healer": 3,
+            "mage": 1,
+            "rogue": 0
+          }
+        }
+      ]
+    }
+  ],
+  "results": {
+    "warrior": {
+      "type": "Warrior",
+      "emoji": "⚔️",
+      "title": "The Warrior: Champion of Courage and Honor",
+      "traits": [
+        "Courageous",
+        "Decisive",
+        "Protective",
+        "Disciplined"
+      ],
+      "description": "You embody the Warrior archetype—a personality defined by courage, direct action, and an unwavering commitment to protecting what matters most. Throughout history, every culture has celebrated the warrior spirit, from the samurai's bushido to the knight's chivalric code, because warriors represent humanity's capacity to stand firm against adversity and fight for meaningful causes.\n\nPsychologically, Warriors score high in conscientiousness and extraversion on the Big Five personality model. You possess remarkable self-discipline and follow through on commitments with determination that others find inspiring. Your extraversion manifests not as social butterfly tendencies, but as a willingness to step forward when others hesitate—to be the one who acts when action is needed.\n\nYour cognitive style tends toward concrete, practical thinking. While others may get lost in theoretical possibilities, you focus on what can be done now, with the resources at hand. This makes you exceptionally effective in crisis situations where decisive action matters more than perfect planning. You have an almost instinctive ability to assess threats and respond proportionally.\n\nIn relationships, you are fiercely loyal and protective. Those in your inner circle know they can count on you absolutely. You express love through acts of service and protection rather than elaborate words. Your challenge lies in vulnerability—allowing others to protect and support you in return. The warrior's strength sometimes masks a fear of appearing weak.\n\nYour shadow side emerges when courage becomes recklessness, or when protection becomes control. Learning to distinguish between battles worth fighting and those requiring strategic patience is your lifelong growth edge. The wisest warriors know that true strength includes the discipline to sheathe the sword.",
+      "dailyLife": "In daily life, your Warrior nature manifests in your reliability and action-orientation. You're the friend who shows up to help someone move without being asked twice. At work, you're known for cutting through endless discussions to ask, \"So what are we actually going to do?\" You likely maintain physical fitness or some form of training discipline, understanding intuitively that a strong body supports a strong will.\n\nYou may find yourself naturally taking leadership roles, not because you seek power, but because someone needs to make decisions and you're willing to bear that responsibility. Morning routines, structured schedules, and clear goals help you thrive. You become restless and irritable without meaningful challenges to overcome.\n\nStress shows up as aggression or impatience. You may need to consciously practice patience and remember that not every problem requires an immediate forceful response.",
+      "advice": "Your greatest growth opportunity lies in developing what might feel like contradictory qualities: patience, vulnerability, and strategic thinking. The most legendary warriors in history combined physical prowess with wisdom, knowing when to fight and when to wait.\n\nPractice sitting with discomfort without immediately trying to fix it. Some battles are won through endurance rather than assault. Cultivate relationships where you can remove your armor and be protected by others—this isn't weakness but the trust that makes deep connection possible.\n\nConsider developing your analytical and empathic capabilities. Partner with Mage and Healer types who complement your strengths. The lone warrior makes for dramatic stories but rarely achieves lasting victory. Your courage is a gift—ensure it serves wisdom rather than pride."
+    },
+    "mage": {
+      "type": "Mage",
+      "emoji": "🔮",
+      "title": "The Mage: Seeker of Knowledge and Hidden Truths",
+      "traits": [
+        "Intellectual",
+        "Curious",
+        "Strategic",
+        "Innovative"
+      ],
+      "description": "You embody the Mage archetype—a personality driven by insatiable curiosity, deep analytical thinking, and the pursuit of understanding that others overlook or cannot grasp. From Merlin to Gandalf, the wizard archetype represents humanity's highest intellectual aspirations: the belief that knowledge is power and that understanding the hidden patterns of reality grants the ability to shape it.\n\nPsychologically, Mages score exceptionally high in openness to experience, the Big Five trait associated with imagination, creativity, and intellectual curiosity. You are drawn to complexity and find simplistic explanations unsatisfying. Where others see random events, you perceive patterns. Where others accept surface appearances, you dig deeper for underlying mechanisms and meanings.\n\nYour cognitive style favors systematic analysis and abstract thinking. You naturally engage in what psychologists call \"need for cognition\"—you enjoy thinking for its own sake and feel uncomfortable making decisions without thoroughly understanding the relevant factors. This makes you excellent at research, strategy, and solving problems that have stumped others.\n\nIn relationships, you connect through shared ideas and intellectual exploration. Small talk drains you, but deep conversations about meaningful topics energize you profoundly. You show love by sharing knowledge and helping others understand things more deeply. Your challenge is remembering that emotional connection doesn't always require understanding—sometimes presence matters more than analysis.\n\nYour shadow side emerges when knowledge becomes a substitute for action, or when intellectual superiority creates isolation. The wisdom of the true mage includes knowing the limits of knowledge and the importance of acting even with incomplete information.",
+      "dailyLife": "In daily life, your Mage nature manifests as constant learning and mental engagement. You likely have multiple books in progress, browser tabs open to fascinating articles, and a mind that's always working on some puzzle or question. You're the person others consult when they need something researched thoroughly or explained clearly.\n\nAt work, you excel in roles requiring analysis, innovation, or specialized expertise. You may become frustrated with colleagues who want quick answers without understanding the complexity involved. You need regular intellectual stimulation and may create it for yourself if your environment doesn't provide it.\n\nYour living space likely reflects your mind—perhaps organized by systems only you fully understand, filled with books, tools of learning, or creative projects in progress. You require significant alone time to process and recharge.\n\nStress manifests as analysis paralysis, overthinking, or retreating entirely into the realm of ideas while neglecting practical and emotional needs.",
+      "advice": "Your greatest growth opportunity lies in bridging the gap between knowledge and action, between understanding and connection. The most powerful mages in legend were not merely scholars—they were wise advisors who applied their knowledge to help others and shape events in the real world.\n\nPractice making decisions with incomplete information. Perfectionism in understanding can become an excuse for avoiding the vulnerability of commitment and action. Set deadlines for analysis and force yourself to act even when you'd prefer more research.\n\nCultivate emotional intelligence alongside intellectual capability. Learn to be present with others' feelings without immediately trying to analyze or solve them. Your insights are gifts, but timing and delivery matter as much as accuracy.\n\nPartner with Warriors who can translate your strategies into action, and Healers who can help you stay connected to human needs beyond abstract understanding. Your wisdom grows not in isolation but through application in the living world."
+    },
+    "rogue": {
+      "type": "Rogue",
+      "emoji": "🗡️",
+      "title": "The Rogue: Master of Adaptation and Freedom",
+      "traits": [
+        "Adaptable",
+        "Independent",
+        "Resourceful",
+        "Perceptive"
+      ],
+      "description": "You embody the Rogue archetype—a personality defined by adaptability, independence, and the ability to thrive in situations that would overwhelm others. From trickster gods like Loki to beloved characters like Han Solo, the rogue represents humanity's capacity for cleverness, survival, and the refusal to be constrained by conventional rules or expectations.\n\nPsychologically, Rogues demonstrate high levels of what researchers call \"psychological flexibility\"—the ability to adapt thoughts and behaviors to changing circumstances while maintaining core values. You score high in openness to experience but channel it differently than Mages—toward practical creativity and real-world problem-solving rather than abstract understanding.\n\nYour cognitive style excels at rapid assessment and improvisation. You notice details others miss—exits in a room, shifts in social dynamics, opportunities hiding in problems. This perceptiveness combines with quick thinking to make you remarkably effective in unpredictable situations. You trust your instincts because experience has proven them reliable.\n\nIn relationships, you value authenticity and resist attempts to change or control you. You may have a smaller circle of truly trusted individuals, but those relationships are genuine and tested. You show love by including others in your adventures and sharing your true self—a gift you don't offer casually. Your challenge is allowing consistent intimacy, as your independence can become avoidance of vulnerability.\n\nYour shadow side emerges when adaptability becomes manipulation, or when independence becomes isolation and inability to commit. The rogue's freedom is most meaningful when chosen consciously, not when it's a compulsive escape from connection and responsibility.",
+      "dailyLife": "In daily life, your Rogue nature manifests as an unconventional approach that somehow works. You may not follow standard procedures, but you consistently get results through methods uniquely your own. You're the person who finds parking spots, knows the shortcut, gets the reservation at the full restaurant, or talks their way into opportunities.\n\nAt work, you thrive in roles with autonomy and variety. Micromanagement is intolerable—you need space to operate your own way. You often succeed in entrepreneurial ventures, creative fields, or positions requiring negotiation and quick thinking. Routine and predictability slowly suffocate your spirit.\n\nYour schedule probably looks chaotic to others but follows an internal logic that serves your priorities. You may keep unusual hours, maintain multiple projects or income streams, and resist being pinned down to long-term plans. This isn't irresponsibility—it's strategic flexibility in an unpredictable world.\n\nStress manifests as restlessness, risk-taking, or simply disappearing—taking space without explaining. You may struggle to ask for help, preferring to solve problems solo.",
+      "advice": "Your greatest growth opportunity lies in discovering that true freedom includes the choice to commit, to be known, and to let others depend on you. The most legendary rogues eventually found causes and companions worth their loyalty—and discovered that chosen bonds enhance rather than diminish their freedom.\n\nPractice staying present when situations become emotionally intense rather than deflecting with humor or physically withdrawing. Your perceptiveness can serve deep connection if you let it. Notice when your independence is a genuine value and when it's a defense mechanism.\n\nDevelop patience alongside your quick adaptability. Some prizes require sustained effort rather than clever shortcuts. Consider what you'd be willing to fight for, not just what you can acquire or escape. Your resourcefulness is remarkable—ensure it serves meaning beyond survival.\n\nPartner with Healers who can help you access deeper emotional currents, and Warriors whose directness complements your subtlety. Your adaptability is a superpower—use it consciously rather than reactively."
+    },
+    "healer": {
+      "type": "Healer",
+      "emoji": "✨",
+      "title": "The Healer: Guardian of Hearts and Connections",
+      "traits": [
+        "Compassionate",
+        "Intuitive",
+        "Supportive",
+        "Harmonizing"
+      ],
+      "description": "You embody the Healer archetype—a personality defined by deep empathy, emotional intelligence, and the ability to nurture growth and wholeness in others. From wise mentors to gentle clerics, the healer represents humanity's capacity for compassion, understanding, and the profound power of caring presence. While other classes may save the day dramatically, healers often save the people who save the day.\n\nPsychologically, Healers score high in agreeableness and demonstrate exceptional emotional intelligence as defined by researchers Salovey and Mayer. You possess remarkable ability to perceive, understand, and respond to emotions—both your own and others'. This isn't mere niceness; it's a sophisticated form of social intelligence that allows you to navigate complex interpersonal dynamics and provide what others truly need.\n\nYour cognitive style integrates emotional and rational information seamlessly. Where others might see emotion as noise interfering with clear thinking, you understand it as essential data about values, needs, and relationships. You notice when something is wrong before others can articulate it and often know what someone needs before they ask.\n\nIn relationships, you create spaces where others feel safe to be vulnerable and grow. People tell you things they've never told anyone else—not because you pry, but because your presence invites authenticity. You show love through attention, care, and the countless small acts that communicate \"you matter.\" Your challenge is ensuring your own needs receive equal attention, as your natural orientation toward others can become self-neglect.\n\nYour shadow side emerges when compassion becomes enabling, or when need to be needed creates unhealthy dynamics. The wisest healers know that true healing empowers others toward independence, not dependence.",
+      "dailyLife": "In daily life, your Healer nature manifests as being the emotional anchor in your communities. You're the friend others call when they're struggling, the family member who remembers everyone's preferences and manages relationships. At work, you likely end up in unofficial counselor or mediator roles regardless of your actual job title.\n\nYou're attuned to group dynamics and often work behind the scenes to smooth conflicts and ensure everyone feels included. You remember personal details others share and follow up meaningfully. Your living space probably feels welcoming and comfortable—a place where others want to gather and open up.\n\nYou may work in helping professions—healthcare, education, counseling, social work—or bring healing qualities to any field. You need work that feels meaningful and connected to others' wellbeing. Purely competitive or impersonal environments drain you quickly.\n\nStress manifests as absorbing others' emotions, difficulty setting boundaries, exhaustion from over-giving, or physical symptoms from suppressed personal needs. You may need to consciously schedule self-care that feels selfish but is actually essential.",
+      "advice": "Your greatest growth opportunity lies in extending to yourself the compassion you so readily offer others. The most powerful healers recognize that self-care isn't selfish—it's the foundation that makes sustainable care for others possible. You cannot pour from an empty vessel indefinitely.\n\nPractice setting boundaries without guilt. Notice when helping becomes a way to avoid your own challenges or maintain a sense of being needed. Your worth doesn't depend on what you provide to others—you are valuable simply existing, not just serving.\n\nDevelop comfort with healthy conflict. Sometimes the most caring thing is honest feedback that risks temporary discomfort. Your conflict avoidance may sometimes enable dysfunction rather than heal it.\n\nPartner with Warriors who can help you protect your boundaries, and Rogues whose independence models healthy self-focus. Your compassion is a profound gift—ensure you receive it as generously as you give it. The world needs you whole, not depleted."
+    }
+  }
+},
+  {
   "id": "leadership-style",
   "slug": "leadership-style",
   "title": "What's Your True Leadership Style? Discover How You Inspire and Guide Others",
