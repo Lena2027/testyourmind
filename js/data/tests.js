@@ -4,6 +4,450 @@
 // =============================================
 
 const TESTS_DATA = [
+  {
+  "id": "leadership-style",
+  "slug": "leadership-style",
+  "title": "What's Your True Leadership Style? Discover How You Inspire and Guide Others",
+  "category": "Career",
+  "categoryColor": "blue",
+  "emoji": "👑",
+  "participants": "127,458",
+  "duration": "8 min",
+  "resultTypes": 4,
+  "intro": "Leadership is not a one-size-fits-all phenomenon. Throughout history, the most effective leaders have understood that their approach to guiding others is deeply personal, shaped by their values, experiences, and psychological makeup. From the boardroom to the community center, from parenting to peer relationships, we all exercise leadership in various forms throughout our lives.\n\nThis assessment is designed to illuminate your natural leadership tendencies—the instinctive ways you approach influence, decision-making, and team dynamics. Understanding your leadership style is not merely an academic exercise; it has profound implications for your career trajectory, relationship satisfaction, and personal fulfillment. Research in organizational psychology consistently demonstrates that self-aware leaders are more effective, more adaptable, and more capable of building high-performing teams.\n\nThe science of leadership has evolved dramatically over the past century. Early theories focused on trait-based approaches, suggesting that leaders were born with certain characteristics. However, contemporary research recognizes that leadership is far more nuanced—a complex interplay of situational factors, learned behaviors, and innate preferences. Kurt Lewin's foundational work on leadership styles, combined with modern research from scholars like Daniel Goleman on emotional intelligence in leadership, forms the theoretical backbone of this assessment.\n\nAs you answer these questions, you may notice that some scenarios feel immediately familiar while others require deeper reflection. This is intentional. True leadership style emerges not just in obvious situations but in the subtle moments where our automatic responses reveal our deeper orientations toward power, collaboration, and influence.\n\nRemember that no leadership style is inherently superior to another. Each approach has distinct strengths and potential blind spots. The most effective leaders are those who understand their natural tendencies while developing the flexibility to adapt when circumstances demand it. Whether you discover that you lead through inspiration, through careful analysis, through empowerment, or through decisive action, this knowledge becomes a powerful tool for personal and professional growth.\n\nApproach each question honestly, selecting the response that most accurately reflects how you actually behave—not how you think you should behave or how you wish you would respond. Authenticity in your answers will yield the most valuable insights into your leadership DNA.",
+  "background": "This assessment draws upon several influential frameworks in leadership psychology. The foundational work of Kurt Lewin in the 1930s identified three primary leadership styles—autocratic, democratic, and laissez-faire—which continue to inform modern research. Building upon this, the Full Range Leadership Model developed by Bernard Bass and Bruce Avolio distinguishes between transformational, transactional, and passive leadership approaches.\n\nContemporary research has expanded these frameworks to incorporate emotional intelligence theory, as articulated by Daniel Goleman, who identified six leadership styles ranging from coercive to coaching. Additionally, situational leadership theory, developed by Hersey and Blanchard, emphasizes that effective leadership requires adapting one's approach based on team readiness and task demands.\n\nNeurological research has also contributed to our understanding, revealing that different leadership behaviors activate distinct neural pathways and that leadership style preferences may have both biological and developmental origins. Studies using fMRI technology have shown that transformational leadership behaviors correlate with increased activity in brain regions associated with social cognition and emotional regulation.",
+  "howToUse": "Your results will reveal your dominant leadership style along with detailed insights into how this manifests in various contexts. Use these findings as a starting point for reflection rather than a fixed label. Consider how your style serves you well and where it might create challenges.\n\nIn professional settings, share your results with colleagues and supervisors to foster mutual understanding and more effective collaboration. When building teams, consider how different leadership styles complement each other. If you manage others, recognize that team members may respond differently to various approaches.\n\nFor personal development, identify the growth edges suggested in your results and commit to practicing complementary skills. Remember that leadership style can be intentionally developed—your natural tendencies are a foundation, not a limitation. Revisit this assessment periodically to track your evolution as a leader.",
+  "questions": [
+    {
+      "text": "Your team is facing a critical deadline and tensions are running high. One team member approaches you with concerns about the project direction. How do you respond?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Listen carefully to their concerns, then facilitate a team discussion to incorporate diverse perspectives before deciding",
+          "score": {
+            "collaborative": 3,
+            "transformational": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Acknowledge their input briefly, then redirect focus to the established plan—we need to stay the course under pressure",
+          "score": {
+            "directive": 3,
+            "analytical": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Use this as an opportunity to inspire the team around a larger vision, helping them see how their work connects to something meaningful",
+          "score": {
+            "transformational": 3,
+            "collaborative": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Analyze their concerns systematically, request data to support their position, and schedule a structured review meeting",
+          "score": {
+            "analytical": 3,
+            "directive": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "You've been asked to lead a new initiative with a team you've never worked with before. What's your first priority?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Establish clear roles, expectations, and accountability structures from day one",
+          "score": {
+            "directive": 3,
+            "analytical": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Spend time getting to know each team member's strengths, aspirations, and working styles",
+          "score": {
+            "collaborative": 3,
+            "transformational": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Paint a compelling picture of what success looks like and why this initiative matters",
+          "score": {
+            "transformational": 3,
+            "collaborative": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Review all available data, past performance metrics, and best practices before developing a detailed project plan",
+          "score": {
+            "analytical": 3,
+            "directive": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "A team member has made a significant mistake that affects an important project. How do you handle it?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Conduct a thorough root cause analysis to understand what systemic factors contributed to the error",
+          "score": {
+            "analytical": 3,
+            "collaborative": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Address the issue directly and clearly, establish corrective measures, and monitor closely going forward",
+          "score": {
+            "directive": 3,
+            "analytical": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Frame this as a learning opportunity for the whole team, focusing on growth rather than blame",
+          "score": {
+            "transformational": 3,
+            "collaborative": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Meet privately to understand their perspective, then work together to develop a recovery plan",
+          "score": {
+            "collaborative": 3,
+            "transformational": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "When making important decisions that affect your team, what approach feels most natural to you?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Gather input from everyone affected, seek consensus, and ensure all voices are heard",
+          "score": {
+            "collaborative": 3,
+            "transformational": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Collect comprehensive data, analyze options systematically, and choose the most logical path",
+          "score": {
+            "analytical": 3,
+            "directive": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Trust my instincts and experience, make a clear decision, and communicate it confidently",
+          "score": {
+            "directive": 3,
+            "analytical": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Consider how this decision aligns with our values and long-term vision, then rally the team around it",
+          "score": {
+            "transformational": 3,
+            "collaborative": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "How do you typically motivate team members who seem disengaged or underperforming?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Set clear performance standards and consequences, providing structured feedback on expectations",
+          "score": {
+            "directive": 3,
+            "analytical": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Connect with them personally to understand what's happening and collaboratively problem-solve",
+          "score": {
+            "collaborative": 3,
+            "transformational": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Help them see the bigger picture and how their unique contributions matter to the team's mission",
+          "score": {
+            "transformational": 3,
+            "collaborative": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Review their performance data, identify specific gaps, and create a detailed improvement plan",
+          "score": {
+            "analytical": 3,
+            "directive": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your organization is undergoing significant change. How do you help your team navigate the uncertainty?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Research best practices for change management and develop a structured transition plan",
+          "score": {
+            "analytical": 3,
+            "directive": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Maintain stability by establishing clear protocols and keeping the team focused on controllable factors",
+          "score": {
+            "directive": 3,
+            "analytical": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Create forums for open dialogue where team members can express concerns and support each other",
+          "score": {
+            "collaborative": 3,
+            "transformational": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Articulate an inspiring vision of the future that helps people embrace the change as an opportunity",
+          "score": {
+            "transformational": 3,
+            "collaborative": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "When delegating an important task, what's most important to you?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Providing detailed instructions, checkpoints, and clear criteria for success",
+          "score": {
+            "directive": 3,
+            "analytical": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Matching the task to someone's development goals and using it as a growth opportunity",
+          "score": {
+            "transformational": 3,
+            "collaborative": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Ensuring the person has the support, resources, and collaborative input they need",
+          "score": {
+            "collaborative": 3,
+            "transformational": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Selecting the person with the best track record and relevant expertise based on past performance data",
+          "score": {
+            "analytical": 3,
+            "directive": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "Two team members are in conflict over different approaches to a project. How do you intervene?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Facilitate a mediated discussion where both can express their views and find common ground together",
+          "score": {
+            "collaborative": 3,
+            "transformational": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Evaluate both approaches objectively against criteria like feasibility, cost, and risk, then recommend the optimal path",
+          "score": {
+            "analytical": 3,
+            "directive": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Make a decisive call about which approach to use, clarifying that healthy debate is good but we need unity in action",
+          "score": {
+            "directive": 3,
+            "analytical": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Help them see beyond the immediate disagreement to our shared purpose, reframing the conflict as creative tension",
+          "score": {
+            "transformational": 3,
+            "collaborative": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "What do you believe is the most important function of a leader?",
+      "options": [
+        {
+          "label": "A",
+          "text": "To provide clear direction, structure, and accountability that enables the team to perform effectively",
+          "score": {
+            "directive": 3,
+            "analytical": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "To inspire people toward a meaningful vision and help them become the best versions of themselves",
+          "score": {
+            "transformational": 3,
+            "collaborative": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "To make sound decisions based on evidence, ensuring the team's efforts are optimally directed",
+          "score": {
+            "analytical": 3,
+            "directive": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "To create an environment of trust and inclusion where everyone can contribute their best work",
+          "score": {
+            "collaborative": 3,
+            "transformational": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "Reflecting on your proudest leadership moment, what made it meaningful to you?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Watching someone I developed grow into a leader themselves, carrying forward a vision we built together",
+          "score": {
+            "transformational": 3,
+            "collaborative": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Successfully navigating a complex challenge through careful analysis and strategic thinking",
+          "score": {
+            "analytical": 3,
+            "directive": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Making a tough decision under pressure that ultimately led the team to success",
+          "score": {
+            "directive": 3,
+            "analytical": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Building a cohesive team where people genuinely supported each other and achieved more together",
+          "score": {
+            "collaborative": 3,
+            "transformational": 1
+          }
+        }
+      ]
+    }
+  ],
+  "results": {
+    "transformational": {
+      "type": "Visionary",
+      "emoji": "🌟",
+      "title": "The Transformational Visionary",
+      "traits": [
+        "Inspirational",
+        "Future-Oriented",
+        "Empowering",
+        "Charismatic"
+      ],
+      "description": "You are a Transformational Visionary—a leader who inspires change and growth through compelling vision and authentic connection. Your leadership is characterized by an ability to see possibilities that others miss and to articulate a future so compelling that people naturally want to be part of creating it. You don't just manage tasks; you transform how people think about their work and their potential.\n\nAt your core, you believe that leadership is about developing people, not just directing them. You invest deeply in understanding what motivates each individual on your team, then help them connect their personal aspirations to larger organizational goals. This creates a powerful sense of meaning that fuels intrinsic motivation far more effectively than external rewards or punishments.\n\nYour communication style is characterized by storytelling, metaphor, and emotional resonance. You intuitively understand that people are moved by narrative and purpose more than by data and logic alone. When you speak about your team's mission, others feel genuinely inspired rather than merely informed.\n\nResearch by Bernard Bass and others has shown that transformational leaders consistently produce higher levels of follower satisfaction, commitment, and performance. Your approach stimulates intellectual curiosity, encourages creative problem-solving, and builds the kind of psychological safety where innovation thrives.\n\nHowever, your visionary orientation can sometimes lead you to overlook practical details or underestimate implementation challenges. You may become frustrated with the pace of change or with team members who seem stuck in conventional thinking. Learning to balance your inspirational approach with attention to operational realities will make you an even more effective leader.",
+      "dailyLife": "In your daily leadership practice, you naturally gravitate toward big-picture conversations and strategic thinking. You're energized by brainstorming sessions, purpose-driven discussions, and one-on-one conversations about people's growth and development. You likely spend considerable time crafting messages that will resonate emotionally and inspire action.\n\nYou may find yourself frustrated by routine administrative tasks, detailed planning, or situations that require strict adherence to established procedures. Meetings focused solely on metrics and operations may drain your energy, while opportunities to mentor, coach, or rally your team around a new initiative feel invigorating.\n\nYour team members likely experience you as inspiring and genuinely caring about their development. They probably feel empowered to take risks and bring forward creative ideas. However, some may occasionally wish for more concrete direction or clearer operational guidelines.",
+      "advice": "To maximize your leadership effectiveness, consciously pair your visionary strengths with systems and people who excel at implementation. Recognize that not everyone is motivated by the same grand visions that inspire you—some team members need more concrete, immediate goals to feel engaged.\n\nPractice grounding your inspiring messages with specific action steps and measurable milestones. This isn't about abandoning your visionary nature but about making your visions achievable. Consider partnering with someone who has strong analytical or directive tendencies to complement your approach.\n\nBe mindful of the gap between inspiration and expectation. Your enthusiasm can sometimes create implicit pressure that leaves team members feeling inadequate if they don't share your level of passion. Celebrate steady, incremental progress alongside breakthrough achievements."
+    },
+    "collaborative": {
+      "type": "Democratic",
+      "emoji": "🤝",
+      "title": "The Collaborative Democrat",
+      "traits": [
+        "Inclusive",
+        "Empathetic",
+        "Consensus-Building",
+        "Supportive"
+      ],
+      "description": "You are a Collaborative Democrat—a leader who creates impact through inclusion, shared ownership, and genuine partnership. Your leadership philosophy centers on the belief that the best solutions emerge from diverse perspectives and that people are most committed to decisions they helped shape. You understand that true engagement comes not from compliance but from authentic participation.\n\nYour approach to leadership reflects deep respect for human dignity and capability. You see your role not as the person with all the answers but as the facilitator who helps the team discover answers together. This creates an environment where psychological safety flourishes, and people feel genuinely valued for their contributions.\n\nYou excel at reading interpersonal dynamics, navigating competing interests, and building bridges between different viewpoints. Your emotional intelligence allows you to sense when someone feels unheard and to create space for their voice. Team members trust you because they know you genuinely care about their perspectives, not just their productivity.\n\nResearch consistently shows that democratic leadership builds higher levels of team cohesion, job satisfaction, and organizational citizenship behavior. Your inclusive approach fosters creativity and reduces the blind spots that come from homogeneous thinking.\n\nThe challenge for collaborative leaders lies in efficiency and decisiveness. Your commitment to inclusion can sometimes slow decision-making to a pace that frustrates team members who prefer quick action. You may also struggle in crisis situations where consensus-building is impractical, or when dealing with team members who interpret your inclusive style as weakness or indecision.",
+      "dailyLife": "Your daily leadership involves frequent check-ins, open-door availability, and creating multiple channels for team input. You likely invest significant time in one-on-one conversations, team meetings where everyone speaks, and informal relationship-building. You probably ask \"What do you think?\" more often than you realize.\n\nYou find energy in collaborative problem-solving sessions, team celebrations, and moments when diverse perspectives come together into creative solutions. You're naturally attuned to team morale and can sense when someone is struggling or disengaged.\n\nDecision-making may sometimes feel burdensome because you genuinely want to honor everyone's input. You might find yourself replaying conversations, wondering if you adequately heard all perspectives. Conflict between team members can be particularly stressful for you because you want everyone to feel valued and included.",
+      "advice": "Develop clear frameworks for when decisions require broad input versus when you should decide independently. Not every choice needs consensus—learn to distinguish between high-stakes decisions that benefit from collaboration and routine matters where seeking extensive input actually undermines efficiency.\n\nPractice setting clearer boundaries around decision timelines. Your team needs to know when input is being gathered versus when a decision has been made. Ambiguity about decision status can create anxiety and frustration.\n\nStrengthen your comfort with healthy conflict. Sometimes genuine collaboration requires honest disagreement before synthesis is possible. Your conflict-averse tendencies may inadvertently suppress the creative tension that produces the best outcomes. Remember that you can facilitate difficult conversations while still maintaining the inclusive culture you value."
+    },
+    "directive": {
+      "type": "Commanding",
+      "emoji": "⚡",
+      "title": "The Directive Commander",
+      "traits": [
+        "Decisive",
+        "Results-Driven",
+        "Authoritative",
+        "Action-Oriented"
+      ],
+      "description": "You are a Directive Commander—a leader who provides clear direction, decisive action, and unwavering focus on results. Your leadership is characterized by confidence, clarity, and a bias toward action. When others are still deliberating, you're already moving forward with a plan. This decisiveness creates momentum and provides the structure that many team members need to perform at their best.\n\nYour approach reflects a belief that leadership means taking responsibility for outcomes and making the tough calls that others avoid. You understand that ambiguity and endless deliberation can paralyze teams, and you're willing to bear the weight of decision-making so your team can focus on execution. This clarity of purpose and direction is genuinely valuable, particularly in high-stakes or time-pressured situations.\n\nYou excel in crisis situations where quick, confident decision-making is essential. Your ability to cut through complexity and identify the critical path forward has likely produced impressive results throughout your career. Team members know exactly where they stand with you and what's expected of them.\n\nResearch shows that directive leadership is highly effective in certain contexts—particularly when teams are inexperienced, when tasks are highly structured, or during genuine emergencies. Your approach provides the scaffolding that helps people perform when ambiguity would otherwise overwhelm them.\n\nHowever, directive leadership can suppress initiative and creativity if applied universally. Team members may become overly dependent on your direction or withhold ideas because they don't feel invited to contribute. Your confidence, while often warranted, can sometimes prevent you from recognizing valuable input that contradicts your initial judgment.",
+      "dailyLife": "Your daily leadership involves setting clear expectations, monitoring progress against goals, and making rapid decisions. You likely communicate in direct, efficient ways and become frustrated when others seem to ramble or avoid getting to the point. Your calendar probably reflects a bias toward action—short meetings with clear agendas and immediate next steps.\n\nYou find energy in solving problems, overcoming obstacles, and achieving measurable results. The satisfaction of checking items off a list, meeting a deadline, or exceeding a target genuinely motivates you. You may become restless in overly theoretical discussions or when progress seems stalled.\n\nTeam members likely experience you as clear, reliable, and results-focused. Some may appreciate your directness and decisiveness, while others may feel their input isn't valued or that there's little room for deviation from your approach. You may occasionally be surprised when team members share that they felt dismissed or steamrolled in conversations where you thought you were simply being efficient.",
+      "advice": "Consciously create space for input before announcing decisions. Your efficiency-oriented mind may jump to solutions quickly, but verbalizing these solutions before inviting other perspectives can shut down valuable contributions. Try asking questions before sharing your own views.\n\nDevelop awareness of how your directness lands with different personality types. What feels like helpful clarity to you may feel like micromanagement or dismissiveness to others. Practice adjusting your communication style based on what different individuals need.\n\nRecognize that sustainable results require team buy-in, not just compliance. People who feel ownership of decisions execute them with more creativity and commitment than those who are simply following orders. Investing in engagement upfront often accelerates results in the long run, even if it feels slower initially."
+    },
+    "analytical": {
+      "type": "Strategic",
+      "emoji": "🔬",
+      "title": "The Analytical Strategist",
+      "traits": [
+        "Logical",
+        "Thorough",
+        "Evidence-Based",
+        "Systematic"
+      ],
+      "description": "You are an Analytical Strategist—a leader who brings rigor, objectivity, and systematic thinking to complex challenges. Your leadership is characterized by careful reasoning, comprehensive analysis, and decisions grounded in evidence rather than intuition or politics. In a world of cognitive biases and emotional decision-making, your commitment to rationality provides crucial ballast.\n\nYour approach reflects a deep respect for complexity and a recognition that important decisions deserve thorough consideration. You understand that what appears obvious often isn't, and that the best solutions frequently emerge from disciplined analysis rather than snap judgments. This thoughtfulness has likely saved your organizations from costly mistakes that faster-moving leaders might have made.\n\nYou excel at breaking down complex problems into manageable components, identifying patterns in data, and building systematic approaches to recurring challenges. Your ability to maintain objectivity in emotionally charged situations is particularly valuable—you can evaluate options on their merits when others are caught up in politics or personalities.\n\nResearch in decision science validates many aspects of your approach. Structured decision-making processes consistently outperform intuitive judgments for complex, high-stakes choices. Your emphasis on evidence helps counteract confirmation bias and groupthink.\n\nHowever, analytical leadership can sometimes tip into analysis paralysis—the endless pursuit of more data that delays necessary action. Your comfort with complexity may also create communication challenges when working with people who prefer simpler, more intuitive approaches. Additionally, your emphasis on logic may occasionally undervalue the emotional and relational dimensions of leadership.",
+      "dailyLife": "Your daily leadership involves research, data review, and structured planning. You likely spend significant time gathering information, building models or frameworks, and documenting processes. Before meetings, you probably prepare thoroughly, anticipating questions and developing evidence-based positions.\n\nYou find energy in solving complex puzzles, discovering insights in data, and creating systems that bring order to chaos. A well-designed process or an elegant solution to a complicated problem provides genuine satisfaction. You're drawn to discussions of strategy, optimization, and continuous improvement.\n\nTeam members likely experience you as thoughtful, fair, and technically competent. They probably trust your judgment on complex issues and appreciate that your decisions are well-reasoned. However, some may occasionally wish for quicker decisions or more emotional engagement. They might feel that you value data more than their personal insights or experiences.",
+      "advice": "Set explicit decision deadlines to prevent analysis paralysis. Recognize that perfect information rarely exists and that delayed decisions have real costs. Practice making decisions with \"sufficient\" rather than \"complete\" information.\n\nDevelop your emotional intelligence alongside your analytical capabilities. Leadership involves motivating human beings, not just solving technical problems. Practice reading emotional cues, acknowledging feelings, and connecting with team members on personal levels.\n\nLearn to communicate your analysis in accessible ways. Your thorough thinking provides little value if others can't follow it. Practice distilling complex analyses into clear narratives and actionable recommendations. Remember that most people are persuaded by stories and relationships as much as by data—incorporate these elements into your communication without abandoning your analytical foundation."
+    }
+  }
+},
     {
         id: 'attachment-style',
         slug: 'attachment-style',
