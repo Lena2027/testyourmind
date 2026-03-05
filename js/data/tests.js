@@ -5,6 +5,530 @@
 
 const TESTS_DATA = [
   {
+  "id": "social-battery-monitor-how-long-can-you-actually-l",
+  "slug": "social-battery-monitor-how-long-can-you-actually-l",
+  "title": "Social Battery Monitor: How Long Can You Actually Last at a Party?",
+  "category": "Personality",
+  "categoryColor": "purple",
+  "emoji": "🔋",
+  "participants": "127,845",
+  "duration": "8 min",
+  "resultTypes": 4,
+  "intro": "Have you ever found yourself glancing at the clock during a social gathering, mentally calculating how much longer you need to stay before you can politely escape? Or perhaps you're the opposite—the person who arrives first, leaves last, and wonders why everyone else seems so eager to head home. Welcome to the fascinating world of social energy management, a concept that has captured both scientific attention and popular imagination in recent years.\n\nThe term \"social battery\" has become a powerful metaphor for understanding how we process and respond to social stimulation. Unlike our phones, which display a clear percentage, our internal social batteries operate on a much more complex and individualized system. Some people seem to run on solar power at parties, actually gaining energy from every conversation and connection. Others operate more like devices with limited charge, needing to carefully budget their social energy to avoid complete depletion.\n\nWhat makes this topic particularly compelling is that social energy capacity isn't simply about introversion versus extroversion—that's an oversimplification that misses the nuanced reality of human social functioning. Research in personality psychology and social neuroscience reveals that our social stamina is influenced by multiple factors: our baseline arousal levels, our sensitivity to social stimuli, our cognitive processing styles, and even our learned expectations about social situations. Two introverts might have vastly different party endurance levels, just as two extroverts might drain at completely different rates.\n\nUnderstanding your social battery pattern matters for practical reasons that extend far beyond party attendance. It affects your career choices, relationship satisfaction, mental health, and overall life design. When you understand your authentic social energy patterns, you can stop forcing yourself into situations that leave you depleted and start creating a social life that genuinely nourishes you.\n\nThis assessment goes beyond surface-level questions about whether you like parties. We'll explore how you process social information, what specific aspects of social gatherings energize or drain you, your recovery patterns after social engagement, and the subtle signals your body and mind send when your battery is running low. The goal isn't to label you, but to give you a detailed map of your unique social energy landscape.",
+  "background": "This assessment draws on several established psychological frameworks. Hans Eysenck's arousal theory of introversion-extroversion suggests that introverts have higher baseline cortical arousal, making them more sensitive to external stimulation and quicker to reach optimal arousal levels in social situations. This explains why some people feel \"full\" after brief social contact while others need extended interaction.\n\nWe also incorporate insights from Elaine Aron's research on sensory processing sensitivity, which identifies a trait present in approximately 15-20% of the population characterized by deeper cognitive processing of stimuli. Highly sensitive individuals often experience social gatherings more intensely, leading to faster depletion regardless of their introversion-extroversion score.\n\nAdditionally, this test considers the social baseline theory from neuroscience, which proposes that humans have a default expectation for social connection, and deviations from this baseline—whether too much or too little interaction—require cognitive resources. Your personal baseline significantly influences your party stamina. Finally, we draw on self-determination theory's concepts of autonomy and relatedness to understand how the quality of social interactions, not just quantity, affects energy expenditure.",
+  "howToUse": "Your results will reveal your social battery type, but remember that this is a snapshot of your general patterns, not a fixed destiny. Use your results as a starting point for self-reflection rather than a limiting label.\n\nConsider how your results align with your lived experience. If something feels off, explore why—perhaps situational factors like stress, health, or life circumstances are temporarily affecting your social capacity. Use the insights to make more informed decisions about social commitments: how many events to schedule in a week, how long to stay, and what recovery time you need.\n\nShare your results with close friends or partners to improve mutual understanding and reduce friction around social planning. Most importantly, remember that all battery types have unique strengths—the goal is optimization, not transformation into a different type entirely.",
+  "questions": [
+    {
+      "text": "You've just arrived at a party where you know only the host. What's your immediate internal experience?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Excitement and curiosity—a room full of potential new connections",
+          "score": {
+            "solar": 3,
+            "standard": 1,
+            "economy": 0,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "Mild nervousness that fades once you spot a friendly face or start a conversation",
+          "score": {
+            "solar": 1,
+            "standard": 3,
+            "economy": 1,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "C",
+          "text": "A quick mental scan for quiet corners or smaller conversation groups",
+          "score": {
+            "solar": 0,
+            "standard": 1,
+            "economy": 3,
+            "reserve": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "An urge to check how long you need to stay before leaving is socially acceptable",
+          "score": {
+            "solar": 0,
+            "standard": 0,
+            "economy": 1,
+            "reserve": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "Two hours into a lively gathering, how are you typically feeling?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Energized and hoping the night is still young",
+          "score": {
+            "solar": 3,
+            "standard": 1,
+            "economy": 0,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "Comfortable and engaged, though starting to notice some tiredness",
+          "score": {
+            "solar": 1,
+            "standard": 3,
+            "economy": 1,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "C",
+          "text": "Ready for a break—maybe stepping outside or finding a quieter space",
+          "score": {
+            "solar": 0,
+            "standard": 1,
+            "economy": 3,
+            "reserve": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Mentally exhausted and counting down to departure",
+          "score": {
+            "solar": 0,
+            "standard": 0,
+            "economy": 1,
+            "reserve": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "How do you feel about small talk with strangers at social events?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It's enjoyable—every stranger is a story waiting to be discovered",
+          "score": {
+            "solar": 3,
+            "standard": 1,
+            "economy": 0,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "It's a necessary warm-up before more meaningful conversation",
+          "score": {
+            "solar": 1,
+            "standard": 3,
+            "economy": 1,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "C",
+          "text": "It's tolerable in small doses but quickly becomes draining",
+          "score": {
+            "solar": 0,
+            "standard": 1,
+            "economy": 3,
+            "reserve": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "It feels performative and exhausting from the start",
+          "score": {
+            "solar": 0,
+            "standard": 0,
+            "economy": 1,
+            "reserve": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "The day after a big social event, what's your typical state?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Buzzing with happy memories and already planning the next gathering",
+          "score": {
+            "solar": 3,
+            "standard": 1,
+            "economy": 0,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "Pleasant tiredness—satisfied but ready for a calm day",
+          "score": {
+            "solar": 1,
+            "standard": 3,
+            "economy": 1,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "C",
+          "text": "Needing significant alone time to recover and recharge",
+          "score": {
+            "solar": 0,
+            "standard": 1,
+            "economy": 3,
+            "reserve": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Completely drained, possibly needing multiple days of solitude",
+          "score": {
+            "solar": 0,
+            "standard": 0,
+            "economy": 1,
+            "reserve": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "You're at a party and someone suggests moving to a second location to continue the night. Your honest reaction?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Absolutely—the night is young and adventure awaits",
+          "score": {
+            "solar": 3,
+            "standard": 1,
+            "economy": 0,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "Sure, if the vibe is right and it's not too late",
+          "score": {
+            "solar": 1,
+            "standard": 3,
+            "economy": 1,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "C",
+          "text": "Hesitant—you were actually calculating your exit strategy",
+          "score": {
+            "solar": 0,
+            "standard": 1,
+            "economy": 3,
+            "reserve": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Absolutely not—you're already past your limit",
+          "score": {
+            "solar": 0,
+            "standard": 0,
+            "economy": 1,
+            "reserve": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "When you notice your social energy starting to dip at a gathering, what happens?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rarely happens—I usually leave before reaching that point because the party ends",
+          "score": {
+            "solar": 3,
+            "standard": 1,
+            "economy": 0,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "I can push through for a while longer without too much discomfort",
+          "score": {
+            "solar": 1,
+            "standard": 3,
+            "economy": 1,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "C",
+          "text": "I start getting quieter and seek out one-on-one conversations instead",
+          "score": {
+            "solar": 0,
+            "standard": 1,
+            "economy": 3,
+            "reserve": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "I become irritable, foggy, or physically uncomfortable quickly",
+          "score": {
+            "solar": 0,
+            "standard": 0,
+            "economy": 1,
+            "reserve": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "How do you feel about being the center of attention at a party (birthday celebrations, toasts, etc.)?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Love it—it actually gives me energy",
+          "score": {
+            "solar": 3,
+            "standard": 1,
+            "economy": 0,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "It's fine in short bursts, especially among friends",
+          "score": {
+            "solar": 1,
+            "standard": 3,
+            "economy": 1,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "C",
+          "text": "Uncomfortable but manageable if it's brief",
+          "score": {
+            "solar": 0,
+            "standard": 1,
+            "economy": 3,
+            "reserve": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Deeply uncomfortable—I'll do almost anything to avoid it",
+          "score": {
+            "solar": 0,
+            "standard": 0,
+            "economy": 1,
+            "reserve": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "What's your ideal party size?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The bigger the better—more people means more energy and possibilities",
+          "score": {
+            "solar": 3,
+            "standard": 1,
+            "economy": 0,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "Medium-sized gatherings where you can mingle but still have real conversations",
+          "score": {
+            "solar": 1,
+            "standard": 3,
+            "economy": 1,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "C",
+          "text": "Small gatherings of 6-10 people maximum",
+          "score": {
+            "solar": 0,
+            "standard": 1,
+            "economy": 3,
+            "reserve": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Intimate settings with 2-4 close friends only",
+          "score": {
+            "solar": 0,
+            "standard": 0,
+            "economy": 1,
+            "reserve": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "When planning your weekend, how do you approach social commitments?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Stack them up—I feel restless with too much unscheduled time",
+          "score": {
+            "solar": 3,
+            "standard": 1,
+            "economy": 0,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "Balance one or two social events with some downtime",
+          "score": {
+            "solar": 1,
+            "standard": 3,
+            "economy": 1,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "C",
+          "text": "Carefully limit commitments and protect recovery time",
+          "score": {
+            "solar": 0,
+            "standard": 1,
+            "economy": 3,
+            "reserve": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Treat social events as special occasions requiring significant mental preparation",
+          "score": {
+            "solar": 0,
+            "standard": 0,
+            "economy": 1,
+            "reserve": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "You've been at a party for a while when you realize you're not enjoying yourself. What do you do?",
+      "options": [
+        {
+          "label": "A",
+          "text": "This rarely happens, but I'd try to change the energy by starting something fun",
+          "score": {
+            "solar": 3,
+            "standard": 1,
+            "economy": 0,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "B",
+          "text": "Seek out different people or conversations to shift the experience",
+          "score": {
+            "solar": 1,
+            "standard": 3,
+            "economy": 1,
+            "reserve": 0
+          }
+        },
+        {
+          "label": "C",
+          "text": "Start planning my graceful exit within the next 30 minutes",
+          "score": {
+            "solar": 0,
+            "standard": 1,
+            "economy": 3,
+            "reserve": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Leave as soon as possible—protecting my energy takes priority",
+          "score": {
+            "solar": 0,
+            "standard": 0,
+            "economy": 1,
+            "reserve": 3
+          }
+        }
+      ]
+    }
+  ],
+  "results": {
+    "solar": {
+      "type": "Solar Powered",
+      "emoji": "☀️",
+      "title": "The Social Solar Panel: Infinite Party Mode",
+      "traits": [
+        "Energized by crowds",
+        "Conversation catalyst",
+        "Natural host",
+        "Last to leave"
+      ],
+      "description": "Your social battery doesn't just last at parties—it actively charges. You belong to a fascinating subset of individuals whose neurological wiring means that social stimulation genuinely increases your energy rather than depleting it. While others are watching their internal meters drop, yours is climbing steadily higher with every new conversation, laugh, and connection.\n\nThis isn't about being \"better\" at socializing—it's about having a fundamentally different relationship with social stimulation. Research suggests that individuals like you may have lower baseline cortical arousal, meaning social environments bring you to an optimal state of alertness and engagement rather than overwhelming your system. The dopamine pathways in your brain likely respond more robustly to social rewards, making each positive interaction feel like a small but meaningful victory.\n\nYou probably find yourself genuinely confused by friends who want to leave parties early. \"But we're having such a great time!\" is your constant refrain, and you mean it sincerely. The concept of social exhaustion may be intellectually understandable to you but not experientially familiar. You've likely been called \"the life of the party\" more times than you can count, and you probably organize more gatherings than anyone in your social circle.\n\nHowever, your gift comes with its own challenges. You may struggle to understand partners or friends who need more solitude. You might fill your calendar so completely that you neglect other needs—rest, reflection, deep work. Your identity might be overly tied to social success, making periods of isolation (like lockdowns or illness) particularly destabilizing.",
+      "dailyLife": "In daily life, you're the connector—the person who introduces friends from different circles, organizes group activities, and keeps social momentum going. Your phone is full of group chats, and you're probably in more than a few planning committees. You genuinely look forward to work events that others dread, and you might choose careers specifically for their social components.\n\nYou likely process your thoughts by talking through them with others, which means you seek out company not just for pleasure but for cognitive function. Solitary tasks may feel more challenging, and you might find yourself manufacturing reasons to collaborate. Your home might frequently host gatherings, and you're probably known for your hospitality.",
+      "advice": "While your social energy is a genuine gift, consider cultivating a relationship with solitude. The ability to be alone comfortably is a skill that serves everyone, and it's particularly important for you to develop intentionally what doesn't come naturally. Practice spending time in your own company without external stimulation—no podcasts, no phone calls, just you.\n\nAlso, be mindful of the social battery levels of those around you. Your enthusiasm is wonderful, but it can inadvertently pressure others to exceed their comfortable limits. Learn to read the subtle signs of social fatigue in friends and partners, and make it easy for them to exit gracefully without feeling like they're disappointing you. Your relationships will deepen when others feel you understand and respect their different wiring."
+    },
+    "standard": {
+      "type": "Standard Capacity",
+      "emoji": "🔋",
+      "title": "The Balanced Battery: Sustainable Social Energy",
+      "traits": [
+        "Adaptable",
+        "Self-aware",
+        "Moderate pacer",
+        "Flexible boundaries"
+      ],
+      "description": "You possess what researchers might call a well-regulated social energy system. Your battery has solid capacity—enough to enjoy extended social engagement—but it operates on realistic principles. You can last at a party, enjoy yourself genuinely, and still recognize when it's time to head home. This balance is actually rarer and more valuable than it might seem.\n\nYour neurological profile likely sits in the middle ranges of arousal sensitivity. You're neither overwhelmed by social stimulation nor dependent on it for optimal functioning. This gives you remarkable flexibility—you can dial up your social engagement when circumstances call for it and dial down when you need restoration. You're bilingual in the languages of introversion and extroversion, able to connect authentically with people across the spectrum.\n\nAt parties, you probably experience a predictable arc: initial engagement and energy, a sustained plateau of enjoyment, and then a gradual decline that signals it's time to wrap up. You've likely developed good intuition about when you're approaching your limit and can usually exit before you hit true depletion. This self-awareness is a significant psychological asset.\n\nYour relationship with parties is healthy and realistic. You enjoy them without being dependent on them. You can skip one without feeling like you're missing something essential, but you also don't avoid them out of anxiety or anticipated exhaustion. This psychological middle ground allows you to make genuinely free choices about your social life.",
+      "dailyLife": "Your daily life probably reflects your balanced approach. You maintain meaningful friendships without feeling constantly behind on social obligations. You can handle work social events without excessive dread or excessive enthusiasm. You likely alternate naturally between social weekends and quieter ones, following your internal rhythms without rigid rules.\n\nYou're probably the friend people rely on for honest assessments—you'll stay at a party when it's fun and suggest leaving when it's not, and people trust your judgment. You might serve as a translator between your more introverted and more extroverted friends, helping each understand the other. Your flexibility makes you valuable in diverse social settings.",
+      "advice": "Your balance is an asset, but don't take it for granted. Continue to check in with yourself about your genuine preferences versus what feels expected. It can be easy for balanced individuals to over-accommodate others' preferences and lose touch with their own.\n\nUse your bilateral social abilities intentionally. You have the capacity to stretch in either direction when needed—staying longer at an important celebration or opting out of an optional event for self-care. Make these choices consciously rather than automatically deferring to others' expectations. Also, consider that your battery capacity might fluctuate with life circumstances—stress, health changes, and major life events can temporarily shift your baseline. Stay attuned to these shifts and adjust accordingly."
+    },
+    "economy": {
+      "type": "Economy Mode",
+      "emoji": "🪫",
+      "title": "The Strategic Conservationist: Mindful Social Energy",
+      "traits": [
+        "Quality over quantity",
+        "Deep connector",
+        "Strategic attender",
+        "Recharge-conscious"
+      ],
+      "description": "Your social battery operates in economy mode—not because it's deficient, but because it's calibrated for depth over breadth. You experience social interactions more intensely than most, which means you extract more meaning from each exchange but also expend more energy. Think of yourself as a high-definition processor in a world of standard definition—you're taking in more information, which requires more resources.\n\nResearch on sensory processing sensitivity and introversion helps explain your experience. Your brain likely processes social stimuli more thoroughly, picking up on subtleties of tone, body language, and emotional undercurrents that others miss. This makes you an exceptionally perceptive friend and conversationalist, but it also means that each interaction costs more cognitively and emotionally.\n\nAt parties, you probably find yourself drawn to corners, kitchens, and quieter spaces where meaningful one-on-one conversations can happen. The thought of working a room, making small talk with dozens of strangers, is exhausting even to contemplate. You'd rather have two rich conversations than twenty superficial ones, and this preference reflects genuine values, not social deficit.\n\nYou've probably developed sophisticated strategies for managing social events: arriving late, leaving early, taking breaks, finding quiet companions, positioning yourself near exits. These aren't signs of dysfunction—they're intelligent adaptations that allow you to participate in social life on terms that work for your neurology. The challenge is that you might sometimes feel like you're failing at socializing when actually you're just doing it differently.",
+      "dailyLife": "In daily life, you likely have a smaller circle of close friends rather than a large network of acquaintances. Quality trumps quantity in all your social decisions. You might decline invitations that others accept automatically, and you probably have recovery rituals after social events—whether that's reading, solo walks, or time in nature.\n\nWork social events may feel like mandatory assignments rather than perks. You've learned to prepare mentally for networking situations, and you might need to decompress afterward in ways your colleagues don't understand. You probably prefer text to phone calls and need significant alone time in relationships to function optimally.",
+      "advice": "Honor your wiring rather than fighting it. There's nothing wrong with needing more recovery time or preferring smaller gatherings. The cultural bias toward extroversion can make you feel like you should push through exhaustion, but this often backfires, leading to deeper depletion and social anxiety.\n\nDevelop a clear personal policy for social commitments. Know your limits in terms of frequency, duration, and intensity, and build in non-negotiable recovery time. Communicate these needs to important people in your life—not as apologies but as neutral facts about how you function best. The right people will appreciate your honesty and accommodate your needs. Finally, when you do attend social events, focus on finding your people rather than trying to connect with everyone. One genuine conversation is worth more than a room full of forgettable exchanges."
+    },
+    "reserve": {
+      "type": "Reserve Power",
+      "emoji": "🔌",
+      "title": "The Deep Reserve: Protected Social Energy",
+      "traits": [
+        "Highly selective",
+        "Intensity-sensitive",
+        "Sanctuary-seeking",
+        "Depth-oriented"
+      ],
+      "description": "Your social battery operates in reserve power mode—a configuration that prioritizes protection and selectivity above all else. Parties don't just tire you; they can feel genuinely overwhelming, even threatening to your sense of equilibrium. This isn't about being antisocial or having something wrong with you. It's about having a nervous system that processes social stimulation at maximum intensity, requiring careful management and abundant recovery.\n\nYou likely fall into the category researchers call \"highly sensitive\" or \"highly reactive.\" Your threshold for optimal arousal is lower than average, which means you reach overstimulation faster in environments others find merely lively. The sensory and social input at a typical party—music, multiple conversations, emotional cues from strangers, unpredictable interactions—creates a processing load that your system struggles to handle without significant cost.\n\nAt parties, you may experience physical symptoms of overwhelm: increased heart rate, difficulty focusing, a strong urge to escape, mental fog, or irritability. These aren't character flaws or things to overcome through willpower—they're signals from a finely-tuned nervous system that's receiving more input than it can comfortably process. Forcing yourself to stay past these signals often leads to a crash that can take days to recover from.\n\nYour relationship with socializing is complex. You likely crave connection—humans are social creatures, regardless of battery type—but the contexts in which you can experience connection comfortably are narrow. Large parties may simply not be your venue, and that's okay. Your social life might look very different from the cultural norm while still being genuinely fulfilling.",
+      "dailyLife": "In daily life, you probably structure things carefully to minimize social overwhelm. You might prefer remote work or roles with limited required social interaction. Your home is likely your sanctuary, and you may feel anxious about events that threaten your recovery time. You might have periods where you decline nearly all social invitations, needing extended time to restore your baseline.\n\nRelationships require special navigation. You need partners and friends who understand that your limited social bandwidth isn't about them. You might excel in one-on-one settings while struggling in groups. Phone calls might feel intrusive, and you probably communicate most comfortably through writing where you can control the pace.",
+      "advice": "Radical self-acceptance is your path forward. You cannot will yourself into having a larger social battery, and attempts to do so often backfire into burnout or anxiety. Instead, design a life that honors your authentic needs. This might mean having fewer but deeper friendships, choosing careers that don't require extensive networking, and being very selective about social commitments.\n\nCommunicate your needs clearly but without excessive apology. You don't need to justify your neurology to anyone. Practice phrases like \"That's not going to work for me\" without elaborate explanations. When you do attend social events, have exit strategies in place and permission from yourself to use them. Consider therapy if social anxiety accompanies your low battery—these are related but distinct issues, and anxiety is treatable even if your fundamental temperament isn't changeable. Most importantly, find your people: the rare individuals with whom interaction costs less and replenishes more."
+    }
+  }
+},
+  {
   "id": "your-spirit-animal-what-animal-represents-your-hid",
   "slug": "your-spirit-animal-what-animal-represents-your-hid",
   "title": "Your Spirit Animal: What Animal Represents Your Hidden Instincts?",
