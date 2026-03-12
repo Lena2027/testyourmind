@@ -5,6 +5,450 @@
 
 const TESTS_DATA = [
   {
+  "id": "-",
+  "slug": "-",
+  "title": "What Drink Matches Your Soul? The Psychology of Alcohol Preferences",
+  "category": "Fun & Light",
+  "categoryColor": "gold",
+  "emoji": "🍷",
+  "participants": "127,845",
+  "duration": "5 min",
+  "resultTypes": 4,
+  "intro": "Have you ever wondered why you instinctively reach for a certain drink at the bar while your friend orders something completely different? The connection between personality and beverage preference runs deeper than mere taste buds. Research in consumer psychology and behavioral science suggests that our drink choices often reflect fundamental aspects of our character, social orientation, and emotional processing styles.\n\nFrom the sophisticated wine connoisseur who savors complexity to the adventurous cocktail enthusiast who craves novelty, our alcohol preferences can serve as a fascinating mirror reflecting our inner psychological landscape. This isn't just about what tastes good—it's about what resonates with our identity, our social aspirations, and our emotional needs.\n\nPsychologists have long studied the relationship between personality traits and consumer choices. The Big Five personality model, sensation-seeking theory, and social identity research all provide valuable frameworks for understanding why certain individuals gravitate toward specific beverages. For instance, studies have shown correlations between openness to experience and preference for complex, unfamiliar drinks, while those high in conscientiousness often prefer traditional, quality-focused options.\n\nBeyond individual psychology, our drink choices are influenced by cultural conditioning, social learning, and the symbolic meanings we attach to different beverages. A glass of whiskey might represent sophistication and maturity to one person, while a colorful cocktail might symbolize celebration and creativity to another. These associations are deeply personal yet also shaped by broader cultural narratives.\n\nThis test draws from established psychological principles including temperament theory, sensation-seeking research, and social psychology to help you discover which alcoholic beverage truly aligns with your personality profile. Through carefully crafted questions about your social behaviors, emotional patterns, decision-making styles, and lifestyle preferences, we'll identify the drink that best matches your psychological makeup.\n\nWhether you're a creature of habit or an eternal experimenter, whether you value tradition or crave innovation, this test will reveal surprising insights about the connection between who you are and what you drink. Remember, there are no wrong answers—just different paths to understanding yourself better through the lens of this universally shared social ritual.",
+  "background": "This test is grounded in several psychological frameworks. First, we draw from Marvin Zuckerman's Sensation Seeking Theory, which explains why some individuals actively pursue novel, complex, and intense experiences while others prefer familiarity and predictability. High sensation seekers typically gravitate toward exotic cocktails and craft spirits, while low sensation seekers often prefer familiar, traditional beverages.\n\nWe also incorporate elements of the Big Five personality model, particularly the dimensions of Extraversion, Openness to Experience, and Conscientiousness. Research has demonstrated meaningful correlations between these traits and consumer preferences across multiple domains, including food and beverage choices.\n\nAdditionally, social identity theory informs our understanding of how drink choices serve as markers of group membership and self-presentation. People often select beverages that align with their desired social image and peer group associations. Finally, temperament research exploring approach versus avoidance motivation helps explain preferences for bold versus subtle flavor profiles.",
+  "howToUse": "Approach each question by selecting the answer that feels most natural and authentic to you—not what you think you should choose or what sounds most impressive. Consider your general tendencies rather than specific situations. Your results will reveal which beverage category most closely aligns with your psychological profile.\n\nUse these insights for self-reflection and perhaps to understand why certain drinks have always appealed to you. This can also be a fun conversation starter with friends to explore how different personalities express themselves through their choices. Remember that preferences evolve over time, and this test captures your current psychological orientation. Most importantly, drink responsibly and recognize that understanding your preferences is about self-awareness, not limitation.",
+  "questions": [
+    {
+      "text": "At a social gathering, you typically find yourself:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Working the room, meeting new people, and being the life of the party",
+          "score": {
+            "cocktail": 3,
+            "beer": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Having deep, meaningful conversations with a small group of close friends",
+          "score": {
+            "wine": 3,
+            "whiskey": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Observing the dynamics from a comfortable corner, joining conversations selectively",
+          "score": {
+            "whiskey": 3,
+            "wine": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Enjoying the casual atmosphere, laughing with everyone, keeping things light",
+          "score": {
+            "beer": 3,
+            "cocktail": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "When making decisions, you tend to:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Trust your gut instinct and embrace spontaneity",
+          "score": {
+            "cocktail": 3,
+            "beer": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Carefully analyze all options before choosing the most refined path",
+          "score": {
+            "wine": 3,
+            "whiskey": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Take your time, preferring proven methods over trendy alternatives",
+          "score": {
+            "whiskey": 3,
+            "beer": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Go with what feels comfortable and has worked before",
+          "score": {
+            "beer": 3,
+            "wine": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your ideal weekend activity would be:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Exploring a new neighborhood, trying a trendy restaurant, or attending a unique event",
+          "score": {
+            "cocktail": 3,
+            "wine": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Visiting a vineyard, museum, or attending a cultural performance",
+          "score": {
+            "wine": 3,
+            "cocktail": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Quiet reading, a quality film, or a thoughtful conversation with a close friend",
+          "score": {
+            "whiskey": 3,
+            "wine": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Barbecue with friends, watching sports, or a relaxed outdoor activity",
+          "score": {
+            "beer": 3,
+            "cocktail": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "How do you typically handle stress?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Distract yourself with social activities and new experiences",
+          "score": {
+            "cocktail": 3,
+            "beer": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Practice self-care rituals and seek aesthetic pleasures",
+          "score": {
+            "wine": 3,
+            "whiskey": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Retreat into solitude for deep reflection and processing",
+          "score": {
+            "whiskey": 3,
+            "wine": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Spend time with trusted friends doing familiar, comforting activities",
+          "score": {
+            "beer": 3,
+            "cocktail": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your approach to fashion and personal style is:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Bold, trendy, and expressive—you love making a statement",
+          "score": {
+            "cocktail": 3,
+            "wine": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Elegant, curated, and timeless—quality over quantity",
+          "score": {
+            "wine": 3,
+            "whiskey": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Classic, understated, and functional—substance over flash",
+          "score": {
+            "whiskey": 3,
+            "beer": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Casual, comfortable, and practical—you dress for ease",
+          "score": {
+            "beer": 3,
+            "cocktail": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "When trying a new restaurant, you usually:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Order the most unusual or creative dish on the menu",
+          "score": {
+            "cocktail": 3,
+            "wine": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Ask the server for recommendations and appreciate the chef's vision",
+          "score": {
+            "wine": 3,
+            "cocktail": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Choose a well-executed classic that reveals the kitchen's true skill",
+          "score": {
+            "whiskey": 3,
+            "wine": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Find something familiar and satisfying—no need to overcomplicate dinner",
+          "score": {
+            "beer": 3,
+            "whiskey": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "In conversations, you're most likely to:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Share entertaining stories and keep the energy high",
+          "score": {
+            "cocktail": 3,
+            "beer": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Discuss art, culture, travel, or philosophical ideas",
+          "score": {
+            "wine": 3,
+            "whiskey": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Listen thoughtfully and offer measured, insightful perspectives",
+          "score": {
+            "whiskey": 3,
+            "wine": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Keep things light, humorous, and relatable",
+          "score": {
+            "beer": 3,
+            "cocktail": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your emotional expression style is best described as:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Open and animated—you wear your heart on your sleeve",
+          "score": {
+            "cocktail": 3,
+            "beer": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Nuanced and refined—emotions are expressed with subtlety",
+          "score": {
+            "wine": 3,
+            "whiskey": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Reserved and controlled—you process internally before sharing",
+          "score": {
+            "whiskey": 3,
+            "wine": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Easy-going and even-keeled—you don't sweat the small stuff",
+          "score": {
+            "beer": 3,
+            "cocktail": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "When it comes to learning new things, you prefer:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Jumping in and learning through experimentation and play",
+          "score": {
+            "cocktail": 3,
+            "beer": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Taking courses, reading extensively, and developing expertise",
+          "score": {
+            "wine": 3,
+            "whiskey": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Deep-diving into subjects that genuinely interest you at your own pace",
+          "score": {
+            "whiskey": 3,
+            "wine": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Learning practical skills when needed, keeping things applicable",
+          "score": {
+            "beer": 3,
+            "cocktail": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your ideal relationship dynamic involves:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Excitement, adventure, and constant growth together",
+          "score": {
+            "cocktail": 3,
+            "wine": 1
+          }
+        },
+        {
+          "label": "B",
+          "text": "Intellectual connection, shared aesthetics, and mutual refinement",
+          "score": {
+            "wine": 3,
+            "cocktail": 1
+          }
+        },
+        {
+          "label": "C",
+          "text": "Deep loyalty, respect for independence, and meaningful silence",
+          "score": {
+            "whiskey": 3,
+            "beer": 1
+          }
+        },
+        {
+          "label": "D",
+          "text": "Comfort, reliability, laughter, and genuine companionship",
+          "score": {
+            "beer": 3,
+            "whiskey": 1
+          }
+        }
+      ]
+    }
+  ],
+  "results": {
+    "cocktail": {
+      "type": "The Creative Cocktail Soul",
+      "emoji": "🍸",
+      "title": "Vibrant Mixologist of Life",
+      "traits": [
+        "Adventurous",
+        "Expressive",
+        "Social",
+        "Creative"
+      ],
+      "description": "Your personality aligns beautifully with the artistry and excitement of cocktails. Like a perfectly crafted mixed drink, you bring together diverse elements to create something uniquely memorable. You possess an innate sense of adventure that drives you to seek out new experiences, flavors, and connections. Routine bores you; you crave the novel and the unexpected.\n\nPsychologically, you score high on sensation-seeking and openness to experience. You're the person who suggests trying that new fusion restaurant, who books spontaneous trips, and who isn't afraid to stand out in a crowd. Your social energy is infectious—you have a natural ability to make others feel included and entertained.\n\nYour creative spirit extends beyond drink preferences into all areas of life. You likely have eclectic taste in music, art, and fashion. You're drawn to self-expression and authenticity, and you appreciate when others bring their unique flair to the table. This makes you an excellent collaborator and a valued friend who adds color to any social circle.\n\nHowever, your love of novelty can sometimes make commitment challenging. You may find yourself restless in situations that demand prolonged consistency. Learning to find excitement within stability—discovering the adventure in depth rather than always seeking breadth—can help you achieve greater fulfillment.\n\nYour ideal drinking experience involves creative cocktail bars where mixologists craft unique concoctions, rooftop venues with spectacular views, or trendy spots where the atmosphere is as important as the drinks themselves.",
+      "dailyLife": "In daily life, your cocktail personality manifests as a constant curiosity about the world around you. You're likely the first to suggest trying a new lunch spot, the one who discovers hidden gems in your city, and the friend who always has interesting stories to share. Your morning routine probably varies based on your mood, and you might have several different coffee shops you rotate through.\n\nAt work, you thrive in environments that allow for creativity and variety. Repetitive tasks drain you, but projects requiring innovation energize you. You're excellent at brainstorming sessions and bringing fresh perspectives to stale problems. Your social nature makes you effective at networking and building diverse professional relationships.\n\nIn relationships, you bring excitement and spontaneity. You plan creative dates, remember unique details about people, and keep things interesting. However, you may need to consciously work on being present during quieter moments.",
+      "advice": "Embrace your vibrant nature while cultivating the art of presence. Your adventurous spirit is a gift, but true depth often comes from staying with something long enough to discover its hidden layers. Consider that the most skilled mixologists don't just chase novelty—they master classics before innovating.\n\nPractice finding adventure in the familiar. Challenge yourself to discover something new about a place you've been a hundred times or a person you've known for years. This will help you build the sustained connections and expertise that complement your natural spontaneity.\n\nWhen you feel restless, pause before immediately seeking external stimulation. Sometimes the most interesting journey is inward. Your creativity will only deepen as you develop the patience to let ideas fully mature before moving to the next shiny thing."
+    },
+    "wine": {
+      "type": "The Refined Wine Spirit",
+      "emoji": "🍷",
+      "title": "Sophisticated Curator of Experience",
+      "traits": [
+        "Cultured",
+        "Discerning",
+        "Romantic",
+        "Thoughtful"
+      ],
+      "description": "Your personality resonates with the complexity and sophistication of wine. Like a fine vintage, you believe that the best things in life develop through careful attention, patience, and an appreciation for nuance. You're not interested in quick thrills or superficial experiences—you seek depth, meaning, and quality in everything you do.\n\nPsychologically, you demonstrate high aesthetic sensitivity and conscientiousness. You notice details others miss: the play of light in a room, the subtle notes in a piece of music, the underlying themes in a conversation. This perceptiveness makes you an excellent judge of character and quality, though it can sometimes make you appear selective or particular to those who don't understand your standards.\n\nYou value culture, tradition, and the accumulated wisdom of the past while remaining open to thoughtful innovation. You're likely drawn to art, literature, travel, and cuisine—not as status symbols but as genuine sources of pleasure and growth. You understand that developing real expertise requires time and dedication.\n\nIn social situations, you prefer quality over quantity. A meaningful conversation with one interesting person satisfies you more than shallow interactions with many. You're warm once people get past your initial reserve, and you form deep, lasting bonds with those who share your appreciation for life's finer aspects.\n\nYour ideal drinking experience involves intimate wine bars with knowledgeable sommeliers, elegant dinners where wine complements carefully prepared food, or quiet evenings with close friends sharing a bottle and conversation.",
+      "dailyLife": "Your wine personality influences your daily choices in subtle but consistent ways. You probably have morning rituals you genuinely enjoy rather than rush through—perhaps quality coffee in a favorite mug while reading. Your living space likely reflects thoughtful curation: fewer items, but each chosen with intention.\n\nAt work, you bring careful analysis and attention to quality. You're not the fastest worker, but your output tends to be polished and well-considered. You excel in roles requiring expertise, aesthetic judgment, or strategic thinking. You may find yourself frustrated by colleagues who prioritize speed over substance.\n\nIn relationships, you're a devoted and attentive partner who remembers important details and creates meaningful experiences. You take time to truly understand your loved ones. However, your high standards can sometimes create pressure—both for yourself and others. Learning to appreciate imperfection as part of authentic beauty can help you relax into deeper intimacy.",
+      "advice": "Your refined nature is genuinely valuable in a world that often prioritizes speed and superficiality. However, be careful that your discernment doesn't become judgmentalism or that your standards don't isolate you from meaningful connections with people who express themselves differently.\n\nRemember that even the finest wines were once unremarkable grapes. Give people and experiences room to develop before assessing their worth. Some of life's most valuable relationships and moments don't announce their quality immediately—they reveal it over time.\n\nAlso, permit yourself occasional simplicity without guilt. Not every meal needs to be an experience, not every evening needs to be meaningful. Sometimes a pizza and a casual movie are exactly what the soul needs. Your sophistication is enhanced, not diminished, by your ability to appreciate life across the full spectrum of experiences."
+    },
+    "whiskey": {
+      "type": "The Contemplative Whiskey Soul",
+      "emoji": "🥃",
+      "title": "Depth-Seeking Independent Thinker",
+      "traits": [
+        "Introspective",
+        "Authentic",
+        "Patient",
+        "Resilient"
+      ],
+      "description": "Your personality aligns with the depth and complexity of whiskey. Like a well-aged spirit, you've developed your character through time, experience, and thoughtful reflection. You don't seek external validation or follow trends—you've developed your own values and perspectives through careful consideration of what truly matters.\n\nPsychologically, you demonstrate high introverted thinking and a strong internal locus of control. You're comfortable with solitude and often prefer your own company to superficial social interactions. This isn't misanthropy—you genuinely value people, but you're selective about where you invest your social energy. When you do connect, it's with depth and authenticity.\n\nYou respect tradition and craftsmanship while maintaining your own independent judgment. You're not impressed by flashiness or novelty for its own sake. You've learned that genuine quality reveals itself slowly and that patience is a virtue the modern world undervalues. This makes you an excellent long-term thinker and a reliable presence in others' lives.\n\nYour emotional life runs deep but isn't always visible on the surface. You process feelings internally before expressing them, which can make you seem reserved. However, those who know you well understand that still waters run deep. Your loyalty, once earned, is unwavering.\n\nYour ideal drinking experience involves a quiet corner of a classic bar, a comfortable leather chair at home with a good book, or meaningful conversation with a trusted friend—situations where the drink can be savored slowly and contemplatively.",
+      "dailyLife": "In daily life, your whiskey personality manifests as a preference for substance over style and depth over breadth. You likely have routines and rituals that ground you—perhaps a morning meditation, an evening walk, or a regular time for reading. Your living space is functional and comfortable rather than showy, with items that have meaning or history.\n\nAt work, you're valued for your reliability, depth of expertise, and ability to stay calm under pressure. You're not the loudest voice in meetings, but when you speak, people listen because your contributions are well-considered. You excel at roles requiring independent judgment, long-term thinking, or technical mastery.\n\nIn relationships, you're a steady, loyal presence. You may not express affection dramatically, but your consistent actions demonstrate your care. You remember what matters to people and show up when it counts. However, your reserved nature can sometimes be misread as coldness. Learning to verbalize your feelings more frequently can help others feel more connected to you.",
+      "advice": "Your depth and authenticity are increasingly rare and valuable qualities. However, ensure that your independence doesn't become isolation and that your selectivity doesn't prevent you from forming new meaningful connections. Even the finest whiskey is meant to be shared.\n\nConsider that vulnerability isn't weakness—letting others see your inner world more readily can deepen your relationships without compromising your integrity. You don't need to become someone you're not, but allowing yourself to be known requires some willingness to open up before you're certain it's safe.\n\nAlso, remember that while patience is valuable, not everything improves with waiting. Sometimes good enough today is better than perfect tomorrow. Your contemplative nature serves you well, but occasionally acting on incomplete information is necessary for growth. Trust that your character has been forged well enough to handle imperfect decisions."
+    },
+    "beer": {
+      "type": "The Grounded Beer Spirit",
+      "emoji": "🍺",
+      "title": "Authentic Connector of People",
+      "traits": [
+        "Approachable",
+        "Loyal",
+        "Practical",
+        "Genuine"
+      ],
+      "description": "Your personality resonates with the honest, unpretentious nature of beer. Like humanity's oldest social beverage, you represent the fundamental values of community, authenticity, and genuine connection. You don't need fancy trappings or elaborate performances—you create warmth and belonging through your simple, reliable presence.\n\nPsychologically, you demonstrate high agreeableness and emotional stability. You're comfortable in your own skin and don't feel the need to prove anything to anyone. This groundedness makes you incredibly easy to be around. People relax in your presence because you don't bring drama, judgment, or hidden agendas.\n\nYou value practicality and substance over appearance. While others might chase trends or status symbols, you focus on what actually works and what genuinely matters. This pragmatic orientation extends to your relationships—you're a loyal friend who shows up consistently rather than making grand gestures.\n\nYour social style is inclusive rather than exclusive. You're the one who makes newcomers feel welcome, who bridges different social groups, and who keeps everyone laughing with your natural wit. You understand that the best moments in life are often simple ones shared with good people.\n\nYour ideal drinking experience involves neighborhood pubs, backyard barbecues, sports bars with friends, or any casual setting where the focus is on enjoyment and connection rather than pretense or performance.",
+      "dailyLife": "In daily life, your beer personality shows up as a practical, no-nonsense approach that others find refreshing. You don't overcomplicate things. Your morning routine is efficient, your living space is comfortable and functional, and your wardrobe prioritizes comfort and practicality.\n\nAt work, you're a reliable team player who keeps things running smoothly. You might not seek the spotlight, but your colleagues know they can count on you. You're excellent at diffusing tension with humor, finding practical solutions to problems, and keeping everyone grounded when things get stressful. You thrive in collaborative environments with good team dynamics.\n\nIn relationships, you're the definition of a solid partner and friend. You remember birthdays, you help people move, you're there for the boring everyday stuff that actually constitutes most of life. You might not plan elaborate romantic gestures, but your consistent presence and genuine care create lasting bonds. Your relationships tend to be characterized by ease, laughter, and mutual support.",
+      "advice": "Your authenticity and groundedness are genuinely valuable—never let anyone make you feel like you should be more complicated or sophisticated. The world needs people who remind us that the simple things matter most.\n\nHowever, consider occasionally pushing yourself beyond your comfort zone. Your preference for the familiar is comforting, but growth often requires venturing into unfamiliar territory. Try a new cuisine, visit an unexpected place, or engage with an idea that initially seems too abstract. You might discover new dimensions of yourself.\n\nAlso, while your low-maintenance nature is a strength, make sure you're not suppressing legitimate needs or desires to avoid being seen as demanding. You deserve to ask for what you want sometimes. Your relationships will actually deepen when you allow yourself to be a little more vulnerable and express your needs more directly."
+    }
+  }
+},
+  {
   "id": "social-battery-monitor-how-long-can-you-actually-l",
   "slug": "social-battery-monitor-how-long-can-you-actually-l",
   "title": "Social Battery Monitor: How Long Can You Actually Last at a Party?",
